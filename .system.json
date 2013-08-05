@@ -1,0 +1,25 @@
+{
+  "client": {
+    "version": "0.0.0"
+  },
+  "generator": {
+    "pagesDir": "pages",
+    "templatesDir": "templates",
+    "partialsDir": "partials",
+    "helpers": "helpers"
+  },
+  "assets": {
+    "imagesDir": "images",
+    "cssDir": "css",
+    "sassDir": "sass",
+    "jsDir": "js",
+    "fontsDir": "fonts",
+    "componentsDir": "components"
+  },
+  "server": {
+    "root": ".www"
+  },
+  "export": {
+    "distPath": ".dist"
+  }
+}

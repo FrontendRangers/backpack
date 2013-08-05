@@ -1,0 +1,108 @@
+// Style Prototypes rely upon Toolkit and Breakpoint compass extensions, to be sure to keep them available in your Gemfile.
+@import "toolkit-no-css";
+@import "breakpoint";
+
+main {
+  display: block;
+}
+
+nav ul {
+  @include box-sizing('border-box');
+  @include breakpoint($vertical-horizontal-nav) {
+    @include horizontal-list;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  max-width: $max-page-width;
+  @include box-sizing('border-box');
+  @include clearfix(true);
+  padding: .5em .75em;
+}
+
+#prototype-header {
+  @include clearfix(true);
+
+  background: $header-color;
+
+  h1, h2, h3, h4, h5, h6, .page-info {
+    margin: 0;
+    padding: 0;
+    color: black;
+    background: none;
+    border: none;
+    vertical-align: baseline;
+    @include box-shadow(none);
+    @include text-shadow(none);
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .section-name {
+    margin-top: .1em;
+  }
+
+  .page-info {
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: .4em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#client-id {
+  width: 100%;
+  @include clearfix(true);
+
+  @include breakpoint($single-to-multi-column) {
+    @include golden('left');
+  }
+}
+
+#page-id {
+  width: 100%;
+  @include clearfix(true);
+
+  @include breakpoint($single-to-multi-column) {
+    text-align: right;
+    @include golden('right');
+  }
+}
+
+[component-list] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-preroll {
+  background: #333;
+
+  .cyan {
+    color: cyan;
+  }
+  .magenta {
+    color: magenta;
+  }
+}
