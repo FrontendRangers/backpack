@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Miscellaneous
+   ========================================================================== */
+
+/*
+   Horizontal rules
+   ========================================================================== */
+
+hr {
+  margin: 0;
+  border: 0;
+}
+
+/*
+   Tooltips
+   ========================================================================== */
+
+.#{$tooltip}, [data-tooltip] {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  text-indent: 0 !important;
+  border-bottom: 1px dotted #ccc;
+}
+
+.#{$tooltip}:before, .#{$tooltip}:after, [data-tooltip]:before, [data-tooltip]:after {
+  position: absolute;
+  z-index: 100;
+  pointer-events:none;
+  opacity: 0;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  transition: .3s ease;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+// Tooltip body
+.#{$tooltip}:after {
+  bottom: 100%;
+  left: 0%;
+  width: 100px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #333;
+  background: rgba(0,0,0,.9);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: normal;
+  text-align: center;
+  // white-space: nowrap;
+  content: attr(data-tooltip);
+}
+
+// Tooltip arrow
+.#{$tooltip}:before {
+  bottom: 100%;
+  left: 50%;
+  content: "";
+  z-index: 101;
+  @include css-arrow(down, rgba(0,0,0,.9), 6px);
+}
+
+.#{$tooltip}:hover:before, .#{$tooltip}:hover:after {
+  opacity: 1;
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+// Tooltip at top
+.#{$tooltip}.tip-top:before {
+  @include css-arrow(down, rgba(0,0,0,.9), 6px);
+}
+
+// Tooltip right side
+.#{$tooltip}.tip-right:after {
+  bottom: 0;
+  left: 100%;
+  margin-left: 12px;
+}
+
+.#{$tooltip}.tip-right:before {
+  @include css-arrow(left, rgba(0,0,0,.9), 6px);
+  bottom: 50%;
+  left: 100%;
+  margin-bottom: -3px;
+}
+
+// Tooltip left side
+.#{$tooltip}.tip-left:after {
+  right: 100%;
+  bottom: 0;
+  margin-right: 12px;
+}
+
+.#{$tooltip}.tip-left:before {
+  @include css-arrow(right, rgba(0,0,0,.9), 6px);
+  bottom: 50%;
+  left: 0;
+  margin-left: -12px;
+  margin-bottom: -3px;
+}
+
+// Tooltip at the bottom
+.#{$tooltip}.tip-bottom:after {
+  left: -100%;
+  top: 100%;
+  margin-top: 12px;
+}
+
+.#{$tooltip}.tip-bottom:before {
+  @include css-arrow(up, rgba(0,0,0,.9), 6px);
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+}
+
+/*
+   Others
+   ========================================================================== */
+
+.keystroke, kbd {
+  @include adjust-font-size-to(14px);
+  @include border-radius($btn-radius);
+  margin: 0;
+  padding: 2px 4px 0px;
+  border: solid 1px #333;
+  background: #DDD;
+  font-family: "Consolas", "Menlo", "Courier", monospace;
+}
+
+#googlemap img, object, embed { max-width: none; }
+
+#map_canvas embed { max-width: none; }
+#map_canvas img { max-width: none; }
+#map_canvas object { max-width: none; }

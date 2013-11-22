@@ -1,0 +1,104 @@
+p {
+  @include adjust-font-size-to($base-font-size);
+}
+
+a {
+  color: $link-color;
+  &:link {
+    outline: none;
+  }
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+  &:visited {
+    color: $link-visited-color;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+.text-big {
+  font-size: 2em;
+}
+
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.lead {
+  font-size: 1.3em;
+}
+
+.sub-header {
+  font-size: 60px;
+}
+
+.text-muted {
+  color: lighten($text-color-primary, 40%);
+}
+
+// Abbreviations and acronyms
+
+abbr[title] {
+  cursor: help;
+}
+
+// Quotes
+
+blockquote {
+  p {}
+  cite {
+    font-style: italic;
+    display: inline-block;
+    &:before {
+      content: "—";
+    }
+  }
+}
+
+blockquote:before,
+blockquote:after {
+  content: ""
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+// Addresses
+
+address {
+  display: block;
+}
+
+// Misc
+
+small {
+  font-size: 100%;
+}
+
+cite {
+  font-style: normal;
+}

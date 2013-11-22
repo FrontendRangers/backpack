@@ -1,0 +1,117 @@
+%clearfix {
+  & {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+// Borders
+
+.border-top {
+  border-top: 1px solid $light-gray;
+}
+
+.border-right {
+  border-right: 1px solid $light-gray;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $light-gray;
+}
+
+.border-left {
+  border-left: 1px solid $light-gray;
+}
+
+@media screen and (min-width: $screen-small + 1) and (max-width: $screen-small - 1) {
+  .dev .mq-indicator {
+    content: "small";
+  }
+}
+
+@media screen and (min-width: $screen-medium) {
+  .dev .mq-indicator {
+    content: "medium";
+  }
+}
+
+@media screen and (min-width: $screen-large) and (max-width: $screen-xlarge - 1) {
+  .dev .mq-indicator {
+    content: "large";
+  }
+}
+
+@media screen and (min-width: $screen-xlarge) {
+  .dev .mq-indicator:after {
+    content: "x-large";
+  }
+}
+
+// Navigation
+@mixin nav-item-width($items,$border-size:0) {
+  width: ($layout-width - 2) / $items - ($border-size * 2);
+}
+
+// Design Elements
+@mixin css-arrow($orientation: "up", $arrow-color: #ccc, $arrow-width: 10px) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $arrow-width;
+
+  @if $orientation == "up" {
+    border-color: transparent transparent $arrow-color transparent;
+  }
+
+  @if $orientation == "down" {
+    border-color: $arrow-color transparent transparent transparent;
+  }
+
+  @if $orientation == "left" {
+    border-color: transparent $arrow-color transparent transparent;
+  }
+
+  @if $orientation == "right" {
+    border-color: transparent transparent transparent $arrow-color;
+  }
+}
+
+@mixin css-triangle-corner($v-position: "top", $h-position: "left", $triangle-color: #ccc, $triangle-width: 50px) {
+  width: 0;
+  height: 0;
+
+  @if ($v-position == "top", $h-position == "left") {
+    border-top: $triangle-width solid $triangle-color;
+    border-right: $triangle-width solid transparent;
+  }
+
+  @if ($v-position == "top", $h-position == "right") {
+    border-top: $triangle-width solid $triangle-color;
+    border-left: $triangle-width solid transparent;
+  }
+
+  @if ($v-position == "bottom", $h-position == "left") {
+    border-bottom: $triangle-width solid $triangle-color;
+    border-right: $triangle-width solid transparent;
+  }
+
+  @if ($v-position == "bottom", $h-position == "right") {
+    border-bottom: $triangle-width solid $triangle-color;
+    border-left: $triangle-width solid transparent;
+  }
+}

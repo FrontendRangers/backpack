@@ -70,14 +70,11 @@ module.exports = function (grunt) {
         tasks: ['jshint:gruntfile', 'build:dev']
       },
       assemble: {
-        files: ['<%= app.src %>/*.hbs'],
+        files: ['<%= app.src %>/{,**/}*.hbs'],
         tasks: ['assemble:dev']
       },
       css: {
-        files: ['<%= app.src %>/css/{,*/}*.css'],
-      },
-      sass: {
-        files: ['<%= app.src %>/sass/{,*/}*.{scss,sass}'],
+        files: ['<%= app.src %>/assets/css/{,**/}*.{scss,sass}'],
         tasks: ['styles:dev']
       },
       scripts: {
@@ -148,14 +145,14 @@ module.exports = function (grunt) {
     compass: {
       dev: {
         options: {
-          sassDir: '<%= app.src %>/sass',
-          cssDir: '<%= app.tmp %>/css',
+          sassDir: '<%= app.src %>/assets/css',
+          cssDir: '<%= app.tmp %>/assets/css',
         },
       },
       build: {
         options: {
-          sassDir: '<%= app.src %>/sass',
-          cssDir: '<%= app.dist %>/css',
+          sassDir: '<%= app.src %>/assets/css',
+          cssDir: '<%= app.dist %>/assets/css',
           environment: 'production'
         },
       }

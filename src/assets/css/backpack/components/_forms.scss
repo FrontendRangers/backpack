@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+   Base
+   ========================================================================== */
+
+form {
+  margin: 0 0 $base-line-height;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  margin-bottom: $base-line-height;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+label {
+  display: block;
+  font-weight: $text-bold;
+  line-height: $base-line-height;
+}
+
+input, textarea {
+  padding: $input-padding;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: block;
+  width: 100%;
+  margin-bottom: $base-line-height;
+  border: $light-gray 1px solid;
+  vertical-align: middle;
+  font-size: 0.9em;
+  @include border-radius($input-radius);
+  &:focus{
+    outline: none;
+    border: 1px solid #0099ff;
+  }
+}
+
+// Select
+select {
+  height: $base-line-height + 5;
+}
+
+// File types
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+// Input Sizes
+.input-mini {
+  width: 60px;
+}
+.input-small {
+  width: 90px;
+}
+.input-medium {
+  width: 150px;
+}
+.input-large {
+  width: 210px;
+}
+.input-xlarge {
+  width: 270px;
+}
+.input-xxlarge {
+  width: 530px;
+}
+
+// Others
+
+.form-actions {
+  @include pie-clearfix;
+  margin-top: $base-line-height;
+  margin-bottom: $base-line-height;
+}
+
+.form-inline {
+  input,
+  textarea,
+  select,
+  button {
+    display: inline-block;
+    margin-right: $base-line-height;
+    margin-bottom: 0;
+  }
+  input[type="checkbox"] {
+    margin-right: $base-line-height / 2;
+  }
+}
+
+.form-inline label {
+  display: inline-block;
+  margin-right: $base-line-height;
+}
+
+input:required:after, textarea:required {
+  content: "*";
+  width: 50px;
+  height: 50px;
+}
+
+input:focus:invalid {
+  border-color: red;
+}
+
+input:focus:valid {
+  border-color: green;
+}
