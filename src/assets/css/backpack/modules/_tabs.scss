@@ -1,0 +1,145 @@
+.#{$tabs} {
+  display: block;
+  margin-bottom: $base-line-height;
+  @extend %clearfix;
+  .#{$tabs-nav} {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid $light-gray;
+    @extend %clearfix;
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: left;
+      display: block;
+      height: 40px;
+    }
+    a {
+      display: inline-block;
+      padding: 0 15px;
+      margin: 0;
+      text-decoration: none;
+      line-height: 40px;
+    }
+    .current {
+      background-color: #FFF;
+      border: 1px solid $light-gray;
+      border-bottom-width: 0;
+    }
+  }
+  .#{$tabs-content} {
+    display: block;
+    position: relative;
+    z-index: 0;
+    & > .#{$tab-pane} {
+      @extend %clearfix;
+    }
+    .#{$tab-pane-inner} {
+        // padding: 2em 0 0 0;
+        @extend %clearfix;
+      }
+  }
+  // Tabs Vertical
+  &.#{$tabs-vertical} {
+    .#{$tabs-nav} {
+      float: left;
+      border: none;
+      border-right: 1px solid $light-gray;
+      width: 20%;
+      height: 100%;
+        li {
+          float: none;
+          height: auto;
+        }
+        a {
+          width: 100%;
+          line-height: 1.2em;
+          padding: 1em 15px;
+          margin-left: 1px;
+        }
+        .current {
+          border: 1px solid $light-gray;
+          border-right: none;
+        }
+    }
+    .#{$tabs-content} {
+      float: left;
+      width: 80%;
+      .#{$tab-pane-inner} {
+        padding: 1em 2em;
+        @extend %clearfix;
+      }
+    }
+  }
+  // Tabs Right
+  &.#{$tabs-right} {
+    .#{$tabs-nav} {
+      float: right;
+      border: none;
+      border-left: 1px solid $light-gray;
+      a {
+        margin-left: -1px;
+      }
+      a.current {
+          border: 1px solid $light-gray;
+          border-left: none;
+      }
+    }
+    .#{$tabs-content} {
+
+    }
+  }
+  // Tabs Pills
+  &.#{$tabs-pills} {
+    .#{$tabs-nav} {
+      border: none;
+      a {
+        border: 1px solid $light-gray;
+        margin-right: 5px;
+      }
+      &.#{$btn-group} a {
+        margin: 0;
+        border-left-width: 0;
+      }
+      &.#{$btn-group} li:first-child a {
+        border-left-width: 1px;
+      }
+      .current {
+        border: 1px solid #000;
+        background-color: #363636;
+        background-image: none;
+        height: auto;
+        color: #FFF;
+      }
+    }
+    .#{$tabs-content} {
+      border: none;
+    }
+  }
+  // Tabs Boxed
+  &.#{$tabs-box} {
+    .#{$tabs-content} {
+      background-color: #FFF;
+      border: 1px solid $light-gray;
+      border-top-width: 0;
+      .#{$tab-pane-inner} {
+        padding: 1em 2em;
+        @extend %clearfix;
+      }
+    }
+    &.#{$tabs-pills} .#{$tabs-content} {
+      margin-top: 10px;
+      border-top-width: 1px;
+    }
+    &.#{$tabs-vertical} .#{$tabs-nav} {
+      border-right-width: 0;
+    }
+    &.#{$tabs-vertical} .#{$tabs-content} {
+      border-top-width: 1px;
+    }
+  }
+}

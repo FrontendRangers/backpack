@@ -1,22 +1,5 @@
 /* ==========================================================================
-   TODO:
-   [x] LiveReload
-   [x] Compass
-   [x] Clean
-   [x] Minification
-   [x] Bower
-   [ ] Sprites - http://emlyn.net/posts/spritesmith-tutorial
-   [ ] Image compression - https://github.com/gruntjs/grunt-contrib-imagemin
-   [x] Uglify
-   [ ] Grunticon - Not working anymore
-   [x] Dev - Temp (Server) - Build
-   [ ] Autoprefixer
-   [ ] Versions
-   [ ] Usemin ?
-   [ ] Concurrent ? For building speed
-   [ ] Readme File
-   [ ] Generator
-
+   Guidebook configuration
    ========================================================================== */
 
 'use strict';
@@ -32,8 +15,7 @@ module.exports = function (grunt) {
   var app = {
     src: './src',
     dist: './build',
-    tmp: './.www',
-    livereload_port: 35729
+    tmp: './.www'
   };
 
   grunt.initConfig({
@@ -43,7 +25,6 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 3456,
-        livereload: '<%= app.livereload_port %>',
         hostname: 'localhost'
       },
       dev: {
@@ -63,40 +44,56 @@ module.exports = function (grunt) {
     // Watch changes on files
     watch: {
       options: {
-        livereload: true,
+        livereload: true
       },
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['jshint:gruntfile', 'build:dev']
+        tasks: ['build:dev']
       },
       assemble: {
-        files: ['<%= app.src %>/{,**/}*.hbs'],
+        files: ['<%= app.src %>/pages/{,**/}*.hbs'],
+        tasks: ['newer:assemble:dev']
+      },
+      templates: {
+        files: ['<%= app.src %>/templates/{layouts,partials}/{,**/}*.hbs'],
         tasks: ['assemble:dev']
       },
       css: {
-        files: ['<%= app.src %>/assets/css/{,**/}*.{scss,sass}'],
+        files: ['<%= app.src %>/{assets,guidebook}/css/{,**/}*.{scss,sass}'],
         tasks: ['styles:dev']
       },
       scripts: {
-        files: ['<%= app.src %>/js/{,*/}*.js'],
+        files: ['<%= app.src %>/{assets,guidebook}/js/{,**/}*.js'],
         tasks: ['scripts:dev']
       },
       images: {
-        files: ['<%= app.src %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}']
+        files: ['<%= app.src %>/media/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}', '<%= app.src %>/assets/icons/{,*/}*.{png,jpg,jpeg,gif,webp,svg}']
       }
     },
 
+    // Assemble all the pages
     assemble: {
       options: {
         flatten: true,
-        data: ['<%= app.src %>/templates/data/*.{json,yml}'],
-        partials: '<%= app.src %>/templates/partials/*.hbs',
-        layoutdir: '<%= app.src %>/templates/layouts',
+        data: ['<%= app.src %>/templates/data/*.{json,yaml}'],
+        partials: ['<%= app.src %>/templates/partials/*.hbs'],
+        layoutdir: '<%= app.src %>/templates/layouts/',
         layout: 'default.hbs',
+        assets: 'assets',
+        files: {'<%= app.src %>/': ['pages/**/*.hbs']},
+        helpers: ['handlebars-helper-compose'],
+        compose: {
+          cwd: '<%= app.src %>',
+          sep: '<!-- include -->'
+        }
       },
       dev: {
-        src: ['<%= app.src %>/*.hbs'],
+        src: ['<%= app.src %>/pages/{,*/}*.hbs'],
         dest: '<%= app.tmp %>/'
+      },
+      build: {
+        src: ['<%= app.src %>/{,*/}*.hbs'],
+        dest: '<%= app.dist %>/'
       }
     },
 
@@ -113,74 +110,131 @@ module.exports = function (grunt) {
       }
     },
 
-    // Copy other files
+    // Copy other files except Bower js files - see bowercopy
     copy: {
-      // build: {
-      //   files: [{
-      //     expand: true,
-      //     dot: true,
-      //     cwd: '<%= app.src %>',
-      //     dest: '<%= app.dist %>',
-      //     src: [
-      //       '*.{ico,txt}',
-      //       '.htaccess',
-      //       'images/!(svg-src)/**',
-      //       'styles/fonts/*',
-      //       'webfonts/*'
-      //     ]
-      //   }]
-      // },
       js: {
         files: [{
           expand: true,
-          src: ['js/**/*.js'],
+          src: ['assets/js/*.js', 'guidebook/js/{,**/}*.js'],
           cwd: '<%= app.src %>',
           dest: '<%= app.tmp %>',
           ext: '.js'
         }]
+      },
+      fonts: {
+        expand: true,
+        src: ['assets/fonts/*'],
+        cwd: '<%= app.src %>',
+        dest: '<%= app.tmp %>'
+      },
+      swf: {
+        files: [{
+          expand: true,
+          src: ['assets/js/{,**/}*.swf', 'guidebook/js/{,**/}*.swf'],
+          cwd: '<%= app.src %>',
+          dest: '<%= app.tmp %>',
+          ext: '.swf'
+        }]
+      },
+    },
+
+    // Copy Bower
+    bowercopy: {
+      options: {
+        srcPrefix: '<%= app.src %>/assets/libs'
+      },
+      dev: {
+        options: {
+          destPrefix: '<%= app.tmp %>/assets/libs'
+        },
+        files: {
+          'modernizr/modernizr.js': 'modernizr/modernizr.js',
+          'chosen/chosen.jquery.min.js': 'chosen/chosen.jquery.min.js'
+        }
       }
     },
 
     // Generate CSS from SASS
-    compass: {
+    // compass: {
+    //   dev: {
+    //     options: {
+    //       sassDir: '<%= app.src %>/assets/css',
+    //       cssDir: '<%= app.tmp %>/assets/css',
+    //     },
+    //   },
+    //   sgdev: {
+    //     options: {
+    //       sassDir: '<%= app.src %>/guidebook/css',
+    //       cssDir: '<%= app.tmp %>/guidebook/css',
+    //       environment: 'production'
+    //     },
+    //   },
+    //   build: {
+    //     options: {
+    //       sassDir: '<%= app.src %>/assets/css',
+    //       cssDir: '<%= app.dist %>/assets/css',
+    //       environment: 'production'
+    //     },
+    //   },
+    //   sgbuild: {
+    //     options: {
+    //       sassDir: '<%= app.src %>/guidebook/css',
+    //       cssDir: '<%= app.dist %>/guidebook/css',
+    //       environment: 'production'
+    //     },
+    //   }
+    // },
+
+    sass: {
       dev: {
         options: {
-          sassDir: '<%= app.src %>/assets/css',
-          cssDir: '<%= app.tmp %>/assets/css',
+          style: 'expanded',
+          lineNumbers: true
         },
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/assets/css',
+          src: ['*.scss'],
+          dest: '<%= app.tmp %>/assets/css',
+          ext: '.css'
+        }],
+      },
+      sgdev: {
+        options: {
+          style: 'expanded',
+          lineNumbers: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/guidebook/css',
+          src: ['*.scss'],
+          dest: '<%= app.tmp %>/guidebook/css',
+          ext: '.css'
+        }],
       },
       build: {
         options: {
-          sassDir: '<%= app.src %>/assets/css',
-          cssDir: '<%= app.dist %>/assets/css',
-          environment: 'production'
+          style: 'nested'
         },
-      }
-    },
-
-    // Create icons from svg files (Not working...Guess why!)
-    grunticon: {
-      dev: {
-        options: {
-          src: '<%= app.src %>/images/svg-src/',
-          dest: '<%= app.src %>/images/svg/'
-        }
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/assets/css',
+          src: ['*.scss'],
+          dest: '<%= app.dist %>/assets/css',
+          ext: '.css'
+        }],
       },
-      build: {
+      sgbuild: {
         options: {
-          src: '<%= app.src %>/images/svg-src/',
-          dest: '<%= app.dist %>/images/svg/'
-        }
-      }
-    },
-
-    // Check our JS
-    jshint: {
-      dev: {
-        files: '<%= app.src %>/js/**/*.js'
-      },
-      gruntfile: {
-        files: 'Gruntfile.js'
+          style: 'nested'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/guidebook/css',
+          src: ['*.scss'],
+          dest: '<%= app.dist %>/guidebook/css',
+          ext: '.css'
+        }],
       }
     },
 
@@ -189,11 +243,45 @@ module.exports = function (grunt) {
       build: {
         files: [{
           expand: true,
-          src: ['js/**/*.js'],
+          src: ['js/{,**/}*.js'],
           cwd: '<%= app.src %>',
           dest: '<%= app.dist %>',
           ext: '.min.js'
         }]
+      }
+    },
+
+    imagemin: {
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/media/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= app.tmp %>/sites/default/files/media/images/'
+        }]
+      },
+      build: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.src %>/media/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= app.dist %>/sites/default/files/media/images/'
+        }]
+      }
+    },
+
+    csslint: {
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ['<%= app.tmp %>/assets/css/*.css']
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ['path/to/**/*.css']
       }
     },
 
@@ -213,60 +301,75 @@ module.exports = function (grunt) {
       }
     },
 
-    'gh-pages': {
-      options: {
-        base: '<%= app.tmp %>',
-        message: 'Auto-generated commit'
-      },
-      src: '**/*'
-    },
-
-    // To check
-    bower: {
-      options: {
-        exclude: ['modernizr']
-      },
-      all: {
-        rjsConfig: '<%= app.src %>/scripts/main.js'
-      }
-    },
-    requirejs: {
-      build: {
+    // Create a webfont from a batch of svg
+    webfont: {
+      icons: {
+        src: '<%= app.src %>/assets/icons/*.svg',
+        dest: '<%= app.src %>/assets/fonts',
+        destCss: '<%= app.src %>/assets/css/app/icons',
         options: {
-          baseUrl: '<%= app.src %>/js',
-          optimize: 'none',
-          preserveLicenseComments: false,
-          useStrict: true,
-          wrap: true
+          stylesheet: 'scss',
+          styles: 'font',
+          syntax: 'bootstrap',
+          htmlDemo: true,
+          htmlDemoTemplate: '<%= app.src %>/templates/webfont/demo.html',
+          destHtml: '<%= app.src %>/pages/icons',
+          relativeFontPath: '/assets/fonts'
         }
       }
     },
+
+    // Push to the Github Pages branch
+    buildcontrol: {
+      options: {
+        dir: '<%= app.dist %>',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      // Release the only assets on their own branch
+      assets: {
+        options: {
+          dir: '<%= app.dist %>/assets',
+          remote: 'git@git.dev.iweb.com:ux/shop-styleguide.git',
+          branch: 'assets'
+        }
+      },
+      ghpages: {
+        options: {
+          remote: 'git@git.dev.iweb.com:ux/shop-styleguide.git',
+          branch: 'gh-pages'
+        }
+      }
+    },
+
   });
 
   // Load plugins from package.json
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('assemble');
 
   // Styles Tasks
-  grunt.registerTask('styles:dev', ['compass:dev']);
-  grunt.registerTask('styles:build', ['compass:build']);
+  grunt.registerTask('styles:dev', ['sass:dev', 'sass:sgdev']);
+  grunt.registerTask('styles:build', ['compass:build', 'compass:sgbuild']);
 
   // Scripts Tasks
-  grunt.registerTask('scripts:dev', ['jshint:dev', 'copy:js']);
-  grunt.registerTask('scripts:build', ['jshint:dev', 'uglify:build']);
+  grunt.registerTask('scripts:dev', ['copy:js', 'bowercopy:dev', 'copy:swf']);
+  grunt.registerTask('scripts:build', ['uglify:build']);
 
   // Images Tasks
-  grunt.registerTask('images:dev', []);
-  grunt.registerTask('images:build', []);
+  grunt.registerTask('images:dev', ['newer:imagemin:dev']);
+  grunt.registerTask('images:build', ['imagemin:build']);
 
   // Build Tasks
-  grunt.registerTask('build:dev', ['verifylowercase', 'clean:temp', 'assemble:dev', 'images:dev', 'styles:dev', 'scripts:dev']);
-  grunt.registerTask('build:build', ['verifylowercase', 'clean:build', 'htmlmin:build', 'images:build', 'styles:build', 'scripts:build']);
+  grunt.registerTask('build:dev', ['verifylowercase', 'clean:temp', 'newer:assemble:dev', 'images:dev', 'styles:dev', 'scripts:dev', 'copy:fonts']);
+  grunt.registerTask('build:build', ['verifylowercase', 'clean:build', 'assemble:build', 'htmlmin:build', 'images:build', 'styles:build', 'scripts:build']);
 
   // Main Tasks
   grunt.registerTask('default', ['server']);
   grunt.registerTask('server', ['build:dev','connect:dev', 'watch']);
-  grunt.registerTask('build', ['build:build', 'connect:build', 'watch']);
-  grunt.registerTask('publish', ['build:dev', 'gh-pages']);
+  grunt.registerTask('build', ['build:build']);
+  grunt.registerTask('publish', ['build:build', 'bump', 'buildcontrol:ghpages', 'buildcontrol:assets']);
 
 };

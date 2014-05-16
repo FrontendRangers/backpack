@@ -135,7 +135,7 @@
 .#{$btn-group} {
 	list-style: none;
 	padding: 0;
-	@include pie-clearfix;
+	@extend %clearfix;
 	li {
 		float: left;
 		padding: 0;
@@ -145,13 +145,13 @@
 		}
 		// This prevent from rounding the middle buttons
 		&:not(:first-child) .#{$btn} {
-			@include border-top-left-radius(0);
-			@include border-bottom-left-radius(0);
+			// @include border-top-left-radius(0);
+			// @include border-bottom-left-radius(0);
 			border-left-width: 0;
 		}
 		&:not(:last-child) .#{$btn} {
-			@include border-top-right-radius(0);
-			@include border-bottom-right-radius(0);
+			// @include border-top-right-radius(0);
+			// @include border-bottom-right-radius(0);
 		}
 	}
 	.#{$btn} {

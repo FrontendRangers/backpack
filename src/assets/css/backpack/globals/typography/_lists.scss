@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol {
+  // @include adjust-font-size-to($base-font-size);
+  // margin: 0 0 rhythm(1, $base-font-size);
+  padding: 0 0 0 $gutter-width / 2;
+  ul {
+    margin: 0;
+  }
+}
+
+li {
+  .list-horizontal & {
+    float: left;
+    margin-right: 20px;
+    &:last-child { margin-right: 0; }
+  }
+  .list-bullet & {
+    list-style: disc outside none;
+  }
+  .list-number &, ol & {
+    list-style: decimal inside none;
+  }
+  .list-unstyled & {
+    list-style: none;
+  }
+}
+
+dl {
+  dt {}
+  dd {}
+}

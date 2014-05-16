@@ -1,0 +1,24 @@
+---
+title: Home
+heading: 'Backpack'
+lead: The CSS starter kit
+---
+<section class="sg-section sg-intro">
+  <div class="sg-wrapper">
+    <h1>{{ heading }}</h1>
+    <p>
+      {{lead}}
+    </p>
+  </div>
+</section>
+
+{{#each pages}}
+  {{#is data.section "component"}}
+    <section class="sg-section">
+      <div class="sg-wrapper">
+        <h2>{{{data.title}}}</h2>
+        {{{page}}}
+      </div>
+    </section>
+  {{/is}}
+{{/each}}

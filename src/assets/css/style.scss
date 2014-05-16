@@ -1,3 +1,32 @@
+/* ==========================================================================
+   Backpack - The css starter kit
+   ==========================================================================
+   Add your css at the bottom and your custom class names & settings
+   in the section below.
+   ========================================================================== */
+
+/*
+   Import Backpack class names & settings
+   ========================================================================== */
+
+@import "backpack/class-names";
+@import "backpack/settings";
+
+/*
+   Import your own class names & settings
+   ========================================================================== */
+
+@import "app/class-names";
+@import "app/settings";
+
+/*
+   Import Backpack core [do not remove]
+   ========================================================================== */
+
 @import "backpack/backpack";
 
-@import "backpack/themes/wireframe/wireframe";
+/*
+   Import your theme and other css
+   ========================================================================== */
+
+@import "app/app";

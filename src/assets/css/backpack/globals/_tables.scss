@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: $base-line-height;
+  caption {}
+  th {}
+  td {}
+
+  &.table-striped {
+    tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.table-bordered {
+    border-collapse: separate;
+    th, td {
+      border-left: 1px solid #989898;
+    }
+    th:last-child, td:last-child {
+      border-right: 1px solid #989898;
+    }
+    thead {
+      th, td {
+        border-top: 1px solid #989898;
+        border-bottom: 1px solid #989898;
+      }
+    }
+    tbody {
+      tr:first-child {
+        th, td {
+          border-top: 1px solid #989898;
+        }
+      }
+      tr {
+        th, td {
+          border-bottom: 1px solid #989898;
+        }
+      }
+    }
+    tfoot {
+      th, td {
+        border-top: 1px solid #989898;
+        border-bottom: 1px solid #989898;
+      }
+    }
+  }
+}

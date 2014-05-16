@@ -1,0 +1,18 @@
+.#{$breadcrumbs} {
+  margin: 0;
+  padding: 0;
+  @extend %clearfix;
+  li {
+    float: left;
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  li:not(:first-child):before {
+    content: "/";
+    padding-right: 10px;
+  }
+}

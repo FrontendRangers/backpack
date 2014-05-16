@@ -1,7 +1,7 @@
 figure {}
 
 figcaption {
-  @include adjust-font-size-to(12px);
+  // @include adjust-font-size-to(12px);
 }
 
 img {}
@@ -12,17 +12,17 @@ img.#{$img-fit} {
 }
 
 img.#{$img-rounded} {
-  @include border-radius($img-rounded-radius);
+  // @include border-radius($img-rounded-radius);
 }
 
 img.#{$img-circle} {
-  @include border-radius(100%);
+  // @include border-radius(100%);
 }
 
 img.#{$img-frame} {
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  // @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
   padding: 4px;
 }
 

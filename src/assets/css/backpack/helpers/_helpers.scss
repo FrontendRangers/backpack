@@ -1,4 +1,12 @@
-%clearfix {
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/*
+   Clearfix
+   ========================================================================== */
+
+.#{$clearfix}, %clearfix {
   & {
     *zoom: 1;
   }
@@ -12,62 +20,154 @@
   }
 }
 
-.pull-left {
+/*
+   Floating
+   ========================================================================== */
+
+.#{$pull-left} {
   float: left;
 }
 
-.pull-right {
+.#{$pull-right} {
   float: right;
 }
 
-// Borders
+/*
+   Visibility
+   ========================================================================== */
 
-.border-top {
+.visible, %visible {
+  display: block !important;
+}
+
+.#{$hidden}, %hidden {
+  display: none !important;
+}
+
+// This is to hide an element to the user but not for screen readers
+.visually-hidden, %visually-hidden {
+  position: absolute;
+  width: 1px;  /* Setting this to 0 make it invisible for VoiceOver */
+  height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*
+   States
+   ========================================================================== */
+
+.#{$is-disabled} {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/*
+   Image replacement
+   ========================================================================== */
+
+.text-hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*
+   Image positioning
+   ========================================================================== */
+
+.#{$img-left} {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.#{$img-right} {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+[class^="img-p-"] {
+  position: absolute;
+}
+
+.#{$img-p-top} {
+  top: 0;
+}
+
+.#{$img-p-right} {
+  right: 0;
+}
+
+.#{$img-p-bottom} {
+  bottom: 0;
+}
+
+.#{$img-p-left} {
+  left: 0;
+}
+
+
+/*
+   Word Break
+   ========================================================================== */
+
+.break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.ellipsis {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis; /* Required for IE8 */
+  -o-text-overflow: ellipsis; /* Required for Opera */
+  text-overflow: ellipsis;
+}
+
+
+/*
+   Borders
+   ========================================================================== */
+
+.#{$border-top} {
   border-top: 1px solid $light-gray;
 }
 
-.border-right {
+.#{$border-right} {
   border-right: 1px solid $light-gray;
 }
 
-.border-bottom {
+.#{$border-bottom} {
   border-bottom: 1px solid $light-gray;
 }
 
-.border-left {
+.#{$border-left} {
   border-left: 1px solid $light-gray;
 }
 
-@media screen and (min-width: $screen-small + 1) and (max-width: $screen-small - 1) {
-  .dev .mq-indicator {
-    content: "small";
-  }
-}
+/*
+   Navigation
+   ========================================================================== */
 
-@media screen and (min-width: $screen-medium) {
-  .dev .mq-indicator {
-    content: "medium";
-  }
-}
-
-@media screen and (min-width: $screen-large) and (max-width: $screen-xlarge - 1) {
-  .dev .mq-indicator {
-    content: "large";
-  }
-}
-
-@media screen and (min-width: $screen-xlarge) {
-  .dev .mq-indicator:after {
-    content: "x-large";
-  }
-}
-
-// Navigation
 @mixin nav-item-width($items,$border-size:0) {
   width: ($layout-width - 2) / $items - ($border-size * 2);
 }
 
-// Design Elements
+/*
+   Design Elements
+   ========================================================================== */
+
+// CSS Arrows
 @mixin css-arrow($orientation: "up", $arrow-color: #ccc, $arrow-width: 10px) {
   width: 0;
   height: 0;
@@ -91,6 +191,7 @@
   }
 }
 
+// CSS Corner
 @mixin css-triangle-corner($v-position: "top", $h-position: "left", $triangle-color: #ccc, $triangle-width: 50px) {
   width: 0;
   height: 0;

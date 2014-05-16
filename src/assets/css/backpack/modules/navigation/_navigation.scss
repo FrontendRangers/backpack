@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+/*
+   Basic navigation
+   ========================================================================== */
+
+.nav {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  .nav-divider {
+    height: 0;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+
+/*
+   Horizontal navigation
+   ========================================================================== */
+
+.nav-horizontal {
+  @extend %clearfix;
+  > li {
+    float: left;
+    position: relative;
+  }
+
+  > .nav-dropdown > a:after {
+    content: "↓";
+  }
+
+  > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+  }
+
+  li:hover > ul {
+    display: block;
+  }
+
+  li > ul > li {
+    position: relative;
+  }
+
+  > li > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: 100%;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+  }
+
+  a {
+    display: block;
+    padding: 0 5px;
+    li:first-child & {
+      padding-left: 0;
+    }
+  }
+}
+
+/*
+   Vertical navigation
+   ========================================================================== */
+
+/*
+   Nav bar
+   ========================================================================== */
+
+.navbar {
+  width: 100%;
+  border: 1px solid #CCC;
+  background-color: #ffffff;
+  @extend %clearfix;
+  a {
+    line-height: 40px;
+  }
+
+  .navbar-header {
+    float: left;
+    a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .nav {
+    float: left;
+  }
+
+  .navbar-form {
+    float: left;
+    display: none;
+    form, input, button {
+      float: left;
+      margin: 0;
+    }
+  }
+
+  .navbar-right {
+    float: right;
+    > li > ul {
+      right: -1px;
+      left: auto;
+    }
+    > li > ul > li > ul {
+      right: 100%;
+      left: auto;
+    }
+  }
+}

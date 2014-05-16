@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-  <html>
+<html lang="en">
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Backpack - A CSS starter kit</title>
-      <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}} | {{site.title}}</title>
+
+    <!-- Guidebook styles -->
+    <link rel="stylesheet" href="/guidebook/css/guidebook.css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{assets}}/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script src="{{assets}}/libs/modernizr/modernizr.js"></script>
+
   </head>
-  <body class="dev">
-    {{> header }}
-    <div class="wrapper">
-      {{> body }}
+  <body>
+
+    <div class="sg-layout">
+      <div class="sg-content">
+        <aside class="sg-sidebar">
+          <header class="sg-header">
+            <div class="sg-title sg-branding">
+              <span class="sg-logo">
+                <a href="/">{{title}}</a>
+              </span>
+            </div>
+          </header>
+          <div class="sg-menu">
+            <ul>
+              <li>
+                Components
+                <ul>
+                  {{#each pages}}
+                  {{#is data.section "component"}}
+                    <li>
+                      <a href ="{{relative ../../page.dest this.dest}}">{{data.title}}</a>
+                    </li>
+                  {{/is}}
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div class="sg-main">{{> body }}</div>
+      </div>
+      {{!-- {{> footer }} --}}
     </div>
-    {{> footer }}
+
+    {{> scripts}}
   </body>
 </html>

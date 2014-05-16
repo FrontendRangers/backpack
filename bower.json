@@ -1,18 +1,16 @@
 {
-  "name": "spike",
-  "version": "0.1.0",
+  "name": "backpack",
+  "version": "0.0.1",
   "authors": [
-    "Benoit Deziel <benoitdeziel@gmail.com>"
+    "Benoit Deziel <ben@benoitdeziel.com>"
   ],
   "license": "MIT",
-  "homepage": "benoitdeziel.com",
   "private": true,
   "dependencies": {
-    "jquery": "~2.0.3",
-    "modernizr": "~2.6.2",
-    "requirejs": "~2.1.8",
-    "parsleyjs": "~1.1.18",
-    "normalize.scss": "~2.1.3"
+    "jquery": "~2.1.0",
+    "modernizr": "~2.7.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "bourbon": "~4.0.1"
+  }
 }

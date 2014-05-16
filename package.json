@@ -1,38 +1,60 @@
 {
-  "name": "spike",
-  "description": "A simple site builder",
-  "author": "Benoit Deziel(benoitdeziel.com)",
-  "version": "0.0.1",
-  "private": true,
+  "name": "shop-styleguide",
+  "description": "The styleguide for the shopping cart.",
+  "version": "0.1.0",
+  "homepage": "https://git.dev.iweb.com/ux/shop-styleguide/",
+  "author": {
+    "name": "Benoit Deziel",
+    "url": "https://git.dev.iweb.com/ux/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://git.dev.iweb.com/ux/shop-styleguide.git"
+  },
+  "bugs": {
+    "url": "https://git.dev.iweb.com/ux/shop-styleguide/issues"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-autoprefixer": "0.2.x",
-    "grunt-contrib-connect": "0.4.x",
-    "grunt-contrib-copy": "0.4.x",
-    "grunt-contrib-cssmin": "0.6.x",
-    "grunt-contrib-clean": "0.4.x",
-    "grunt-contrib-imagemin": "0.3.x",
-    "grunt-contrib-jshint": "0.6.x",
-    "grunt-contrib-sass": "0.5.x",
-    "grunt-contrib-compass": "0.6.x",
-    "grunt-contrib-uglify": "0.2.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-jsonlint": "1.0.x",
-    "grunt-verifylowercase": "0.2.x",
-    "grunt-version": "0.2.x",
-    "matchdep": "0.3.x",
-    "grunt-contrib-csslint": "0.1.x",
+    "assemble": "~0.4.x",
+    "bower": ">= 1.2.x",
+    "grunt": ">= 0.4.x",
+    "grunt-autoprefixer": "~0.6.x",
+    "grunt-bowercopy": "^1.0.0",
+    "grunt-build-control": "^0.1.3",
+    "grunt-clear": "^0.2.1",
+    "grunt-concurrent": "~0.4.x",
+    "grunt-contrib-clean": "~0.5.x",
+    "grunt-contrib-compass": "~0.7.x",
+    "grunt-contrib-connect": "~0.6.x",
+    "grunt-contrib-copy": "~0.5.x",
+    "grunt-contrib-csslint": "^0.2.0",
+    "grunt-contrib-cssmin": "~0.7.x",
     "grunt-contrib-htmlmin": "0.1.x",
-    "grunt-pngmin": "0.6.x",
-    "grunt-spritesmith": "1.11.x",
-    "load-grunt-tasks": "0.2.x",
+    "grunt-contrib-imagemin": "^0.5.0",
+    "grunt-contrib-jshint": "~0.8.x",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-uglify": "~0.3.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-gh-pages": "~0.9.x",
     "grunt-grunticon": "0.6.x",
-    "grunt-svgmin": "0.2.x",
-    "bower": "1.2.x",
-    "grunt-contrib-requirejs": "0.4.x",
-    "yaml-front-matter": "2.1.x",
-    "assemble": "~0.4.27",
-    "grunt-newer": "~0.5.4",
-    "grunt-gh-pages": "~0.8.1"
-  }
+    "grunt-jsonlint": "1.0.x",
+    "grunt-newer": "~0.6.x",
+    "grunt-svgmin": "~0.3.x",
+    "grunt-svgstore": "~0.0.2",
+    "grunt-verifylowercase": "0.2.x",
+    "grunt-webfont": "^0.3.4",
+    "handlebars-helper-compose": "~0.2.x",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.2.x",
+    "yaml-front-matter": "2.1.x"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://git.dev.iweb.com/ux/shop-styleguide/blob/master/LICENSE-MIT"
+    }
+  ]
 }

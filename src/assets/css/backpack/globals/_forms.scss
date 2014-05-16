@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+   Base
+   ========================================================================== */
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+label {
+  display: block;
+  font-weight: $text-bold;
+}
+
+input, textarea {
+  padding: $input-padding;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: block;
+  width: 100%;
+  border: $light-gray 1px solid;
+  vertical-align: middle;
+  // @include border-radius($input-radius);
+  &:focus{
+    outline: none;
+    border: 1px solid #0099ff;
+  }
+}
+
+// Select
+select {
+
+}
+
+// File types
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+// Input Sizes
+.input-mini {
+  width: 60px;
+}
+.input-small {
+  width: 90px;
+}
+.input-medium {
+  width: 150px;
+}
+.input-large {
+  width: 210px;
+}
+.input-xlarge {
+  width: 270px;
+}
+.input-xxlarge {
+  width: 530px;
+}
+
+// Others
+
+.form-actions {
+  @extend %clearfix;
+}
+
+.form-inline {
+  input,
+  textarea,
+  select,
+  button {
+    display: inline-block;
+  }
+  input[type="checkbox"] {
+  }
+}
+
+.form-inline label {
+  display: inline-block;
+}
+
+.field-inline > label,
+.field-inline > p,
+.field-inline > input {
+  display: inline-block;
+  width: auto;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  vertical-align: middle;
+  font-size: 1em;
+}
+
+input:required:after, textarea:required {
+  content: "*";
+  width: 50px;
+  height: 50px;
+}
+
+input:focus:invalid {
+  border-color: red;
+}
+
+input:focus:valid {
+  border-color: green;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+  cursor: pointer;
+}
+
+.#{$is-disabled}, input[disabled], input[disabled] + label {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
