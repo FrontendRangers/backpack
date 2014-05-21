@@ -14,6 +14,10 @@
 - [Grunt](http://gruntjs.com)
 - [Sass](http://sass-lang.com/)
 
+### Get the repositories from Bower
+
+```grunt bower```
+
 ### Start the server
 
 In the project folder, run the following command:
