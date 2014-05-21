@@ -81,7 +81,7 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         flatten: true,
-        data: ['<%= app.src %>/templates/data/*.{json,yaml}'],
+        data: ['<%= app.src %>/data/*.{json,yaml}'],
         partials: ['<%= app.src %>/templates/partials/*.hbs'],
         layoutdir: '<%= app.src %>/templates/layouts/',
         layout: 'default.hbs',

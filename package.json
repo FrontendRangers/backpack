@@ -37,7 +37,7 @@
     "grunt-contrib-jshint": "~0.8.x",
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-uglify": "~0.3.x",
-    "grunt-contrib-watch": "0.5.x",
+    "grunt-contrib-watch": "0.6.x",
     "grunt-jsonlint": "1.0.x",
     "grunt-newer": "~0.6.x",
     "grunt-svgmin": "~0.3.x",
