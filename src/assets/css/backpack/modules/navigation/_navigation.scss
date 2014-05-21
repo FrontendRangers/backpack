@@ -2,6 +2,13 @@
    Navigation
    ========================================================================== */
 
+/**
+ * TODO
+ * ==========================================================================
+ * - Set default nav to horizontal
+ * - Fix the search form in the navbar
+ */
+
 /*
    Basic navigation
    ========================================================================== */
@@ -89,6 +96,21 @@
    ========================================================================== */
 
 /*
+   Distributed navigation
+   ========================================================================== */
+
+.nav-distribute {
+  @include display(flex);
+  @include align-items(stretch);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  li {
+    @include flex(1);
+  }
+}
+
+
+/*
    Nav bar
    ========================================================================== */
 
@@ -101,12 +123,15 @@
     line-height: 40px;
   }
 
-  .navbar-header {
+  .navbar-title {
     float: left;
-    a {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 40px;
+  }
+
+  &.navbar-vertical .navbar-title {
+      float: none;
   }
 
   .nav {
@@ -115,7 +140,6 @@
 
   .navbar-form {
     float: left;
-    display: none;
     form, input, button {
       float: left;
       margin: 0;
@@ -131,6 +155,25 @@
     > li > ul > li > ul {
       right: 100%;
       left: auto;
+    }
+  }
+  &.navbar-distribute {
+    @include display(flex);
+    @include align-items(stretch);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    .navbar-title, .navbar-form {
+      @include flex(none);
+    }
+    .nav {
+      @include flex(1);
+      @include display(flex);
+      @include align-items(stretch);
+      @include flex-direction(row);
+      @include justify-content(flex-start);
+      li {
+        @include flex(1);
+      }
     }
   }
 }
