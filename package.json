@@ -1,18 +1,20 @@
 {
-  "name": "shop-styleguide",
-  "description": "The styleguide for the shopping cart.",
+  "name": "Backpack",
+  "description": "A css starter kit.",
   "version": "0.1.0",
-  "homepage": "https://git.dev.iweb.com/ux/shop-styleguide/",
+  "homepage": "https://github.com/openfire3/backpack/",
   "author": {
     "name": "Benoit Deziel",
-    "url": "https://git.dev.iweb.com/ux/"
+    "url": "https://github.com/openfire3/",
+  "copyright": "2014",
+  "license": "MIT"
   },
   "repository": {
     "type": "git",
-    "url": "git://git.dev.iweb.com/ux/shop-styleguide.git"
+    "url": "git://github.com/openfire3/backpack.git"
   },
   "bugs": {
-    "url": "https://git.dev.iweb.com/ux/shop-styleguide/issues"
+    "url": "https://github.com/openfire3/backpack/issues"
   },
   "engines": {
     "node": ">=0.8"
@@ -24,10 +26,8 @@
     "grunt-autoprefixer": "~0.6.x",
     "grunt-bowercopy": "^1.0.0",
     "grunt-build-control": "^0.1.3",
-    "grunt-clear": "^0.2.1",
-    "grunt-concurrent": "~0.4.x",
+    "grunt-concurrent": "~0.5.x",
     "grunt-contrib-clean": "~0.5.x",
-    "grunt-contrib-compass": "~0.7.x",
     "grunt-contrib-connect": "~0.6.x",
     "grunt-contrib-copy": "~0.5.x",
     "grunt-contrib-csslint": "^0.2.0",
@@ -38,8 +38,6 @@
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-uglify": "~0.3.x",
     "grunt-contrib-watch": "0.5.x",
-    "grunt-gh-pages": "~0.9.x",
-    "grunt-grunticon": "0.6.x",
     "grunt-jsonlint": "1.0.x",
     "grunt-newer": "~0.6.x",
     "grunt-svgmin": "~0.3.x",
@@ -48,8 +46,7 @@
     "grunt-webfont": "^0.3.4",
     "handlebars-helper-compose": "~0.2.x",
     "load-grunt-tasks": "~0.4.0",
-    "time-grunt": "~0.2.x",
-    "yaml-front-matter": "2.1.x"
+    "time-grunt": "~0.2.x"
   },
   "licenses": [
     {

@@ -4,12 +4,6 @@
 
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
   var app = {
@@ -20,6 +14,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     app: app,
+    pkg: grunt.file.readJSON('package.json'),
 
     // Create a server
     connect: {
@@ -39,6 +34,17 @@ module.exports = function (grunt) {
           base: '<%= app.dist %>'
         }
       }
+    },
+
+    tag: {
+      banner: '/*!\n' +
+              ' * <%= pkg.name %>\n' +
+              ' * <%= pkg.title %>\n' +
+              ' * <%= pkg.url %>\n' +
+              ' * @author <%= pkg.author.name %> <%= pkg.author.url %>\n' +
+              ' * @version <%= pkg.version %>\n' +
+              ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
+              ' */\n'
     },
 
     // Watch changes on files
@@ -93,14 +99,15 @@ module.exports = function (grunt) {
       },
       build: {
         src: ['<%= app.src %>/{,*/}*.hbs'],
-        dest: '<%= app.dist %>/'
+        dest: '<%= app.dist %>'
       }
     },
 
     // Clean the output folder
     clean: {
       build: '<%= app.dist %>',
-      temp: '<%= app.tmp %>'
+      temp: '<%= app.tmp %>',
+      bower: ['<%= app.src %>/assets/js/libs', '<%= app.src %>/assets/css/backpack/libs']
     },
 
     // Verify lowercase filenames
@@ -115,10 +122,9 @@ module.exports = function (grunt) {
       js: {
         files: [{
           expand: true,
-          src: ['assets/js/*.js', 'guidebook/js/{,**/}*.js'],
+          src: ['assets/js/{,**/}*'],
           cwd: '<%= app.src %>',
-          dest: '<%= app.tmp %>',
-          ext: '.js'
+          dest: '<%= app.tmp %>'
         }]
       },
       fonts: {
@@ -127,34 +133,44 @@ module.exports = function (grunt) {
         cwd: '<%= app.src %>',
         dest: '<%= app.tmp %>'
       },
-      swf: {
+      guidebook: {
         files: [{
           expand: true,
-          src: ['assets/js/{,**/}*.swf', 'guidebook/js/{,**/}*.swf'],
+          src: ['guidebook/js/{,**/}*'],
           cwd: '<%= app.src %>',
-          dest: '<%= app.tmp %>',
-          ext: '.swf'
+          dest: '<%= app.tmp %>'
         }]
       },
     },
 
-    // Copy Bower
+    // Copy Bower files
     bowercopy: {
       options: {
-        srcPrefix: '<%= app.src %>/assets/libs'
+        srcPrefix: 'bower_components'
       },
-      dev: {
+      scripts: {
         options: {
-          destPrefix: '<%= app.tmp %>/assets/libs'
+          destPrefix: '<%= app.src %>/assets/js/libs'
         },
         files: {
           'modernizr/modernizr.js': 'modernizr/modernizr.js',
-          'chosen/chosen.jquery.min.js': 'chosen/chosen.jquery.min.js'
+          'jquery': 'jquery/dist'
+        }
+      },
+      styles: {
+        options: {
+          destPrefix: '<%= app.src %>/assets/css/backpack/libs'
+        },
+        files: {
+          'bourbon': 'bourbon/dist',
+          'animate.sass': 'animate.sass/stylesheets/animate',
+          '_normalize.scss': 'normalize-css/normalize.css',
+          '_universal-ie6.scss': 'universal-ie6-css/universal-ie6.css'
         }
       }
     },
 
-    // Generate CSS from SASS
+    // Generate CSS with Compass
     // compass: {
     //   dev: {
     //     options: {
@@ -189,7 +205,8 @@ module.exports = function (grunt) {
       dev: {
         options: {
           style: 'expanded',
-          lineNumbers: true
+          lineNumbers: true,
+          banner: '<%= tag.banner %>'
         },
         files: [{
           expand: true,
@@ -319,6 +336,11 @@ module.exports = function (grunt) {
       }
     },
 
+    // Run several tasks
+    concurrent: {
+      styles: ['sass:dev', 'sass:sgdev']
+    },
+
     // Push to the Github Pages branch
     buildcontrol: {
       options: {
@@ -337,7 +359,7 @@ module.exports = function (grunt) {
       },
       ghpages: {
         options: {
-          remote: 'git@git.dev.iweb.com:ux/shop-styleguide.git',
+          remote: 'git@github.com:openfire3/backpack.git',
           branch: 'gh-pages'
         }
       }
@@ -351,11 +373,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('assemble');
 
   // Styles Tasks
-  grunt.registerTask('styles:dev', ['sass:dev', 'sass:sgdev']);
-  grunt.registerTask('styles:build', ['compass:build', 'compass:sgbuild']);
+  grunt.registerTask('styles:dev', ['concurrent:styles']);
+  grunt.registerTask('styles:build', ['sass:build', 'sass:sgbuild']);
 
   // Scripts Tasks
-  grunt.registerTask('scripts:dev', ['copy:js', 'bowercopy:dev', 'copy:swf']);
+  grunt.registerTask('scripts:dev', ['copy:js', 'copy:guidebook']);
   grunt.registerTask('scripts:build', ['uglify:build']);
 
   // Images Tasks
@@ -371,5 +393,6 @@ module.exports = function (grunt) {
   grunt.registerTask('server', ['build:dev','connect:dev', 'watch']);
   grunt.registerTask('build', ['build:build']);
   grunt.registerTask('publish', ['build:build', 'bump', 'buildcontrol:ghpages', 'buildcontrol:assets']);
+  grunt.registerTask('bower', ['clean:bower', 'bowercopy:styles', 'bowercopy:scripts'])
 
 };

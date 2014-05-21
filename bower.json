@@ -11,6 +11,9 @@
     "modernizr": "~2.7.2"
   },
   "devDependencies": {
-    "bourbon": "~4.0.1"
+    "bourbon": "~4.0.1",
+    "animate.sass": "https://github.com/adamstac/animate.sass.git",
+    "normalize-css": "~3.0.1",
+    "universal-ie6-css": "https://github.com/malarkey/universal-ie6-css.git"
   }
 }
