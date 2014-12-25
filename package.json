@@ -1,7 +1,7 @@
 {
   "name": "Backpack",
-  "description": "A css starter toolkit.",
   "version": "0.1.0",
+  "description": "A css starter toolkit.",
   "homepage": "https://github.com/openfire3/backpack/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,9 +27,6 @@
   "bugs": {
     "url": "https://github.com/openfire3/backpack/issues"
   },
-  "engines": {
-    "node": ">=0.8"
-  },
   "devDependencies": {
     "bower": ">= 1.2.x",
     "gulp": "^3.8.10",
@@ -39,12 +36,6 @@
     "gulp-git": "^0.5.5",
     "gulp-load-plugins": "^0.8.0",
     "gulp-sass": "^0.7.1",
-    "gulp-tag-version": "^1.2.1",
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://git.dev.iweb.com/openfire3/backpack/blob/master/LICENSE-MIT"
-    }
-  ]
+    "gulp-tag-version": "^1.2.1"
+  }
 }

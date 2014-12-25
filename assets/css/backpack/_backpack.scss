@@ -4,9 +4,8 @@
    Import everything, except the class names & settings
    ========================================================================== */
 
-// @import "compass";
-@import "libs/bourbon/bourbon";
-@import "libs/normalize";
+@import "../../libs/bourbon/dist/bourbon";
+@import "../../libs/normalize-css/normalize.css";
 
 // Helpers
 @import "utilities/helpers";
