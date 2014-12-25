@@ -9,9 +9,9 @@
 @import "libs/normalize";
 
 // Helpers
-@import "helpers/helpers";
-@import "helpers/dev";
-@import "helpers/animations";
+@import "utilities/helpers";
+@import "utilities/dev";
+@import "utilities/animations";
 
 // Globals
 @import "globals/base";
@@ -25,21 +25,21 @@
 @import "layout/grid";
 
 // Components
-@import "components/badges";
-@import "components/labels";
-@import "components/media";
-@import "components/buttons";
-@import "components/misc";
+@import "elements/badges";
+@import "elements/labels";
+@import "elements/media";
+@import "elements/buttons";
+@import "elements/misc";
 
 // Modules
-@import "modules/navigation/navigation";
-@import "modules/navigation/breadcrumbs";
-@import "modules/navigation/pagination";
-@import "modules/tabs";
-@import "modules/list-group";
-@import "modules/panels";
-@import "modules/wells";
-@import "modules/messages";
+@import "components/navigation/navigation";
+@import "components/navigation/breadcrumbs";
+@import "components/navigation/pagination";
+@import "components/tabs";
+@import "components/list-group";
+@import "components/panels";
+@import "components/wells";
+@import "components/messages";
 
 // Wireframe
 

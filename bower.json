@@ -1,11 +1,26 @@
 {
   "name": "backpack",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "authors": [
     "Benoit Deziel <ben@benoitdeziel.com>"
   ],
   "license": "MIT",
   "private": true,
+  "ignore": [
+    "node_modules",
+    "docs",
+    ".bowerrc",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "AUTHORS"
+    "CHANGELOG"
+  ],
   "dependencies": {
     "jquery": "~2.1.0",
     "modernizr": "~2.7.2"
