@@ -20,9 +20,11 @@
     "AUTHORS",
     "CHANGELOG"
   ],
-  "devDependencies": {
+  "dependencies": {
     "jquery": "~2.1.0",
-    "modernizr": "~2.8.3",
+    "modernizr": "~2.8.3"
+  },
+  "devDependencies": {
     "bourbon": "~4.0.2",
     "animate.sass": "https://github.com/adamstac/animate.sass.git",
     "normalize-css": "~3.0.2"
