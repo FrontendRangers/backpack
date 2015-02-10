@@ -21,6 +21,4 @@ bower_components
 /.sass-cache/
 /.www/
 /dist/
-/src/assets/libs/
-/src/assets/js/libs/
-/src/assets/css/backpack/libs/
+/assets/libs/
