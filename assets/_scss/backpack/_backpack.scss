@@ -4,7 +4,7 @@
    Import everything, except the class names & settings
    ========================================================================== */
 
-@import "../../libs/bourbon/dist/bourbon";
+@import "../../libs/bourbon/app/assets/stylesheets/bourbon";
 @import "../../libs/normalize-scss/normalize";
 
 // Helpers
@@ -23,14 +23,15 @@
 // Layout
 @import "layout/grid";
 
-// Components
+// Elements
 @import "elements/badges";
 @import "elements/labels";
 @import "elements/media";
 @import "elements/buttons";
 @import "elements/misc";
 
-// Modules
+// Components
+@import "components/media-block";
 @import "components/navigation/navigation";
 @import "components/navigation/breadcrumbs";
 @import "components/navigation/pagination";

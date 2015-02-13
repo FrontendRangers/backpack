@@ -1,0 +1,663 @@
+/**
+*
+* Guidebook Stylesheet
+*
+**/
+
+
+/*
+   Variables
+   ========================================================================== */
+
+$sg-logo-color: #fff;
+$sg-logo-bg-color: #222e3d;
+
+$sg-sidebar-color: #1c2531;
+
+$sg-intro-color: #39414d;
+
+$sg-menu-level-1-color: #2980b9;
+$sg-menu-level-2-color: #34495e;
+
+$sg-font-text: "Roboto", sans-serif;
+$sg-font-heading: "Montserrat", sans-serif;
+$sg-font-monospace: "Source Code Pro", monospace;
+
+$layout-width: 978px;
+
+$background-color: #ffffff;
+
+/*
+   Imports
+   ========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700|Source+Code+Pro);
+
+/*
+   Helpers
+   ========================================================================== */
+
+%clearfix {
+  & {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/*
+   Media Queries
+   ========================================================================== */
+
+$screen-small: 320px;
+$screen-medium: 720px;
+$screen-large: 1024px;
+$screen-xlarge: 1200px;
+
+/*
+   Globals
+   ========================================================================== */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.sg {
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+/*
+   Grid Helpers
+   ========================================================================== */
+
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.show-grid [class*="col"] {
+  position: relative;
+  min-height: 40px;
+  line-height: 40px;
+  background-color: rgba(107, 6, 163, 0.5);
+}
+
+.show-grid [class*="col"] p {
+  margin: 10px 0;
+  padding: 10px 0;
+  text-align: center;
+  color: #fefefe;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(107, 6, 163, 1);
+  background-color: rgba(107, 6, 163, 0.5);
+}
+
+.show-grid .show-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.show-grid .show-grid [class*="col"] {
+  margin-top: 5px;
+}
+
+.show-grid [class*="col"] [class*="col"] {
+  outline: none;
+}
+
+
+// Grid overlay
+#gridOverlay {
+  position: relative;
+  z-index: 9001;
+  overflow: visible !important;
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+  .grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+  }
+  .grid-container div {
+    float: left;
+    height: 100%;
+    background: rgba(170, 219, 245, 0.2);
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+
+/*
+   Styleguide layout
+   ========================================================================== */
+
+.sg-bar {
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.5rem;
+  font-family: $sg-font-text;
+  font-size: 90%;
+  background-color: #222E3D;
+  ul {
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    li {
+      display: block;
+      float: left;
+      height: 24px;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid rgba(100,100,100,0.5);
+    }
+  }
+  a,
+  a:visited {
+    display: block;
+    height: 100%;
+    padding: 0 10px;
+    color: rgba(255,255,255,0.5);
+  }
+}
+
+
+.sg-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sg-site-header {
+  width: 100%;
+  z-index: 1;
+  background-color: $sg-logo-bg-color;
+  * {
+    font-family: $sg-font-heading;
+  }
+}
+
+.sg-content {
+  width: 1400px;
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+
+  @media screen and (max-width: $screen-small){
+    flex-flow: column wrap;
+    width: 100%;
+  }
+}
+
+.sg-site-footer {
+  width: 100%;
+  padding: 10px 20px;
+  color: #FFF;
+  background-color: rgba(34.00, 34.00, 34.00, 1.00);
+
+  p.sg {
+    color: #FFF;
+    margin: 0;
+  }
+}
+
+.sg-page-header {
+  width: 100%;
+
+  padding: 1rem 2rem;
+  background-color: $sg-intro-color;
+  * {
+    color: #fff !important;
+  }
+}
+
+.sg-main {
+  flex: 0 0 auto;
+  order: 2;
+  width: 85%;
+
+  padding: 0;
+  background-color: rgba(255, 255, 255, 1.00);
+  @media screen and (max-width: $screen-small){
+    flex: 1 0 auto;
+    order: 1;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .sg-wrapper {
+    width: 100%;
+    max-width: $layout-width;
+  }
+}
+
+.sg-sidebar {
+  flex: 0 0 auto;
+  order: 1;
+  width: 15%;
+
+  padding: 2rem 0;
+  // background-color: $sg-sidebar-color;
+  @media screen and (max-width: 320px){
+    min-width: 100%;
+    max-width: 100%;
+    flex: 1 0 auto;
+    order: 2;
+    background-color: $sg-sidebar-color;
+  }
+  p.sg, ul.sg li {
+    color: #ffffff;
+  }
+}
+
+/*==========  Site Header  ==========*/
+
+.sg-title {
+  padding: 0;
+  font-size: 1.5em;
+  line-height: 60px;
+  font-family: $sg-font-heading;
+  font-weight: bold;
+  color: $sg-logo-color;
+  .sg-logo {
+    a {
+      color: $sg-logo-color;
+      text-decoration: none;
+    }
+  }
+  @media screen and (max-width: $screen-small){
+    min-width: 100%;
+    max-width: 100%;
+    color: red;
+  }
+}
+
+.sg-tools {
+  flex: 1;
+  align-self: flex-end;
+  align-content: center;
+  padding: 0 3em;
+  font-family: $sg-font-text;
+  text-align: right;
+  @media screen and (max-width: $screen-small){
+    display: none;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    list-style-type: none;
+    li {
+      line-height: 60px;
+    }
+  }
+}
+
+/*==========  Main Content  ==========*/
+
+.sg-section {
+  padding: 2em 4em;
+}
+
+.sg-wrapper {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+/*==========  Navigation  ==========*/
+
+.sg-menu {
+  @media screen and (max-width: $screen-small){
+    position: relative;
+    min-width: 100%;
+    max-width: 100%;
+    top: 0;
+  }
+  * {
+    font-family: $sg-font-text;
+  }
+  > ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    @media screen and (max-width: $screen-small){
+      position: relative;
+      min-width: 100%;
+      max-width: 100%;
+      top: 0;
+    }
+    // Base
+    li {
+      position: relative;
+      display: block;
+      width: 100%;
+      a {
+        display: block;
+        text-decoration: none;
+      }
+    }
+    // Level 1
+    > li {
+      padding: 0;
+      margin-bottom: 1em;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 2em;
+      text-transform: uppercase;
+      color: $sg-menu-level-1-color;
+      > a {
+        padding: 0 2rem;
+        color: $sg-menu-level-1-color;
+      }
+    }
+    // Level 2
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5em;
+        text-transform: none;
+      }
+      a {
+        padding: 0;
+        color: $sg-menu-level-2-color;
+      }
+    }
+  }
+}
+
+
+/*
+   Styleguide examples
+   ========================================================================== */
+
+// .sg-example {
+//   max-width: $layout-width + 40px;
+//   position: relative;
+//   padding: 0;
+//   margin: 1rem 0 2.5rem 0;
+//   background-color: $background-color;
+//   border-radius: 8px;
+//   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+// }
+
+.sg-example {
+  margin: 2em 0;
+  background-color: $background-color;
+}
+
+.sg-example-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+.sg-example-block {
+  margin: 1em 0;
+  width: 10%;
+  text-align: center;
+  background-color: $background-color;
+  overflow: hidden;
+  &:hover {
+    background-color: rgba(248,248,248,1);
+    border-radius: 8px;
+  }
+  .sg-example-content {
+    padding: 1em;
+    &.sg-swatch {
+      height: 200px;
+    }
+  }
+  .sg-example-label {
+    font-size: 1em;
+  }
+}
+
+.sg-example-snippet {
+  flex: 0 0 ($layout-width);
+  width: $layout-width + 40px;
+  @extend %clearfix;
+  > div {
+    margin-bottom: 0!important;
+    min-height: 0!important;
+  }
+  > h1, > h2, > h3, > h4, > h5, > h6 {
+    margin: 1rem 0!important;
+  }
+}
+
+.sg-example-code {
+  overflow: hidden;
+  margin: 2em 0 0 0;
+  border-radius: 8px;
+  background-color: rgba(245, 242, 240, 1);
+
+  flex: 1 0 auto;
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+  .sg-btn {
+    margin: 1em;
+    font-size: 10px;
+    border-width: 1px;
+    border-color: #CCC;
+    background-color: #fff;
+  }
+  .sg-btn-copy {
+    font-family: $sg-font-heading;
+  }
+}
+
+.sg-example-code pre {
+  margin: 0;
+}
+
+// .sg code, code.sg {
+//   font-family: $sg-font-monospace;
+//   background-color: #F9F2F4;
+//   color: #C7254E;
+// }
+
+/*
+   Styleguide typography
+   ========================================================================== */
+
+%font-common {
+  font-family: $sg-font-heading;
+  color: #444;
+}
+
+h1.sg {
+  @extend %font-common;
+
+  margin: 0 0 0.2em 0;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.05em;
+}
+
+h2.sg {
+  @extend %font-common;
+
+  margin: 0 0 0.5em 0;
+  font-size: 2.25em;
+  font-weight: 700;
+  line-height: 1.25em;
+  letter-spacing: -1px;
+  border-bottom: 5px solid rgba(0,0,0,0.1);
+}
+
+h3.sg {
+  @extend %font-common;
+
+  margin: 2rem 0 0 0;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.25em;
+  color: #7c90a8;
+}
+
+h4.sg {
+  @extend %font-common;
+
+  margin: 0 0 0.5em 0;
+  font-size: 1.125em;
+  line-height: 1.22222222em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+h5.sg {
+  @extend %font-common;
+
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1rem;
+}
+
+h6.sg {
+  @extend %font-common;
+
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+h3.sg + h4.sg {
+  margin-top: 1rem;
+}
+
+p.sg {
+  @extend %font-common;
+
+  font-family: $sg-font-text;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+
+ul.sg li {
+  @extend %font-common;
+
+  font-family: $sg-font-text;
+}
+
+.sg-note {
+  margin-bottom: 1rem;
+  padding: 0.75em 1em;
+  border: 3px solid #b2dfee;
+  border-radius: 8px;
+  background-color: #ecf0f4;
+  p {
+    @extend %font-common;
+
+    font-family: $sg-font-text;
+    font-size: 14px;
+    color: #36afd7;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+/*
+   Buttons
+   ========================================================================== */
+
+.sg-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25em;
+  color: #56a7d4;
+  background-color: rgba(255,255,255,0);
+  border: 2px solid #56a7d4;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    color: rgba(255,255,255,1);
+    background-color: #56a7d4;
+    text-decoration: none;
+  }
+}
+
+/*
+   Table
+   ========================================================================== */
+$table-border: 1px solid #ccc;
+
+table.sg {
+  width: 100%;
+  margin: 1em 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  th,
+  td {
+    padding: 1em;
+    border-bottom: $table-border;
+    border-left: $table-border;
+  }
+  thead {
+    th {
+      text-align: left;
+      border-top: $table-border;
+      border-bottom-width: 2px;
+      &:first-child {
+        border-top-left-radius: 4px;
+      }
+      &:last-child {
+        border-right: $table-border;
+        border-top-right-radius: 4px;
+      }
+    }
+  }
+  tbody {
+    th {
+      text-align: left;
+    }
+    th:last-child {
+      border-right: $table-border;
+    }
+    td:last-child {
+      border-right: $table-border;
+    }
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: $table-border;
+    }
+    tr:last-child th:first-child,
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 4px;
+    }
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 4px;
+    }
+  }
+}

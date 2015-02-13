@@ -1,0 +1,17 @@
+- title: "Globals"
+  href: "/globals/"
+  patterns:
+    - title: "Typography"
+      href: "typography"
+- title: "Elements"
+  href: "/elements/"
+  patterns:
+    - title: "Buttons"
+      href: "buttons"
+- title: "Components"
+  href: "/components/"
+  patterns:
+    - title: "Media Block"
+      href: "media-block"
+    - title: "Panels"
+      href: "panels"

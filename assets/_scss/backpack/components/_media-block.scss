@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Media Block
+   ========================================================================== */
+
+.mediaBlock {
+  width: 400px;
+  display: table;
+  vertical-align: top;
+  .mediaBlock-img {
+    display: table-cell;
+    vertical-align: top;
+    img {
+      float: left;
+    }
+  }
+  .mediaBlock-title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    justify-content: center;
+    p {
+      margin: 0;
+    }
+  }
+  .mediaBlock-content {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/*==========  Variation 1  ==========*/
+
+.mediaBlock--v2 {
+  @include clearfix;
+  .mediaBlock-img {
+    display: block;
+    float: left;
+    img {
+      float: none;
+    }
+  }
+  .mediaBlock-title {
+    display: block;
+    float: left;
+  }
+  .mediaBlock-content {
+    float: left;
+    clear: both;
+  }
+}
+
+/*==========  Variation 2  ==========*/
+
+.mediaBlock--left,
+.mediaBlock--center,
+.mediaBlock--right {
+  @include clearfix;
+
+  display: block;
+  .mediaBlock-img {
+    display: block;
+    clear: both;
+    img {
+      float: none;
+    }
+  }
+  .mediaBlock-title {
+    display: block;
+    clear: both;
+  }
+  .mediaBlock-content {
+    display: block;
+    clear: both;
+  }
+}
+
+.mediaBlock--center {
+  .mediaBlock-img, .mediaBlock-title, .mediaBlock-content {
+    text-align: center;
+  }
+}
+
+.mediaBlock--right {
+  .mediaBlock-img, .mediaBlock-title, .mediaBlock-content {
+    text-align: right;
+  }
+}

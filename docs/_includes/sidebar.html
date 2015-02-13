@@ -1,0 +1,22 @@
+<aside class="sg-sidebar">
+  <div class="sg-menu">
+    <ul>
+      {% for section in site.data.menu %}
+      {% if section.patterns != null %}
+      <li>
+        {{ section.title }}
+        <ul>
+          {% for pattern in section.patterns %}
+          <li>
+            <a href="{{ section.href }}{{ pattern.href }}.html">{{pattern.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% else %}
+        <li><a href="{{ section.href }}.html">{{ section.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</aside>
