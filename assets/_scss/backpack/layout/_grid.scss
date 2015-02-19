@@ -22,7 +22,6 @@
   width: $layout-width;
   margin-left: auto;
   margin-right: auto;
-  @extend %clearfix;
 }
 
 
@@ -31,7 +30,6 @@
    ========================================================================== */
 
 .row {
-  // width: 100%;
   display: flex;
   flex-flow: row wrap;
   margin: 0 (-$gutter-width / 2);
