@@ -10,16 +10,6 @@
   margin-right: 0 !important;
 }
 
-.#{$wrapper} {
-  max-width: $layout-width;
-  _width: $layout-width;
-  // padding-right: $gutter-width / 2;
-  // padding-left: $gutter-width / 2;
-  margin-left: auto;
-  margin-right: auto;
-  @extend %clearfix;
-}
-
 .first {
   @extend %first;
 }
@@ -28,79 +18,40 @@
   @extend %last;
 }
 
+.#{$wrapper} {
+  width: $layout-width;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %clearfix;
+}
+
+
 /*
    Rows
    ========================================================================== */
 
-%row {
-  display: block;
-  position: relative;
-  @extend %clearfix;
-  [class*="col-"] {
-    float: left;
-    padding: 0 $gutter-width / 2;
-    min-height: 1px;
-    @extend %clearfix;
-  }
-}
-
 .row {
-  margin-left: -$gutter-width / 2;
-  margin-right: -$gutter-width / 2;
+  // width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 (-$gutter-width / 2);
 }
 
 
-// Flexbox
-@import "flexbox";
-@if $modernizr == true {
+/* 
+   Auto Columns
+   ========================================================================== */
 
-  .no-flexbox {
-    .row {
-      @extend %row;
-    }
-  }
+[class~="col"] {
+  flex: 1;
+  padding: 0 ($gutter-width / 2);
+}
 
-  .flexbox{
-    .row {
-      @extend %flexbox;
-      @include flex-flow(row wrap);
-      [class*="col-"] {
-        @include flex(none);
-        padding-right: $gutter-width / 2;
-        padding-left: $gutter-width / 2;
-      }
-      .col {
-        @include flex(1);
-        min-width: percentage(1 / $total-columns);
-        padding-right: $gutter-width / 2;
-        padding-left: $gutter-width / 2;
-      }
-    }
-    .row--top {
-      @include align-items(flex-start);
-    }
-    .row--bottom {
-      @include align-items(flex-end);
-    }
-    .row--center {
-      @include align-items(center);
-    }
-    .col--top {
-      @include align-self(flex-start);
-    }
-    .col--bottom {
-      @include align-self(flex-end);
-    }
-    .col--center {
-      @include align-self(center);
-    }
-  }
+[class*="col-"] {
+  flex: 0 1 auto;
+  padding: 0 ($gutter-width / 2);
 }
-@else {
-  .row {
-    @extend %row;
-  }
-}
+
 
 /*
    Default - 12 Cols Layout

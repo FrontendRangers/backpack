@@ -50,16 +50,10 @@ input[type="color"] {
   width: 100%;
   border: $light-gray 1px solid;
   vertical-align: middle;
-  // @include border-radius($input-radius);
   &:focus{
     outline: none;
     border: 1px solid #0099ff;
   }
-}
-
-// Select
-select {
-
 }
 
 // File types
@@ -73,7 +67,18 @@ input[type="checkbox"] {
   width: auto;
 }
 
-// Input Sizes
+/* 
+   Buttons
+   ========================================================================== */
+
+input[type="submit"], button {
+  @extend .btn; // TODO: Please switch this to a placeholder
+}
+
+/* 
+   Sizes
+   ========================================================================== */
+
 .input-mini {
   width: 60px;
 }

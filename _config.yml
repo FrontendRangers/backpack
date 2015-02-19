@@ -8,6 +8,8 @@ js_path: /assets/js/
 css_path: /assets/css/
 
 markdown: redcarpet
+redcarpet:
+  extensions: ["with_toc_data", "tables"]
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 

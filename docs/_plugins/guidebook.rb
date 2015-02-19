@@ -4,7 +4,7 @@ module Jekyll
       super
     end
     def render(context)
-      '<div class="sg-example-snippet">' + super + '</div>'
+      '<div class="sg-example">' + super + '</div>'
     end
   end
 end

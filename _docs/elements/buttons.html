@@ -11,8 +11,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- Guidebook CSS -->
-		<link rel="stylesheet" href="/assets/css/guidebook.css">
-		<link rel="stylesheet" href="/assets/css/syntax.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/guidebook.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/syntax.css">
 
 		<!-- Your CSS -->
 		<link rel="stylesheet" href="/assets/css/style.css">
@@ -30,8 +30,8 @@
     <div class="sg-top-menu">
       <nav>
         <ul>
-          <li><a href="/" title="">Patterns</a></li>
-          <li><a href="/templates/homepage.html" title="">Templates</a></li>
+          <li><a href="/patterns/index.html" title="">Patterns</a></li>
+          <li><a href="/templates/index.html" title="">Templates</a></li>
         </ul>
       </nav>
     </div>
@@ -40,20 +40,24 @@
 			<div class="sg-page-header">
   <div class="sg-wrapper">
     
-      <p class="sg sg-category">Elements</p>
+      <p class="sg sg-page-category">elements</p>
     
-    <h1 class="sg">Buttons</h1>
+    <!-- <p class="sg-page-title">Buttons</p> -->
     
-      <p class="sg">This are the buttons</p>
+      <!-- <p class="sg-page-description">This are the buttons</p> -->
     
   </div>
 </div>
 			<div class="sg-content">
-				<div class="sg-main">
-					<section class="sg-section">
-	<div class="sg-wrapper">
-		<h2 class="sg">Buttons</h2>
-		<div class="sg-example-snippet">
+				<div class="sg-wrapper">
+					<div class="sg-main">
+						<section class="sg-section">
+  <div class="sg-wrapper">
+    <h1 class="sg sg-pattern-title">Buttons</h1>
+     <p class="sg-pattern-description">This are the buttons</p>
+    <h2 id="default">Default</h2>
+
+<div class="sg-example">
 <a href="#" class="btn">Button</a>
 <a href="#" class="btn btn--alt">Alt</a>
 <a href="#" class="btn btn--primary">Primary</a>
@@ -63,18 +67,27 @@
 </div>
 
 <div class="sg-example-code">
+
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--alt&quot;</span><span class="nt">&gt;</span>Alt<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--secondary&quot;</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--primary btn--alt&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn--secondary btn--alt&quot;</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span></code></pre></div>
-</div>
-	</div>
-</section>
 
-				</div>
-				<aside class="sg-sidebar">
+</div>
+
+<h2 id="variations">Variations</h2>
+
+<h3 id="button-group">Button group</h3>
+
+  </div> 
+</section>
+					</div>
+					<div class="sg-toc">
+					  <div id="toc"></div>
+					</div>
+					<aside class="sg-sidebar">
   <div class="sg-menu">
     <ul>
       
@@ -82,6 +95,18 @@
       <li>
         Globals
         <ul>
+          
+          <li>
+            <a href="/globals/colors.html">Colors</a>
+          </li>
+          
+          <li>
+            <a href="/globals/grid.html">Grid</a>
+          </li>
+          
+          <li>
+            <a href="/globals/media.html">Media</a>
+          </li>
           
           <li>
             <a href="/globals/typography.html">Typography</a>
@@ -97,7 +122,31 @@
         <ul>
           
           <li>
+            <a href="/elements/badges.html">Badges</a>
+          </li>
+          
+          <li>
             <a href="/elements/buttons.html">Buttons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/dividers.html">Dividers</a>
+          </li>
+          
+          <li>
+            <a href="/elements/forms.html">Forms</a>
+          </li>
+          
+          <li>
+            <a href="/elements/icons.html">Icons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/labels.html">Labels</a>
+          </li>
+          
+          <li>
+            <a href="/elements/tables.html">Tables</a>
           </li>
           
         </ul>
@@ -110,11 +159,31 @@
         <ul>
           
           <li>
+            <a href="/components/breadcrumbs.html">Breadcrumbs</a>
+          </li>
+          
+          <li>
             <a href="/components/media-block.html">Media Block</a>
           </li>
           
           <li>
+            <a href="/components/messages.html">Messages</a>
+          </li>
+          
+          <li>
+            <a href="/components/navigation.html">Navigation</a>
+          </li>
+          
+          <li>
+            <a href="/components/pagination.html">Pagination</a>
+          </li>
+          
+          <li>
             <a href="/components/panels.html">Panels</a>
+          </li>
+          
+          <li>
+            <a href="/components/tabs.html">Tabs</a>
           </li>
           
         </ul>
@@ -124,11 +193,18 @@
     </ul>
   </div>
 </aside>
+				</div>
 			</div>
 			<footer class="sg-site-footer">
   <div class="sg-wrapper">
-    <p class="sg">The footer</p>
+    <p class="sg">Made by the UX Team</p>
   </div>
 </footer>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<!-- Guidebook JS -->
+		<script src="/assets/guidebook/js/toc.js"></script>
+		<script src="/assets/guidebook/js/guidebook.js"></script>
+		<script src="/assets/js/main.js"></script>
 	</body>
 </html>

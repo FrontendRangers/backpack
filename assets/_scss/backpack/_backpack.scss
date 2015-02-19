@@ -14,32 +14,33 @@
 
 // Globals
 @import "globals/base";
-@import "globals/forms";
-@import "globals/tables";
-@import "globals/typography/text";
 @import "globals/typography/headings";
 @import "globals/typography/lists";
+@import "globals/typography/text";
 
 // Layout
 @import "layout/grid";
 
 // Elements
 @import "elements/badges";
+@import "elements/buttons";
+@import "elements/dividers";
+@import "elements/forms";
 @import "elements/labels";
 @import "elements/media";
-@import "elements/buttons";
 @import "elements/misc";
+@import "elements/tables";
 
 // Components
-@import "components/media-block";
-@import "components/navigation/navigation";
-@import "components/navigation/breadcrumbs";
-@import "components/navigation/pagination";
-@import "components/tabs";
 @import "components/list-group";
-@import "components/panels";
-@import "components/wells";
+@import "components/media-block";
 @import "components/messages";
+@import "components/navigation/breadcrumbs";
+@import "components/navigation/navigation";
+@import "components/navigation/pagination";
+@import "components/panels";
+@import "components/tabs";
+@import "components/wells";
 
 // Wireframe
 

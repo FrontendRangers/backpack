@@ -2,11 +2,12 @@
 layout: pattern
 title: Panels
 description: Panels, yeah!
+section: components
 ---
 
-<h3 class="sg">Default</h3>
-<h4 class="sg">Basic</h4>
-<div data-xrayhtml class="sg-example prism zeroclip">
+## Default
+### Basic</h4>
+{% example %}
   <div class="panel">
     <div class="panel-content">
       <div class="panel-inner">
@@ -15,10 +16,10 @@ description: Panels, yeah!
       </div>
     </div>
   </div>
-</div>
+{% endexample %}
 
-<h4 class="sg">With header</h4>
-<div data-xrayhtml class="sg-example prism zeroclip">
+### With header
+{% example %}
   <div class="panel">
     <div class="panel-header">
       <div class="panel-inner">
@@ -32,11 +33,11 @@ description: Panels, yeah!
       </div>
     </div>
   </div>
-</div>
+{% endexample %}
 
 
-<h4 class="sg">With footer</h4>
-<div data-xrayhtml class="sg-example prism zeroclip">
+### With footer
+{% example %}
   <div class="panel">
     <div class="panel-content">
       <div class="panel-inner">
@@ -50,4 +51,4 @@ description: Panels, yeah!
       </div>
     </div>
   </div>
-</div>
+{% endexample %}

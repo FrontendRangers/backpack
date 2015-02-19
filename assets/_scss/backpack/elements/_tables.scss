@@ -2,6 +2,9 @@
    Tables
    ========================================================================== */
 
+$table-border-color: rgba(0,0,0,0.1);
+$table-striped-color: rgba(0, 0, 0, 0.1);
+
 .table {
   width: 100%;
   table-layout: fixed;
@@ -10,42 +13,42 @@
   th {}
   td {}
 
-  &.table-striped {
+  &.table--striped {
     tr:nth-child(even) {
-      background: rgba(0, 0, 0, 0.1);
+      background: $table-striped-color;
     }
   }
 
-  &.table-bordered {
+  &.table--bordered {
     border-collapse: separate;
     th, td {
-      border-left: 1px solid #989898;
+      border-left: 1px solid $table-border-color;
     }
     th:last-child, td:last-child {
-      border-right: 1px solid #989898;
+      border-right: 1px solid $table-border-color;
     }
     thead {
       th, td {
-        border-top: 1px solid #989898;
-        border-bottom: 1px solid #989898;
+        border-top: 1px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
       }
     }
     tbody {
       tr:first-child {
         th, td {
-          border-top: 1px solid #989898;
+          border-top: 1px solid $table-border-color;
         }
       }
       tr {
         th, td {
-          border-bottom: 1px solid #989898;
+          border-bottom: 1px solid $table-border-color;
         }
       }
     }
     tfoot {
       th, td {
-        border-top: 1px solid #989898;
-        border-bottom: 1px solid #989898;
+        border-top: 1px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
       }
     }
   }

@@ -7,18 +7,20 @@
   "license": "MIT",
   "private": true,
   "ignore": [
-    "node_modules",
-    "docs",
     ".bowerrc",
     ".editorconfig",
     ".gitignore",
     ".jshintignore",
     ".jshintrc",
-    "gulpfile.js",
-    "package.json",
-    "README.md",
+    ".sass-cache",
+    "_docs",
     "AUTHORS",
-    "CHANGELOG"
+    "CHANGELOG",
+    "docs",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "README.md"
   ],
   "dependencies": {
     "jquery": "~2.1.0",

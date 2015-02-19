@@ -4,38 +4,24 @@ title: Media Block
 description: The media block object
 section: components
 ---
-<h3 class="sg">Default</h3>
+## Default
+### Aligned left
 {% example %}
 <div class="mediaBlock">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
 {% endexample %}
-
-<h3 class="sg">Variation 1</h3>
+### Aligned right
 {% example %}
-<div class="mediaBlock mediaBlock--v2">
+<div class="mediaBlock mediaBlock--right">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
-  </div>
-  <div class="mediaBlock-title">This title is very very long and will wrap on two lines centered to his parent</div>
-  <div class="mediaBlock-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
-  </div>
-</div>
-{% endexample %}
-
-<h3 class="sg">Variation 2</h3>
-<h4 class="sg">Aligned left</h4>
-{% example %}
-<div class="mediaBlock mediaBlock--left">
-  <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
   <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
@@ -44,26 +30,67 @@ section: components
 </div>
 {% endexample %}
 
-<h4 class="sg">Aligned center</h4>
+## Variation 2
+### Aligned left
 {% example %}
-<div class="mediaBlock mediaBlock--center">
+<div class="mediaBlock mediaBlock--v2">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
+</div>
+{% endexample %}
+### Aligned right
+{% example %}
+<div class="mediaBlock mediaBlock--v2 mediaBlock--right">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
 {% endexample %}
 
-<h4 class="sg">Aligned right</h4>
+## Variations
+### Stacked
+<p class="sg">Add <code>.mediaBlock--stack</code> to put elements one after another.</p>
 {% example %}
-<div class="mediaBlock mediaBlock--right">
+<div class="mediaBlock mediaBlock--stack">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>Title</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
+</div>
+{% endexample %}
+
+### Aligned center
+{% example %}
+<div class="mediaBlock mediaBlock--stack mediaBlock--center">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>Title</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
+</div>
+{% endexample %}
+
+### Aligned right
+{% example %}
+<div class="mediaBlock mediaBlock--stack mediaBlock--right">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>

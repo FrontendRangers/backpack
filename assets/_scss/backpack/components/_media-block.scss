@@ -3,87 +3,96 @@
    ========================================================================== */
 
 .mediaBlock {
-  width: 400px;
-  display: table;
-  vertical-align: top;
+  @extend %clearfix;
+  p:last-child {
+    margin: 0;
+  }
   .mediaBlock-img {
-    display: table-cell;
-    vertical-align: top;
-    img {
-      float: left;
-    }
+    float: left;
+    max-width: 25%;
+    min-height: 100px;
   }
   .mediaBlock-title {
     display: flex;
+    float: left;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    width: 75%;
 
     justify-content: center;
-    p {
-      margin: 0;
-    }
   }
   .mediaBlock-content {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-/*==========  Variation 1  ==========*/
-
-.mediaBlock--v2 {
-  @include clearfix;
-  .mediaBlock-img {
     display: block;
     float: left;
-    img {
-      float: none;
+    width: 75%;
+    overflow: hidden;
+  }
+  &.mediaBlock--right {
+    .mediaBlock-img {
+      float: right;
+      text-align: right;
     }
-  }
-  .mediaBlock-title {
-    display: block;
-    float: left;
-  }
-  .mediaBlock-content {
-    float: left;
-    clear: both;
+    .mediaBlock-title {
+      float: right;
+      text-align: right;
+    }
+    .mediaBlock-content {
+      float: right;
+      text-align: right;
+    }
   }
 }
 
 /*==========  Variation 2  ==========*/
 
-.mediaBlock--left,
-.mediaBlock--center,
-.mediaBlock--right {
-  @include clearfix;
-
-  display: block;
+.mediaBlock--v2 {
   .mediaBlock-img {
-    display: block;
-    clear: both;
-    img {
-      float: none;
-    }
-  }
-  .mediaBlock-title {
-    display: block;
-    clear: both;
+    min-height: 1px;
   }
   .mediaBlock-content {
-    display: block;
     clear: both;
+    width: 100%;
+  }
+  &.mediaBlock--right {
+    .mediaBlock-img {
+      float: right;
+    }
+    .mediaBlock-title {
+      float: right;
+      text-align: right;
+    }
+    .mediaBlock-content {
+      float: right;
+      text-align: right;
+    }
   }
 }
 
-.mediaBlock--center {
-  .mediaBlock-img, .mediaBlock-title, .mediaBlock-content {
-    text-align: center;
-  }
-}
+/*==========  Variation 3  ==========*/
 
-.mediaBlock--right {
-  .mediaBlock-img, .mediaBlock-title, .mediaBlock-content {
-    text-align: right;
+.mediaBlock--stack {
+  .mediaBlock-img {
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+  }
+  .mediaBlock-title {
+    clear: both;
+    width: 100%;
+  }
+  .mediaBlock-content {
+    clear: both;
+    width: 100%;
+  }
+  &.mediaBlock--center {
+    .mediaBlock-img {
+      text-align: center;
+    }
+    .mediaBlock-title {
+      text-align: center;
+    }
+    .mediaBlock-content {
+      text-align: center;
+    }
   }
 }

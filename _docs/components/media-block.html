@@ -11,8 +11,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- Guidebook CSS -->
-		<link rel="stylesheet" href="/assets/css/guidebook.css">
-		<link rel="stylesheet" href="/assets/css/syntax.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/guidebook.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/syntax.css">
 
 		<!-- Your CSS -->
 		<link rel="stylesheet" href="/assets/css/style.css">
@@ -30,8 +30,8 @@
     <div class="sg-top-menu">
       <nav>
         <ul>
-          <li><a href="/" title="">Patterns</a></li>
-          <li><a href="/templates/homepage.html" title="">Templates</a></li>
+          <li><a href="/patterns/index.html" title="">Patterns</a></li>
+          <li><a href="/templates/index.html" title="">Templates</a></li>
         </ul>
       </nav>
     </div>
@@ -40,89 +40,141 @@
 			<div class="sg-page-header">
   <div class="sg-wrapper">
     
-      <p class="sg sg-category">Components</p>
+      <p class="sg sg-page-category">components</p>
     
-    <h1 class="sg">Media block</h1>
+    <!-- <p class="sg-page-title">Media block</p> -->
     
-      <p class="sg">The media block object</p>
+      <!-- <p class="sg-page-description">The media block object</p> -->
     
   </div>
 </div>
 			<div class="sg-content">
-				<div class="sg-main">
-					<section class="sg-section">
-	<div class="sg-wrapper">
-		<h2 class="sg">Media Block</h2>
-		<h3 class="sg">Default</h3>
-<div class="sg-example-snippet">
+				<div class="sg-wrapper">
+					<div class="sg-main">
+						<section class="sg-section">
+  <div class="sg-wrapper">
+    <h1 class="sg sg-pattern-title">Media Block</h1>
+     <p class="sg-pattern-description">The media block object</p>
+    <h2 id="default">Default</h2>
+
+<h3 id="aligned-left">Aligned left</h3>
+
+<div class="sg-example">
 <div class="mediaBlock">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
-</div>
 
-<h3 class="sg">Variation 1</h3>
-<div class="sg-example-snippet">
-<div class="mediaBlock mediaBlock--v2">
-  <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
-  </div>
-  <div class="mediaBlock-title">This title is very very long and will wrap on two lines centered to his parent</div>
-  <div class="mediaBlock-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
-  </div>
-</div>
-</div>
+<p></div></p>
 
-<h3 class="sg">Variation 2</h3>
-<h4 class="sg">Aligned left</h4>
-<div class="sg-example-snippet">
-<div class="mediaBlock mediaBlock--left">
+<h3 id="aligned-right">Aligned right</h3>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--right">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
   <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
-</div>
 
-<h4 class="sg">Aligned center</h4>
-<div class="sg-example-snippet">
-<div class="mediaBlock mediaBlock--center">
+<p></div></p>
+
+<h2 id="variation-2">Variation 2</h2>
+
+<h3 id="aligned-left">Aligned left</h3>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--v2">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
-</div>
 
-<h4 class="sg">Aligned right</h4>
-<div class="sg-example-snippet">
-<div class="mediaBlock mediaBlock--right">
+<p></div></p>
+
+<h3 id="aligned-right">Aligned right</h3>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--v2 mediaBlock--right">
   <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/50/50" alt="">
+    <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title">Title</div>
+  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
+
+<p></div></p>
+
+<h2 id="variations">Variations</h2>
+
+<h3 id="stacked">Stacked</h3>
+
+<p class="sg">Add <code>.mediaBlock--stack</code> to put elements one after another.</p>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--stack">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>Title</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
 </div>
-	</div>
+
+<p></div></p>
+
+<h3 id="aligned-center">Aligned center</h3>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--stack mediaBlock--center">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>Title</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
+</div>
+
+<p></div></p>
+
+<h3 id="aligned-right">Aligned right</h3>
+
+<div class="sg-example">
+<div class="mediaBlock mediaBlock--stack mediaBlock--right">
+  <div class="mediaBlock-img">
+    <img src="https://placekitten.com/g/48/48" alt="">
+  </div>
+  <div class="mediaBlock-title"><p>Title</p></div>
+  <div class="mediaBlock-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
+  </div>
+</div>
+
+<p></div></p>
+
+  </div> 
 </section>
-
-				</div>
-				<aside class="sg-sidebar">
+					</div>
+					<div class="sg-toc">
+					  <div id="toc"></div>
+					</div>
+					<aside class="sg-sidebar">
   <div class="sg-menu">
     <ul>
       
@@ -130,6 +182,18 @@
       <li>
         Globals
         <ul>
+          
+          <li>
+            <a href="/globals/colors.html">Colors</a>
+          </li>
+          
+          <li>
+            <a href="/globals/grid.html">Grid</a>
+          </li>
+          
+          <li>
+            <a href="/globals/media.html">Media</a>
+          </li>
           
           <li>
             <a href="/globals/typography.html">Typography</a>
@@ -145,7 +209,31 @@
         <ul>
           
           <li>
+            <a href="/elements/badges.html">Badges</a>
+          </li>
+          
+          <li>
             <a href="/elements/buttons.html">Buttons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/dividers.html">Dividers</a>
+          </li>
+          
+          <li>
+            <a href="/elements/forms.html">Forms</a>
+          </li>
+          
+          <li>
+            <a href="/elements/icons.html">Icons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/labels.html">Labels</a>
+          </li>
+          
+          <li>
+            <a href="/elements/tables.html">Tables</a>
           </li>
           
         </ul>
@@ -158,11 +246,31 @@
         <ul>
           
           <li>
+            <a href="/components/breadcrumbs.html">Breadcrumbs</a>
+          </li>
+          
+          <li>
             <a href="/components/media-block.html">Media Block</a>
           </li>
           
           <li>
+            <a href="/components/messages.html">Messages</a>
+          </li>
+          
+          <li>
+            <a href="/components/navigation.html">Navigation</a>
+          </li>
+          
+          <li>
+            <a href="/components/pagination.html">Pagination</a>
+          </li>
+          
+          <li>
             <a href="/components/panels.html">Panels</a>
+          </li>
+          
+          <li>
+            <a href="/components/tabs.html">Tabs</a>
           </li>
           
         </ul>
@@ -172,11 +280,18 @@
     </ul>
   </div>
 </aside>
+				</div>
 			</div>
 			<footer class="sg-site-footer">
   <div class="sg-wrapper">
-    <p class="sg">The footer</p>
+    <p class="sg">Made by the UX Team</p>
   </div>
 </footer>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<!-- Guidebook JS -->
+		<script src="/assets/guidebook/js/toc.js"></script>
+		<script src="/assets/guidebook/js/guidebook.js"></script>
+		<script src="/assets/js/main.js"></script>
 	</body>
 </html>

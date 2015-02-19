@@ -5,17 +5,13 @@
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
-  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-// @include establish-baseline;
 
 html,
 body {
   color: $text-color-primary;
   font-family: $base-font-family;
-  // @include adjust-font-size-to($base-font-size);
   font-style: normal;
   font-weight: $text-regular;
 }

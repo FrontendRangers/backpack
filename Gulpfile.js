@@ -72,7 +72,7 @@ gulp.task('styles-sg', function() {
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('./docs/assets/css'))
+		.pipe(gulp.dest('./docs/assets/guidebook/css'))
 		.pipe(reload({stream:true}));
 });
 
@@ -120,8 +120,13 @@ gulp.task('default', ['dev']);
 // Run the styleguide
 gulp.task('dev', ['styles', 'styles-sg', 'browser-sync'], function(){
 	gulp.watch('./assets/_scss/backpack/**/*.scss', ['styles', 'jekyll-rebuild']);
+	gulp.watch('./assets/js/*.js', ['styles', 'jekyll-rebuild']);
+	gulp.watch('./docs/assets/js/*.js', ['styles', 'jekyll-rebuild']);
+
 	gulp.watch('./docs/assets/guidebook/_scss/*.scss', ['styles-sg', 'jekyll-rebuild']);
-	gulp.watch(['./docs/index.html', './docs/_layouts/*.html', './docs/_includes/*.html', './docs/**/*.html'], ['jekyll-rebuild']);
+	gulp.watch('./docs/assets/guidebook/js/*.js', ['styles-sg', 'jekyll-rebuild']);
+
+	gulp.watch(['./docs/index.html', './docs/_layouts/*.html', './docs/_includes/*.html', './docs/**/*.{html,md}', './docs/_data/*.yaml'], ['jekyll-rebuild']);
 });
 
 // Generate files for production

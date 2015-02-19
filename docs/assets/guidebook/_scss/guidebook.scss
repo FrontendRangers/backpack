@@ -8,8 +8,7 @@
 /*
    Variables
    ========================================================================== */
-
-$sg-logo-color: #fff;
+$sg-logo-color: #ffffff;
 $sg-logo-bg-color: #222e3d;
 
 $sg-sidebar-color: #1c2531;
@@ -64,16 +63,18 @@ $screen-xlarge: 1200px;
    Globals
    ========================================================================== */
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body.sg {
   margin: 0;
   padding: 0;
-  background-color: #eeeeee;
+  background-color: #EEE;
 }
 
 /*
@@ -89,17 +90,17 @@ body.sg {
   position: relative;
   min-height: 40px;
   line-height: 40px;
-  background-color: rgba(107, 6, 163, 0.5);
+  background-color: rgba(52, 152, 219,1.0);
 }
 
 .show-grid [class*="col"] p {
   margin: 10px 0;
   padding: 10px 0;
-  text-align: center;
-  color: #fefefe;
   font-weight: 600;
+  text-align: center;
+  color: #FEFEFE;
+  background-color: rgba(41, 128, 185,1.0);
   text-shadow: 0 1px 0 rgba(107, 6, 163, 1);
-  background-color: rgba(107, 6, 163, 0.5);
 }
 
 .show-grid .show-grid {
@@ -150,12 +151,13 @@ body.sg {
   position: relative;
   z-index: 10000;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 1.5rem;
   font-family: $sg-font-text;
   font-size: 90%;
   background-color: #222E3D;
+
+  align-items: center;
+  justify-content: space-between;
   ul {
     height: 24px;
     margin: 0;
@@ -178,94 +180,102 @@ body.sg {
   }
 }
 
-
 .sg-layout {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
+
   align-items: center;
-  overflow: hidden;
 }
 
 .sg-site-header {
-  width: 100%;
   z-index: 1;
+  width: 100vw;
   background-color: $sg-logo-bg-color;
   * {
     font-family: $sg-font-heading;
   }
-}
-
-.sg-content {
-  width: 1400px;
-  flex: 1;
-  display: flex;
-  flex-flow: row nowrap;
-
-  @media screen and (max-width: $screen-small){
-    flex-flow: column wrap;
-    width: 100%;
-  }
-}
-
-.sg-site-footer {
-  width: 100%;
-  padding: 10px 20px;
-  color: #FFF;
-  background-color: rgba(34.00, 34.00, 34.00, 1.00);
-
-  p.sg {
-    color: #FFF;
-    margin: 0;
+  .sg-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
 
 .sg-page-header {
-  width: 100%;
-
-  padding: 1rem 2rem;
+  width: 100vw;
+  padding: 2em 0;
   background-color: $sg-intro-color;
   * {
-    color: #fff !important;
+    color: #FFF !important;
+  }
+  .sg-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.sg-content {
+  display: flex;
+  width: 100%;
+
+  flex: 1;
+  align-items: stretch;
+  > .sg-wrapper {
+    display: flex;
+
+    flex-flow: row nowrap;
+    align-items: stretch;
   }
 }
 
 .sg-main {
-  flex: 0 0 auto;
+  display: flex;
+
   order: 2;
-  width: 85%;
-
-  padding: 0;
-  background-color: rgba(255, 255, 255, 1.00);
-  @media screen and (max-width: $screen-small){
-    flex: 1 0 auto;
-    order: 1;
-    min-width: 100%;
-    max-width: 100%;
-  }
-
+  flex: 1 0 auto;
+  justify-content: stretch;
   .sg-wrapper {
-    width: 100%;
-    max-width: $layout-width;
+    width: $layout-width;
+    padding: 0;
   }
 }
 
+.sg-toc {
+  position: relative;
+  width: 15%;
+  padding: 5em 1em;
+
+  order: 3;
+}
+
 .sg-sidebar {
+  width: 15%;
+  padding: 2em 2em 2em 0;
+
   flex: 0 0 auto;
   order: 1;
-  width: 15%;
-
-  padding: 2rem 0;
-  // background-color: $sg-sidebar-color;
-  @media screen and (max-width: 320px){
-    min-width: 100%;
-    max-width: 100%;
-    flex: 1 0 auto;
-    order: 2;
-    background-color: $sg-sidebar-color;
+  p.sg,
+  ul.sg li {
+    color: #FFF;
   }
-  p.sg, ul.sg li {
-    color: #ffffff;
+}
+
+
+.sg-site-footer {
+  width: 100%;
+  padding: 0.5em 0;
+  font-size: 0.8rem;
+  color: #FFF;
+  background-color: rgba(34.00, 34.00, 34.00, 1.00);
+  p.sg {
+    margin: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #FFF;
   }
 }
 
@@ -273,18 +283,18 @@ body.sg {
 
 .sg-title {
   padding: 0;
-  font-size: 1.5em;
-  line-height: 60px;
   font-family: $sg-font-heading;
+  font-size: 1.5em;
   font-weight: bold;
+  line-height: 60px;
   color: $sg-logo-color;
   .sg-logo {
     a {
-      color: $sg-logo-color;
       text-decoration: none;
+      color: $sg-logo-color;
     }
   }
-  @media screen and (max-width: $screen-small){
+  @media screen and (max-width: $screen-small) {
     min-width: 100%;
     max-width: 100%;
     color: red;
@@ -292,19 +302,20 @@ body.sg {
 }
 
 .sg-tools {
-  flex: 1;
-  align-self: flex-end;
-  align-content: center;
   padding: 0 3em;
   font-family: $sg-font-text;
   text-align: right;
-  @media screen and (max-width: $screen-small){
+
+  flex: 1;
+  align-self: flex-end;
+  align-content: center;
+  @media screen and (max-width: $screen-small) {
     display: none;
   }
   ul {
-    padding: 0;
-    margin: 0;
     height: 60px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     li {
       line-height: 60px;
@@ -315,22 +326,74 @@ body.sg {
 /*==========  Main Content  ==========*/
 
 .sg-section {
-  padding: 2em 4em;
+  width: 100%;
+  padding: 2em 0;
+  background-color: rgba(255, 255, 255, 1.00);
 }
 
 .sg-wrapper {
-  width: 1400px;
+  width: 90%;
+  padding: 0 2em;
   margin: 0 auto;
 }
+
+.sg-toc {
+  #toc {
+    position: fixed;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 1px 4px -1px rgba(0,0,0,0.2);
+    &:empty {
+      display: none;
+    }
+  }
+  i {
+    display: none;
+  }
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  a,
+  a:link,
+  a:visited {
+    display: block;
+    padding: 0 1em;
+    font-family: $sg-font-text;
+    line-height: 2;
+    text-decoration: none;
+    color: #666;
+  }
+  a:hover {
+    color: tomato;
+  }
+  #toc > ol > li > a {
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.02);
+  }
+  ol ol {
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+}
+
 
 /*==========  Navigation  ==========*/
 
 .sg-menu {
-  @media screen and (max-width: $screen-small){
+  @media screen and (max-width: $screen-small) {
     position: relative;
+    top: 0;
     min-width: 100%;
     max-width: 100%;
-    top: 0;
   }
   * {
     font-family: $sg-font-text;
@@ -340,11 +403,11 @@ body.sg {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    @media screen and (max-width: $screen-small){
+    @media screen and (max-width: $screen-small) {
       position: relative;
+      top: 0;
       min-width: 100%;
       max-width: 100%;
-      top: 0;
     }
     // Base
     li {
@@ -358,8 +421,8 @@ body.sg {
     }
     // Level 1
     > li {
-      padding: 0;
       margin-bottom: 1em;
+      padding: 0;
       font-size: 16px;
       font-weight: 500;
       line-height: 2em;
@@ -375,8 +438,8 @@ body.sg {
       margin: 0;
       padding: 0;
       li {
-        padding: 0;
         margin: 0;
+        padding: 0;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5em;
@@ -390,60 +453,83 @@ body.sg {
   }
 }
 
+.sg-top-menu {
+  align-self: flex-end;
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    height: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  a:visited {
+    display: block;
+    padding: 0 1em;
+    line-height: 60px;
+    text-decoration: none;
+    color: #FFF;
+  }
+  a:hover {
+    background: #222e3d;
+  }
+}
 
 /*
    Styleguide examples
    ========================================================================== */
-
-// .sg-example {
-//   max-width: $layout-width + 40px;
-//   position: relative;
-//   padding: 0;
-//   margin: 1rem 0 2.5rem 0;
-//   background-color: $background-color;
-//   border-radius: 8px;
-//   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-// }
 
 .sg-example {
   margin: 2em 0;
   background-color: $background-color;
 }
 
-.sg-example-grid {
+.sg-grid, ul.sg-grid {
   display: flex;
-  flex-wrap: wrap;
-  margin: 2em 0;
+  margin: 0 -15px;
+  padding: 0;
+  list-style: none;
+
+  flex-flow: row wrap;
 }
 
-.sg-example-block {
-  margin: 1em 0;
-  width: 10%;
+.sg-grid-item {
+  padding: 15px;
   text-align: center;
   background-color: $background-color;
-  overflow: hidden;
-  &:hover {
-    background-color: rgba(248,248,248,1);
-    border-radius: 8px;
+
+  flex: 1;
+  .sg-swatch {
+    height: 200px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
-  .sg-example-content {
-    padding: 1em;
-    &.sg-swatch {
-      height: 200px;
-    }
-  }
-  .sg-example-label {
+  .sg-label {
+    padding: 0.5em 0;
     font-size: 1em;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
 }
 
+
 .sg-example-snippet {
-  flex: 0 0 ($layout-width);
-  width: $layout-width + 40px;
   @extend %clearfix;
+
+  width: $layout-width + 40px;
+
+  flex: 0 0 ($layout-width);
   > div {
-    margin-bottom: 0!important;
     min-height: 0!important;
+    margin-bottom: 0!important;
   }
   > h1, > h2, > h3, > h4, > h5, > h6 {
     margin: 1rem 0!important;
@@ -452,7 +538,7 @@ body.sg {
 
 .sg-example-code {
   overflow: hidden;
-  margin: 2em 0 0 0;
+  margin: 2em 0;
   border-radius: 8px;
   background-color: rgba(245, 242, 240, 1);
 
@@ -466,7 +552,7 @@ body.sg {
     font-size: 10px;
     border-width: 1px;
     border-color: #CCC;
-    background-color: #fff;
+    background-color: #FFF;
   }
   .sg-btn-copy {
     font-family: $sg-font-heading;
@@ -477,12 +563,6 @@ body.sg {
   margin: 0;
 }
 
-// .sg code, code.sg {
-//   font-family: $sg-font-monospace;
-//   background-color: #F9F2F4;
-//   color: #C7254E;
-// }
-
 /*
    Styleguide typography
    ========================================================================== */
@@ -492,16 +572,9 @@ body.sg {
   color: #444;
 }
 
-h1.sg {
-  @extend %font-common;
-
-  margin: 0 0 0.2em 0;
-  font-size: 3em;
-  font-weight: 700;
-  line-height: 1.05em;
-}
-
-h2.sg {
+// Main content
+h1.sg,
+.sg-wrapper > h1 {
   @extend %font-common;
 
   margin: 0 0 0.5em 0;
@@ -512,17 +585,19 @@ h2.sg {
   border-bottom: 5px solid rgba(0,0,0,0.1);
 }
 
-h3.sg {
+h2.sg,
+.sg-wrapper > h2 {
   @extend %font-common;
 
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 1rem 0;
   font-size: 2em;
   font-weight: 400;
   line-height: 1.25em;
-  color: #7c90a8;
+  color: #7C90A8;
 }
 
-h4.sg {
+h3.sg,
+.sg-wrapper > h3 {
   @extend %font-common;
 
   margin: 0 0 0.5em 0;
@@ -532,7 +607,8 @@ h4.sg {
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-h5.sg {
+h4.sg,
+.sg-wrapper > h4 {
   @extend %font-common;
 
   margin: 0;
@@ -540,18 +616,24 @@ h5.sg {
   line-height: 1rem;
 }
 
-h6.sg {
+h5.sg,
+.sg-wrapper > h5 {
   @extend %font-common;
 
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
+h6.sg,
+.sg-wrapper > h6 {
+  @extend %font-common;
+}
+
 h3.sg + h4.sg {
   margin-top: 1rem;
 }
 
-p.sg {
+.sg-content .sg-wrapper > p {
   @extend %font-common;
 
   font-family: $sg-font-text;
@@ -559,31 +641,59 @@ p.sg {
   line-height: 1.25em;
 }
 
+
 ul.sg li {
   @extend %font-common;
 
   font-family: $sg-font-text;
 }
 
+// Page Header
+.sg-page-title {
+  @extend %font-common;
+
+  margin: 0;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+.sg-page-category {
+  @extend %font-common;
+
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.sg-page-description {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.sg-content .sg-wrapper > p.sg-pattern-description {
+  font-size: 1.5em;
+}
+
 .sg-note {
   margin-bottom: 1rem;
   padding: 0.75em 1em;
-  border: 3px solid #b2dfee;
+  border: 3px solid #B2DFEE;
   border-radius: 8px;
-  background-color: #ecf0f4;
+  background-color: #ECF0F4;
   p {
     @extend %font-common;
 
     font-family: $sg-font-text;
     font-size: 14px;
-    color: #36afd7;
+    color: #36AFD7;
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
-
-
 
 /*
    Buttons
@@ -595,25 +705,25 @@ ul.sg li {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.25em;
-  color: #56a7d4;
-  background-color: rgba(255,255,255,0);
-  border: 2px solid #56a7d4;
-  border-radius: 8px;
   text-decoration: none;
   text-transform: uppercase;
+  color: #56A7D4;
+  border: 2px solid #56A7D4;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0);
   &:hover {
-    color: rgba(255,255,255,1);
-    background-color: #56a7d4;
     text-decoration: none;
+    color: rgba(255,255,255,1);
+    background-color: #56A7D4;
   }
 }
 
 /*
    Table
    ========================================================================== */
-$table-border: 1px solid #ccc;
+$table-border: 1px solid #CCC;
 
-table.sg {
+table.sg, .sg-wrapper > table {
   width: 100%;
   margin: 1em 0;
   border-spacing: 0;

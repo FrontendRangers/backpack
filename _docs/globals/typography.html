@@ -11,8 +11,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- Guidebook CSS -->
-		<link rel="stylesheet" href="/assets/css/guidebook.css">
-		<link rel="stylesheet" href="/assets/css/syntax.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/guidebook.css">
+		<link rel="stylesheet" href="/assets/guidebook/css/syntax.css">
 
 		<!-- Your CSS -->
 		<link rel="stylesheet" href="/assets/css/style.css">
@@ -30,8 +30,8 @@
     <div class="sg-top-menu">
       <nav>
         <ul>
-          <li><a href="/" title="">Patterns</a></li>
-          <li><a href="/templates/homepage.html" title="">Templates</a></li>
+          <li><a href="/patterns/index.html" title="">Patterns</a></li>
+          <li><a href="/templates/index.html" title="">Templates</a></li>
         </ul>
       </nav>
     </div>
@@ -40,18 +40,22 @@
 			<div class="sg-page-header">
   <div class="sg-wrapper">
     
-    <h1 class="sg">Typography</h1>
+      <p class="sg sg-page-category">Globals</p>
+    
+    <!-- <p class="sg-page-title">Typography</p> -->
     
   </div>
 </div>
 			<div class="sg-content">
-				<div class="sg-main">
-					<section class="sg-section">
-	<div class="sg-wrapper">
-		<h2 class="sg">Typography</h2>
-		<h3 class="sg">Headings</h3>
-<h4 class="sg">Default</h4>
-<div data-xrayhtml class="sg-example prism zeroclip">
+				<div class="sg-wrapper">
+					<div class="sg-main">
+						<section class="sg-section">
+  <div class="sg-wrapper">
+    <h1 class="sg sg-pattern-title">Typography</h1>
+     <p class="sg-pattern-description"></p>
+    <h3 id="headings">Headings</h3>
+
+<div class="sg-example">
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
@@ -60,12 +64,65 @@
   <h6>Heading 6</h6>
 </div>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;lead&quot;</span><span class="nt">&gt;</span>Lead text<span class="nt">&lt;/p&gt;</span></code></pre></div>
-	</div>
-</section>
+<h3 id="body-text">Body text</h3>
 
-				</div>
-				<aside class="sg-sidebar">
+<div class="sg-example">
+<p>Body text</p>
+</div>
+
+<h4 id="text-tranform">Text tranform</h4>
+
+<div class="sg-example">
+<p class="text-left">Body text aligned left</p>
+<p class="text-center">Body text aligned center</p>
+<p class="text-right">Body text aligned right</p>
+</div>
+
+<div class="sg-example-code">
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-left&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-right&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+</div>
+
+<h3 id="lead-text">Lead text</h3>
+
+<div class="sg-example">
+<p class="lead">Lead text</p>
+</div>
+
+<h3 id="lists">Lists</h3>
+
+<h4 id="unordered-list">Unordered list</h4>
+
+<div class="sg-example">
+<ul>
+  <li>Morbi in sem quis dui placerat ornare. </li>
+  <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</li>
+  <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer.</li>
+  <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut.</li>
+</ul>
+</div>
+
+<h4 id="ordered-list">Ordered list</h4>
+
+<div class="sg-example">
+<ol>
+  <li>Morbi in sem quis dui placerat ornare. </li>
+  <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</li>
+  <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer.</li>
+  <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut.</li>
+</ol>
+</div>
+
+  </div> 
+</section>
+					</div>
+					<div class="sg-toc">
+					  <div id="toc"></div>
+					</div>
+					<aside class="sg-sidebar">
   <div class="sg-menu">
     <ul>
       
@@ -73,6 +130,18 @@
       <li>
         Globals
         <ul>
+          
+          <li>
+            <a href="/globals/colors.html">Colors</a>
+          </li>
+          
+          <li>
+            <a href="/globals/grid.html">Grid</a>
+          </li>
+          
+          <li>
+            <a href="/globals/media.html">Media</a>
+          </li>
           
           <li>
             <a href="/globals/typography.html">Typography</a>
@@ -88,7 +157,31 @@
         <ul>
           
           <li>
+            <a href="/elements/badges.html">Badges</a>
+          </li>
+          
+          <li>
             <a href="/elements/buttons.html">Buttons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/dividers.html">Dividers</a>
+          </li>
+          
+          <li>
+            <a href="/elements/forms.html">Forms</a>
+          </li>
+          
+          <li>
+            <a href="/elements/icons.html">Icons</a>
+          </li>
+          
+          <li>
+            <a href="/elements/labels.html">Labels</a>
+          </li>
+          
+          <li>
+            <a href="/elements/tables.html">Tables</a>
           </li>
           
         </ul>
@@ -101,11 +194,31 @@
         <ul>
           
           <li>
+            <a href="/components/breadcrumbs.html">Breadcrumbs</a>
+          </li>
+          
+          <li>
             <a href="/components/media-block.html">Media Block</a>
           </li>
           
           <li>
+            <a href="/components/messages.html">Messages</a>
+          </li>
+          
+          <li>
+            <a href="/components/navigation.html">Navigation</a>
+          </li>
+          
+          <li>
+            <a href="/components/pagination.html">Pagination</a>
+          </li>
+          
+          <li>
             <a href="/components/panels.html">Panels</a>
+          </li>
+          
+          <li>
+            <a href="/components/tabs.html">Tabs</a>
           </li>
           
         </ul>
@@ -115,11 +228,18 @@
     </ul>
   </div>
 </aside>
+				</div>
 			</div>
 			<footer class="sg-site-footer">
   <div class="sg-wrapper">
-    <p class="sg">The footer</p>
+    <p class="sg">Made by the UX Team</p>
   </div>
 </footer>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<!-- Guidebook JS -->
+		<script src="/assets/guidebook/js/toc.js"></script>
+		<script src="/assets/guidebook/js/guidebook.js"></script>
+		<script src="/assets/js/main.js"></script>
 	</body>
 </html>

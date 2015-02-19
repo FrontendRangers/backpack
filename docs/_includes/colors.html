@@ -1,0 +1,18 @@
+<div class="sg-colors">
+    {% for color in site.data.colors %}
+    <h2 class="sg">{{ color.color | capitalize }}</h2>
+    <ul class="sg-grid">
+      {% for variation in color.variations %}
+      <li class="sg-grid-item sg-swatch">
+        <div class="sg-swatch" style="background-color:{{variation.hex}};"></div>
+        <div class="sg-label">
+          <strong>{{variation.name}}</strong>
+          <br>
+          {{variation.hex}}
+        </div>
+      </li>
+      {% endfor %}
+      </li>
+    </ul>
+    {% endfor %}
+</div>
