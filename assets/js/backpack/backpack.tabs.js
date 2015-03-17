@@ -27,12 +27,8 @@
         $(this).addClass('is-active');
         $("#"+tab_id).addClass('is-active');
 
-        console.log(this);
-
         e.preventDefault();
       });
-      console.log(currentTabs);
-      console.log(currentTabsLinks);
     });
   }
 
