@@ -18,14 +18,9 @@ button {
    ========================================================================== */
 
 p {
-  // @include adjust-font-size-to($base-font-size);
-  // margin: rhythm(1, $base-font-size) 0;
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin: 0 0 1em;
-  word-break: break-all;
-  /* Non standard for webkit */
-  word-break: break-word;
 
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -35,8 +30,6 @@ p {
 
 a {
   position: relative;
-  // padding: .5em;
-  // margin: -.5em;
   color: $link-color;
   transition: all 0.3s ease-out;
   &:link {
