@@ -23,10 +23,8 @@
     }
     a {
       display: block;
-      margin-right: 0.5em;
-      padding: 0 1em;
-      line-height: 3em;
       text-decoration: none;
+      cursor: pointer;
     }
   }
   .#{$tabs-content} {
@@ -35,8 +33,7 @@
     list-style: none;
     .#{$tab-pane} {
       display: none;
-      padding: 1em;
-      &.current {
+      &.is-active {
         display: block;
       }
     }

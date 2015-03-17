@@ -363,12 +363,12 @@ td, th {
 /*
    Clearfix
    ========================================================================== */
-.clearfix, .wrapper, .btn-group, .form-actions, .mediaBlock, .message, .breadcrumbs, .nav-horizontal, .navbar, .pagination, .panel .panel-header, .panel .panel-content, .panel .panel-footer, .panel .panel-inner, .well .well-inner {
+.clearfix, .btn-group, .form-actions, .mediaBlock, .message, .breadcrumbs, .nav-horizontal, .navbar, .pagination, .panel .panel-header, .panel .panel-content, .panel .panel-footer, .panel .panel-inner, .well .well-inner {
   *zoom: 1; }
-.clearfix:before, .clearfix:after, .wrapper:before, .btn-group:before, .form-actions:before, .mediaBlock:before, .message:before, .breadcrumbs:before, .nav-horizontal:before, .navbar:before, .pagination:before, .panel .panel-header:before, .panel .panel-content:before, .panel .panel-footer:before, .panel .panel-inner:before, .well .well-inner:before, .wrapper:after, .btn-group:after, .form-actions:after, .mediaBlock:after, .message:after, .breadcrumbs:after, .nav-horizontal:after, .navbar:after, .pagination:after, .panel .panel-header:after, .panel .panel-content:after, .panel .panel-footer:after, .panel .panel-inner:after, .well .well-inner:after {
+.clearfix:before, .clearfix:after, .btn-group:before, .form-actions:before, .mediaBlock:before, .message:before, .breadcrumbs:before, .nav-horizontal:before, .navbar:before, .pagination:before, .panel .panel-header:before, .panel .panel-content:before, .panel .panel-footer:before, .panel .panel-inner:before, .well .well-inner:before, .btn-group:after, .form-actions:after, .mediaBlock:after, .message:after, .breadcrumbs:after, .nav-horizontal:after, .navbar:after, .pagination:after, .panel .panel-header:after, .panel .panel-content:after, .panel .panel-footer:after, .panel .panel-inner:after, .well .well-inner:after {
   content: " ";
   display: table; }
-.clearfix:after, .wrapper:after, .btn-group:after, .form-actions:after, .mediaBlock:after, .message:after, .breadcrumbs:after, .nav-horizontal:after, .navbar:after, .pagination:after, .panel .panel-header:after, .panel .panel-content:after, .panel .panel-footer:after, .panel .panel-inner:after, .well .well-inner:after {
+.clearfix:after, .btn-group:after, .form-actions:after, .mediaBlock:after, .message:after, .breadcrumbs:after, .nav-horizontal:after, .navbar:after, .pagination:after, .panel .panel-header:after, .panel .panel-content:after, .panel .panel-footer:after, .panel .panel-inner:after, .well .well-inner:after {
   clear: both; }
 
 /*
@@ -1349,6 +1349,16 @@ img.img-frame {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
 
+/* ==========================================================================
+   Accordions
+   ========================================================================== */
+.accordion .accordion-title {
+  cursor: pointer; }
+.accordion .accordion-pane {
+  display: none; }
+  .accordion .accordion-pane.is-active {
+    display: block; }
+
 .list-group {
   margin: 0;
   padding: 0;
@@ -1751,18 +1761,15 @@ img.img-frame {
       list-style: none; }
     .tabs .tabs-nav a {
       display: block;
-      margin-right: 0.5em;
-      padding: 0 1em;
-      line-height: 3em;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
   .tabs .tabs-content {
     margin: 0;
     padding: 0;
     list-style: none; }
     .tabs .tabs-content .tab-pane {
-      display: none;
-      padding: 1em; }
-      .tabs .tabs-content .tab-pane.current {
+      display: none; }
+      .tabs .tabs-content .tab-pane.is-active {
         display: block; }
   .tabs.tabs--vertical {
     -webkit-flex-flow: row nowrap;

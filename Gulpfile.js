@@ -15,6 +15,8 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
 var plumber      = require('gulp-plumber');
 var cp           = require('child_process');
 var browserSync  = require('browser-sync');
@@ -79,7 +81,13 @@ gulp.task('styles-sg', function() {
 /*==========  Scripts  ==========*/
 
 gulp.task('scripts', function(){
-
+	browserSync.notify('<span style="color: grey">Running:</span> Scripts compiling');
+	return gulp.src('./assets/js/**/*.js')
+		.pipe(plumber())
+		.pipe(uglify())
+		.pipe(concat('scripts.min.js'))
+		.pipe(gulp.dest('./docs/assets/js'))
+		.pipe(reload({stream:true}));
 });
 
 /*-----  End of Gulp Tasks  ------*/
@@ -118,9 +126,9 @@ gulp.task('release', function() { return inc('major'); })
 gulp.task('default', ['dev']);
 
 // Run the styleguide
-gulp.task('dev', ['styles', 'styles-sg', 'browser-sync'], function(){
+gulp.task('dev', ['styles', 'styles-sg', 'scripts', 'browser-sync'], function(){
 	gulp.watch('./assets/_scss/backpack/**/*.scss', ['styles', 'jekyll-rebuild']);
-	gulp.watch('./assets/js/*.js', ['styles', 'jekyll-rebuild']);
+	gulp.watch('./assets/js/*.js', ['scripts', 'jekyll-rebuild']);
 	gulp.watch('./docs/assets/js/*.js', ['styles', 'jekyll-rebuild']);
 
 	gulp.watch('./docs/assets/guidebook/_scss/*.scss', ['styles-sg', 'jekyll-rebuild']);

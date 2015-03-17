@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Accordions
+   ========================================================================== */
+
+.accordion {
+  .accordion-title {
+    cursor: pointer;
+    &.is-active {
+    }
+  }
+  .accordion-pane {
+    display: none;
+    &.is-active {
+      display: block;
+    }
+  }
+}
