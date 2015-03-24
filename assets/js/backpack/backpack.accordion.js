@@ -13,7 +13,7 @@
   $.fn.backpackAccordion = function (){
     function close_accordion() {
       $('.accordion-title').removeClass('is-active');
-      $('.accordion-content').removeClass('is-active');
+      $('.accordion-content').slideUp("300").removeClass('is-active');
     };
 
     return this.each( function() {
@@ -24,7 +24,7 @@
         } else {
           close_accordion();
           $(this).addClass('is-active');
-          $(this).next('.accordion-content').addClass('is-active');
+          $(this).next('.accordion-content').slideDown("300").addClass('is-active');
         }
         
         e.preventDefault();
