@@ -1354,9 +1354,9 @@ img.img-frame {
    ========================================================================== */
 .accordion .accordion-title {
   cursor: pointer; }
-.accordion .accordion-pane {
+.accordion .accordion-content {
   display: none; }
-  .accordion .accordion-pane.is-active {
+  .accordion .accordion-content.is-active {
     display: block; }
 
 .list-group {

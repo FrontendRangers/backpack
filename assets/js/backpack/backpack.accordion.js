@@ -15,10 +15,10 @@
       $(this).find('.accordion-title').on('click', function (e) {
 
         $('.accordion-title').removeClass('is-active');
-        $('.accordion-pane').removeClass('is-active');
+        $('.accordion-content').removeClass('is-active');
 
-        $(this).addClass('is-active');
-        $(this).next('.accordion-pane').addClass('is-active');
+        $(this).toggleClass('is-active');
+        $(this).next('.accordion-content').toggleClass('is-active');
 
         e.preventDefault();
       });

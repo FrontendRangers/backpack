@@ -3,12 +3,14 @@
    ========================================================================== */
 
 .accordion {
+  .accordion-pane {
+  }
   .accordion-title {
     cursor: pointer;
     &.is-active {
     }
   }
-  .accordion-pane {
+  .accordion-content {
     display: none;
     &.is-active {
       display: block;
