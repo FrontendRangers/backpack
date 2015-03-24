@@ -11,15 +11,22 @@
   "use strict";
 
   $.fn.backpackAccordion = function (){
+    function close_accordion() {
+      $('.accordion-title').removeClass('is-active');
+      $('.accordion-content').removeClass('is-active');
+    };
+
     return this.each( function() {
       $(this).find('.accordion-title').on('click', function (e) {
 
-        $('.accordion-title').removeClass('is-active');
-        $('.accordion-content').removeClass('is-active');
-
-        $(this).toggleClass('is-active');
-        $(this).next('.accordion-content').toggleClass('is-active');
-
+        if ($(this).hasClass('is-active')) {
+          close_accordion();
+        } else {
+          close_accordion();
+          $(this).addClass('is-active');
+          $(this).next('.accordion-content').addClass('is-active');
+        }
+        
         e.preventDefault();
       });
     });
