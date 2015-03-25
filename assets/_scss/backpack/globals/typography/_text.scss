@@ -50,11 +50,11 @@ em {
   font-style: italic;
 }
 
-.text-big {
+.text--big {
   font-size: 2em;
 }
 
-small, .text-small {
+small, .text--small {
   font-size: 80%;
 }
 
@@ -62,25 +62,25 @@ small, .text-small {
   font-size: 1.3em;
 }
 
-.text-muted {
+.text--muted {
   color: lighten($text-color-primary, 40%);
 }
 
-.text-up {
+.text--up {
   text-transform: uppercase;
 }
 
 // Text alignment
 
-.text-left {
+.text--left {
   text-align: left !important;
 }
 
-.text-center {
+.text--center {
   text-align: center !important;
 }
 
-.text-right {
+.text--right {
   text-align: right !important;
 }
 
