@@ -64,6 +64,15 @@
   }
 }
 
+@for $i from 1 through $total-columns {
+  .col-#{$i}of12 {
+    width: percentage($i / $total-columns);
+  }
+  .col-offset-#{$i}of12 {
+    margin-left: percentage($i / $total-columns);
+  }
+}
+
 /*
    Columns - Pourcentages
    ========================================================================== */
