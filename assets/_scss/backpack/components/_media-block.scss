@@ -3,86 +3,37 @@
    ========================================================================== */
 
 .mediaBlock {
-  @extend %clearfix;
-  p:last-child {
-    margin: 0;
-  }
+   display: flex;
+   align-items: flex-start;
   .mediaBlock-img {
-    float: left;
-    max-width: 25%;
-    min-height: 100px;
-  }
-  .mediaBlock-title {
-    display: flex;
-    float: left;
-    flex-direction: column;
-    width: 75%;
-
-    justify-content: center;
+    margin-right: 1em;
   }
   .mediaBlock-content {
-    display: block;
-    float: left;
-    width: 75%;
-    overflow: hidden;
+    flex: 1;
   }
   &.mediaBlock--right {
+    flex-flow: row-reverse;
     .mediaBlock-img {
-      float: right;
       text-align: right;
+      margin-left: 1em;
+      margin-right: 0;
     }
     .mediaBlock-title {
-      float: right;
       text-align: right;
     }
     .mediaBlock-content {
-      float: right;
       text-align: right;
     }
   }
 }
 
-/*==========  Variation 2  ==========*/
-
-.mediaBlock--v2 {
-  .mediaBlock-img {
-    min-height: 1px;
-  }
-  .mediaBlock-content {
-    clear: both;
-    width: 100%;
-  }
-  &.mediaBlock--right {
-    .mediaBlock-img {
-      float: right;
-    }
-    .mediaBlock-title {
-      float: right;
-      text-align: right;
-    }
-    .mediaBlock-content {
-      float: right;
-      text-align: right;
-    }
-  }
-}
-
-/*==========  Variation 3  ==========*/
+/*==========  Stack  ==========*/
 
 .mediaBlock--stack {
+  flex-flow: column;
+  align-items: stretch;
   .mediaBlock-img {
-    clear: both;
-    width: 100%;
-    max-width: 100%;
-    min-height: 1px;
-  }
-  .mediaBlock-title {
-    clear: both;
-    width: 100%;
-  }
-  .mediaBlock-content {
-    clear: both;
-    width: 100%;
+    margin: 0;
   }
   &.mediaBlock--center {
     .mediaBlock-img {
@@ -94,5 +45,8 @@
     .mediaBlock-content {
       text-align: center;
     }
+  }
+  &.mediaBlock--right {
+    flex-flow: column;
   }
 }
