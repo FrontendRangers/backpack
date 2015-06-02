@@ -100,12 +100,12 @@
    ========================================================================== */
 
 .nav-distribute {
-  @include display(flex);
-  @include align-items(stretch);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
   li {
-    @include flex(1);
+    flex: 1;
   }
 }
 
@@ -158,21 +158,21 @@
     }
   }
   &.navbar-distribute {
-    @include display(flex);
-    @include align-items(stretch);
-    @include flex-direction(row);
-    @include justify-content(flex-start);
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: flex-start;
     .navbar-title, .navbar-form {
-      @include flex(none);
+      flex: none;
     }
     .nav {
-      @include flex(1);
-      @include display(flex);
-      @include align-items(stretch);
-      @include flex-direction(row);
-      @include justify-content(flex-start);
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      flex-direction: row;
+      justify-content: flex-start;
       li {
-        @include flex(1);
+        flex: 1;
       }
     }
   }
