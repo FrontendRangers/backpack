@@ -19,9 +19,11 @@
 }
 
 .#{$wrapper} {
-  width: $layout-width;
+  max-width: $layout-width;
   margin-left: auto;
   margin-right: auto;
+  padding-left: ($gutter-width / 2);
+  padding-right: ($gutter-width / 2);
 }
 
 
@@ -35,6 +37,13 @@
   margin: 0 (-$gutter-width / 2);
 }
 
+.no-flexbox {
+  .row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+}
 
 /* 
    Auto Columns
@@ -48,6 +57,13 @@
 [class*="col-"] {
   flex: 0 1 auto;
   padding: 0 ($gutter-width / 2);
+}
+
+// Old Browsers Support
+.no-flexbox {
+  [class~="col"], [class*="col-"] {
+    display: table-cell;
+  }
 }
 
 
@@ -157,115 +173,11 @@
   left: 66.6666%;
 }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
-/*
-   Equal Height Columns
-   Might be replaced by flexbox
+/* 
+   Responsive
    ========================================================================== */
 
-.equal-height {
-  display: table;
-  .gutter {
-    display: block;
-    width: 1px;
-  }
-  > .gutter:last-child {
-    display: none;
-  }
-  [class*="col-"] {
-    float: none;
-    display: table-cell;
-    position: relative;  }
-  .panel {
-    float: none;
-    display: table-cell;
-    position: relative;
-  }
-}
-
-/*
-   Block grid
-   ========================================================================== */
-
-// [class*="#{$block-grid}"] {
-//   display: block;
-//   padding: 0;
-//   @extend %clearfix;
-//   .block-grid-col, & > li {
-//     display: inline;
-//     float: left;
-//     height: auto;
-//     padding: 0 $gutter-width/2;
-//     list-style: none;
-//   }
-//   .block-grid-col:nth-child(n), li:nth-child(n) {
-//     clear: none;
-//   }
-// }
-
-// .#{$block-grid}-2 {
-//   .block-grid-col, & > li {
-//     width: 50%;
-//   }
-//   .block-grid-col:nth-child(2n+1), li:nth-child(2n+1) {
-//     clear: left;
-//   }
-// }
-
-// .#{$block-grid}-3 {
-//   .block-grid-col, & > li {
-//     width: 33.333333%;
-
-//   }
-//   .block-grid-col:nth-child(3n+1), li:nth-child(3n+1) {
-//     clear: left;
-//   }
-// }
-
-// .#{$block-grid}-4 {
-//   .block-grid-col, & > li {
-//     width: 25%;
-//   }
-//   .block-grid-col:nth-child(4n+1), li:nth-child(4n+1) {
-//     clear: left;
-//   }
-// }
-
-// .#{$block-grid}-5 {
-//   .block-grid-col, & > li {
-//     width: 20%;
-//   }
-//   .block-grid-col:nth-child(5n+1), li:nth-child(5n+1) {
-//     clear: left;
-//   }
-// }
-
-@if $modernizr == true {
-
-  .flexbox {
-    [class*="#{$block-grid}"] {
-      @extend %flexbox;
-      .col {
-        @include flex(none);
-      }
-    }
-
-    @for $i from 2 through $total-columns {
-      .#{$block-grid}-#{$i} {
-        .col {
-          width: 100% / $i;
-        }
-      }
-    }
-  }
-}
-
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $screen-xsmall) {
   [class*="col-"] {
     width: 100%;
   }
