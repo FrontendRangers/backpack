@@ -1,6 +1,6 @@
 {
   "name": "backpack",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "authors": [
     "Benoit Deziel <ben@benoitdeziel.com>"
   ],
@@ -27,6 +27,7 @@
     "modernizr": "~2.8.3",
     "normalize-scss": "~3.0.2",
     "bourbon": "~4.2.0",
-    "animate.sass": "https://github.com/adamstac/animate.sass.git"
+    "animate.sass": "https://github.com/adamstac/animate.sass.git",
+    "sass-mq": "~3.1.2"
   }
 }

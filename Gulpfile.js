@@ -1,7 +1,7 @@
 /**
 *
 * Backpack Configuration
-* @version: 0.0.1
+* @version: 0.5.0
 * @author: Benoit Deziel
 *
 **/
@@ -36,17 +36,17 @@ var messages = {
 
 /*==========  Jekyll  ==========*/
 
-gulp.task('jekyll-build', ['styles', 'styles-sg'], function (done) {
+gulp.task('jekyll-build', ['styles:app', 'styles:sg'], function (done) {
 	browserSync.notify(messages.jekyllBuild);
 		return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
 		.on('close', done);
 });
 
-gulp.task('jekyll-rebuild', ['styles', 'styles-sg', 'jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['styles:app', 'styles:sg', 'jekyll-build'], function () {
 	browserSync.reload();
 });
 
-gulp.task('browser-sync', ['styles', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['styles:app', 'jekyll-build'], function() {
 	browserSync({
 		server: {
 			baseDir: '_docs',
@@ -57,7 +57,7 @@ gulp.task('browser-sync', ['styles', 'jekyll-build'], function() {
 
 /*==========  Styles  ==========*/
 
-gulp.task('styles', function() {
+gulp.task('styles:app', function() {
 	browserSync.notify('<span style="color: grey">Running:</span> Styles compiling');
 	return gulp.src('./assets/_scss/*.scss')
 	 	.pipe(plumber())
@@ -68,7 +68,7 @@ gulp.task('styles', function() {
 		.pipe(reload({stream:true}));
 });
 
-gulp.task('styles-sg', function() {
+gulp.task('styles:sg', function() {
 	browserSync.notify('<span style="color: grey">Running:</span> Styleguide styles compiling');
 	return gulp.src('./docs/assets/guidebook/_scss/*.scss')
 		.pipe(plumber())
@@ -80,13 +80,21 @@ gulp.task('styles-sg', function() {
 
 /*==========  Scripts  ==========*/
 
-gulp.task('scripts', function(){
+gulp.task('scripts:app', function(){
 	browserSync.notify('<span style="color: grey">Running:</span> Scripts compiling');
 	return gulp.src('./assets/js/**/*.js')
 		.pipe(plumber())
 		.pipe(uglify())
 		.pipe(concat('scripts.min.js'))
 		.pipe(gulp.dest('./docs/assets/js'))
+		.pipe(reload({stream:true}));
+});
+
+gulp.task('scripts:vendor', function(){
+	browserSync.notify('<span style="color: grey">Running:</span> Scripts compiling');
+	return gulp.src('./assets/js/vendor/**/*.js')
+		.pipe(plumber())
+		.pipe(gulp.dest('./docs/assets/js/vendor'))
 		.pipe(reload({stream:true}));
 });
 
@@ -126,19 +134,19 @@ gulp.task('release', function() { return inc('major'); })
 gulp.task('default', ['dev']);
 
 // Run the styleguide
-gulp.task('dev', ['styles', 'styles-sg', 'scripts', 'browser-sync'], function(){
-	gulp.watch('./assets/_scss/backpack/**/*.scss', ['styles', 'jekyll-rebuild']);
-	gulp.watch('./assets/js/*.js', ['scripts', 'jekyll-rebuild']);
-	gulp.watch('./docs/assets/js/*.js', ['styles', 'jekyll-rebuild']);
+gulp.task('dev', ['styles:app', 'styles:sg', 'scripts:app', 'scripts:vendor', 'browser-sync'], function(){
+	gulp.watch('./assets/_scss/backpack/**/*.scss', ['styles:app', 'jekyll-rebuild']);
+	gulp.watch('./assets/js/**/*.js', ['scripts:app', 'jekyll-rebuild']);
+	gulp.watch('./docs/assets/js/*.js', ['styles:app', 'jekyll-rebuild']);
 
-	gulp.watch('./docs/assets/guidebook/_scss/*.scss', ['styles-sg', 'jekyll-rebuild']);
-	gulp.watch('./docs/assets/guidebook/js/*.js', ['styles-sg', 'jekyll-rebuild']);
+	gulp.watch('./docs/assets/guidebook/_scss/*.scss', ['styles:sg', 'jekyll-rebuild']);
+	gulp.watch('./docs/assets/guidebook/js/*.js', ['styles:sg', 'jekyll-rebuild']);
 
-	gulp.watch(['./docs/index.html', './docs/_layouts/*.html', './docs/_includes/*.html', './docs/**/*.{html,md}', './docs/_data/*.yaml'], ['jekyll-rebuild']);
+	gulp.watch(['./docs/index.html', './docs/_layouts/*.{html,md}', './docs/_includes/*.{html,md}', './docs/**/*.{html,md}', './docs/_data/*.yaml'], ['jekyll-rebuild']);
 });
 
 // Generate files for production
-gulp.task('prod', ['styles', 'serve']);
+gulp.task('prod', ['styles:app', 'serve']);
 
 
 /*-----  End of Tasks  ------*/
