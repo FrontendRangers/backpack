@@ -11,8 +11,8 @@ section: components
   <div class="mediaBlock-img">
     <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
   <div class="mediaBlock-content">
+    <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
@@ -23,34 +23,8 @@ section: components
   <div class="mediaBlock-img">
     <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
-  </div>
-</div>
-{% endexample %}
-
-## Variation 2
-### Aligned left
-{% example %}
-<div class="mediaBlock mediaBlock--v2">
-  <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/48/48" alt="">
-  </div>
-  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
-  <div class="mediaBlock-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
-  </div>
-</div>
-{% endexample %}
-### Aligned right
-{% example %}
-<div class="mediaBlock mediaBlock--v2 mediaBlock--right">
-  <div class="mediaBlock-img">
-    <img src="https://placekitten.com/g/48/48" alt="">
-  </div>
-  <div class="mediaBlock-title"><p>This title is very very long and will wrap on two lines centered to his parent</p></div>
-  <div class="mediaBlock-content">
+      <div class="mediaBlock-title"><p>Title</p></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
@@ -64,8 +38,8 @@ section: components
   <div class="mediaBlock-img">
     <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
+      <div class="mediaBlock-title"><p>Title</p></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
@@ -77,8 +51,8 @@ section: components
   <div class="mediaBlock-img">
     <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
+      <div class="mediaBlock-title"><p>Title</p></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
@@ -90,8 +64,8 @@ section: components
   <div class="mediaBlock-img">
     <img src="https://placekitten.com/g/48/48" alt="">
   </div>
-  <div class="mediaBlock-title"><p>Title</p></div>
   <div class="mediaBlock-content">
+      <div class="mediaBlock-title"><p>Title</p></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt rerum explicabo, dolorem cumque facere consequuntur necessitatibus dolor tempora, at illum magnam a, quaerat quia ea soluta autem veritatis neque consectetur!</p>
   </div>
 </div>
