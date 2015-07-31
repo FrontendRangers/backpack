@@ -38,7 +38,7 @@
    Horizontal navigation
    ========================================================================== */
 
-.nav-horizontal {
+.nav--horizontal {
   @extend %clearfix;
   > li {
     float: left;
@@ -99,7 +99,7 @@
    Distributed navigation
    ========================================================================== */
 
-.nav-distribute {
+.nav--distribute {
   display: flex;
   align-items: stretch;
   flex-direction: row;
@@ -130,7 +130,7 @@
     line-height: 40px;
   }
 
-  &.navbar-vertical .navbar-title {
+  &.navbar--vertical .navbar-title {
       float: none;
   }
 
@@ -146,7 +146,7 @@
     }
   }
 
-  .navbar-right {
+  .navbar--right {
     float: right;
     > li > ul {
       right: -1px;
@@ -157,7 +157,7 @@
       left: auto;
     }
   }
-  &.navbar-distribute {
+  &.navbar--distribute {
     display: flex;
     align-items: stretch;
     flex-direction: row;
