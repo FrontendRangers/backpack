@@ -8,41 +8,16 @@
 @import "../../libs/normalize-scss/normalize";
 
 // Helpers
-@import "utilities/helpers";
-@import "utilities/dev";
-@import "utilities/animations";
+@import "utilities/index";
 
 // Globals
-@import "globals/base";
-@import "globals/typography/headings";
-@import "globals/typography/lists";
-@import "globals/typography/text";
+@import "globals/index";
 
 // Layout
-@import "layout/grid";
-
-// Elements
-@import "elements/badges";
-@import "elements/buttons";
-@import "elements/dividers";
-@import "elements/forms";
-@import "elements/labels";
-@import "elements/media";
-@import "elements/misc";
-@import "elements/tables";
+@import "layout/index";
 
 // Components
-@import "components/accordions";
-@import "components/list-group";
-@import "components/media-block";
-@import "components/messages";
-@import "components/navigation/breadcrumbs";
-@import "components/navigation/navigation";
-@import "components/navigation/pagination";
-@import "components/panels";
-@import "components/tabs";
-@import "components/wells";
+@import "components/index";
 
-// Wireframe
-
+// Theme
 @import "themes/wireframe/wireframe";

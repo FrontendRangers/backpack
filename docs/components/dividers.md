@@ -2,7 +2,7 @@
 layout: pattern
 title: Dividers
 description: Dividers are great to give space between 2 blocks of content.
-section: elements
+section: components
 ---
 ## Default
 A single line with margin. Can be a <code>hr</code> or a <code>div</code>

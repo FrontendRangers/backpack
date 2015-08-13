@@ -59,22 +59,21 @@ gulp.task('browser-sync', ['styles:app', 'jekyll-build'], function() {
 
 gulp.task('styles:app', function() {
 	browserSync.notify('<span style="color: grey">Running:</span> Styles compiling');
-	return gulp.src('./assets/_scss/*.scss')
+	return gulp.src('assets/_scss/*.scss')
 	 	.pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('./docs/assets/css'))
-		.pipe(gulp.dest('./assets/css'))
+		.pipe(gulp.dest('docs/assets/css'))
 		.pipe(reload({stream:true}));
 });
 
 gulp.task('styles:sg', function() {
 	browserSync.notify('<span style="color: grey">Running:</span> Styleguide styles compiling');
-	return gulp.src('./docs/assets/guidebook/_scss/*.scss')
+	return gulp.src('docs/assets/guidebook/_scss/*.scss')
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(gulp.dest('./docs/assets/guidebook/css'))
+		.pipe(gulp.dest('docs/assets/guidebook/css'))
 		.pipe(reload({stream:true}));
 });
 
@@ -82,19 +81,17 @@ gulp.task('styles:sg', function() {
 
 gulp.task('scripts:app', function(){
 	browserSync.notify('<span style="color: grey">Running:</span> Scripts compiling');
-	return gulp.src('./assets/js/**/*.js')
+	return gulp.src('assets/js/**/*.js')
 		.pipe(plumber())
-		.pipe(uglify())
-		.pipe(concat('scripts.min.js'))
-		.pipe(gulp.dest('./docs/assets/js'))
+		.pipe(gulp.dest('docs/assets/js'))
 		.pipe(reload({stream:true}));
 });
 
 gulp.task('scripts:vendor', function(){
 	browserSync.notify('<span style="color: grey">Running:</span> Scripts compiling');
-	return gulp.src('./assets/js/vendor/**/*.js')
+	return gulp.src('assets/js/vendor/**/*.js')
 		.pipe(plumber())
-		.pipe(gulp.dest('./docs/assets/js/vendor'))
+		.pipe(gulp.dest('docs/assets/js/vendor'))
 		.pipe(reload({stream:true}));
 });
 
@@ -106,11 +103,11 @@ gulp.task('scripts:vendor', function(){
 
 function inc(importance) {
 	// get all the files to bump version in
-	return gulp.src(['./package.json', './bower.json'])
+	return gulp.src(['package.json', 'bower.json'])
 		// bump the version number in those files
 		.pipe($.bump({type: importance}))
 		// save it back to filesystem
-		.pipe(gulp.dest('./'))
+		.pipe(gulp.dest(''))
 		// commit the changed version number
 		.pipe($.git.commit('bumps package version'))
 
@@ -135,14 +132,14 @@ gulp.task('default', ['dev']);
 
 // Run the styleguide
 gulp.task('dev', ['styles:app', 'styles:sg', 'scripts:app', 'scripts:vendor', 'browser-sync'], function(){
-	gulp.watch('./assets/_scss/backpack/**/*.scss', ['styles:app', 'jekyll-rebuild']);
-	gulp.watch('./assets/js/**/*.js', ['scripts:app', 'jekyll-rebuild']);
-	gulp.watch('./docs/assets/js/*.js', ['styles:app', 'jekyll-rebuild']);
+	gulp.watch('assets/_scss/backpack/**/*.scss', ['styles:app', 'jekyll-rebuild']);
+	gulp.watch('assets/js/**/*.js', ['scripts:app', 'jekyll-rebuild']);
+	gulp.watch('docs/assets/js/*.js', ['styles:app', 'jekyll-rebuild']);
 
-	gulp.watch('./docs/assets/guidebook/_scss/*.scss', ['styles:sg', 'jekyll-rebuild']);
-	gulp.watch('./docs/assets/guidebook/js/*.js', ['styles:sg', 'jekyll-rebuild']);
+	gulp.watch('docs/assets/guidebook/_scss/*.scss', ['styles:sg', 'jekyll-rebuild']);
+	gulp.watch('docs/assets/guidebook/js/*.js', ['styles:sg', 'jekyll-rebuild']);
 
-	gulp.watch(['./docs/index.html', './docs/_layouts/*.{html,md}', './docs/_includes/*.{html,md}', './docs/**/*.{html,md}', './docs/_data/*.yaml'], ['jekyll-rebuild']);
+	gulp.watch(['docs/index.html', 'docs/_layouts/*.{html,md}', 'docs/_includes/*.{html,md}', 'docs/**/*.{html,md}', 'docs/_data/*.yaml'], ['jekyll-rebuild']);
 });
 
 // Generate files for production
@@ -150,4 +147,3 @@ gulp.task('prod', ['styles:app', 'serve']);
 
 
 /*-----  End of Tasks  ------*/
-

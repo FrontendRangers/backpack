@@ -2,7 +2,7 @@
 layout: pattern
 title: Buttons
 description: This are the buttons
-section: elements
+section: components
 ---
 ## Default
 {% example %}

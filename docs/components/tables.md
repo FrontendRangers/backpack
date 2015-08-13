@@ -2,7 +2,7 @@
 layout: pattern
 title: Tables
 description: This are the tables
-section: elements
+section: components
 ---
 ## Default
 ### Headings on top

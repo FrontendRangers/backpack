@@ -2,7 +2,7 @@
 layout: pattern
 title: Forms
 description: This are the forms
-section: elements
+section: components
 ---
 
 ## Default
