@@ -3,21 +3,25 @@
 root = true
 
 [*]
-indent_style = tabs
-indent_size = 2
+indent_style = space
+indent_size = 4
 
-[*.html, *.haml]
-indent_style = tabs
-indent_size = 2
+[*.html, *.haml, *.jade]
+indent_style = space
+indent_size = 4
 
 [*.css, *.scss, *.sass, *.less, *.stylus]
-indent_style = tabs
-indent_size = 2
+indent_style = space
+indent_size = 4
 
 [*.js, *.coffee]
-indent_style = tabs
-indent_size = 2
+indent_style = space
+indent_size = 4
 
 [*.json]
 indent_style = space
-indent_size = 2
+indent_size = 4
+
+[*.md]
+indent_style = space
+indent_size = 4

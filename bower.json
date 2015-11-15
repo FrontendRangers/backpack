@@ -23,11 +23,6 @@
     "README.md"
   ],
   "dependencies": {
-    "jquery": "~1.11.1",
-    "modernizr": "~2.8.3",
-    "normalize-scss": "~3.0.2",
-    "bourbon": "~4.2.0",
-    "animate.sass": "https://github.com/adamstac/animate.sass.git",
-    "sass-mq": "~3.1.2"
+    "polymer": "Polymer/polymer#~1.2.1"
   }
 }

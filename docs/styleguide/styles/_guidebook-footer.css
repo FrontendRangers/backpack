@@ -1,0 +1,16 @@
+/*
+   Footer
+   ========================================================================== */
+
+sg-footer {
+    font-family: $sg-font-text;
+    background-color: $sg-footer-bg-color;
+    color: #fff;
+    .sg-footer {
+        font-size: 1em;
+        &.sgWrapper {
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
+    }
+}

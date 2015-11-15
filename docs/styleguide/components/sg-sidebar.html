@@ -1,0 +1,28 @@
+<link rel="import" href="../../libs/polymer/polymer.html">
+
+<dom-module id="sg-sidebar">
+  <template>
+    <nav class="sgMenu">
+      <div class="sgWrapper">
+          <ul>
+            <li>
+              Section Title
+              <ul>
+                <li>
+                  <a href="#">pattern.title</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">{{ section.title }}</a></li>
+          </ul>
+      </div>
+    </nav>
+  </template>
+
+  <script>
+    Polymer({
+      is: "sg-sidebar",
+    });
+  </script>
+
+</dom-module>

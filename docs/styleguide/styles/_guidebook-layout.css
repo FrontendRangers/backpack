@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.sgLayout {
+    display: flex;
+    flex-flow: column nowrap;
+
+    height: 100vh;
+}
+
+.sgContent {
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: stretch;
+    .sgMain {
+        flex: 1;
+        order: 2;
+    }
+}

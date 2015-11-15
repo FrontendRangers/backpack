@@ -9,8 +9,8 @@
    Import Backpack class names & settings
    ========================================================================== */
 
-@import "backpack/class-names";
-@import "backpack/settings";
+// @import "backpack/class-names";
+// @import "backpack/settings";
 
 /*
    Import your own class names & settings
@@ -23,10 +23,15 @@
    Import Backpack core [do not remove]
    ========================================================================== */
 
-@import "backpack/backpack";
+// @import "backpack/backpack";
 
 /*
    Import your theme and other css
    ========================================================================== */
 
 // @import "app/app";
+
+body {
+    font-size: 18px;
+    font-family: 'Helvetica Neue';
+}

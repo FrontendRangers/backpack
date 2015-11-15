@@ -1,0 +1,23 @@
+<link rel="import" href="../../libs/polymer/polymer.html">
+
+<dom-module id="guidebook-sg">
+  <template>
+    <div class="sgLayout">
+      <sg-header></sg-header>
+      <div class="sgContent">
+          <div class="sgMain">
+              <content></content>
+          </div>
+          <sg-sidebar></sg-sidebar>
+      </div>
+      <sg-footer></sg-footer>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "guidebook-sg",
+    });
+  </script>
+
+</dom-module>

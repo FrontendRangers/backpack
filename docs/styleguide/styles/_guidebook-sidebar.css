@@ -1,0 +1,24 @@
+/*
+   Sidebar
+   ========================================================================== */
+
+sg-sidebar {
+    order: 1;
+    font-family: $sg-font-text;
+    background-color: $sg-sidebar-color;
+    .sg-sidebar {
+        &.sgMenu {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    color: white;
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
