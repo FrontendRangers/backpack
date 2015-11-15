@@ -2,7 +2,9 @@
 
 ## v.0.7.0
 
-- Major refactor of code and folder architecture
-- Updated Guidebook
-- Switch to postcss
-- ITCSS architecture
+- Change folder structure
+- Remove Jekyll in favor of Polymer + Nunjunks
+- Separate tasks in their own files
+- Add PostCSS for CSS manipulation
+- Change libs folder
+- Better README

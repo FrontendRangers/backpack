@@ -83,6 +83,7 @@ gulp
 - [ ] Style styleguide components
 - [ ] Put in own repository as a gulp plugin
 - [ ] Implement [Page.js](https://visionmedia.github.io/page.js/) for routing
+- [ ] Create components via the command line
 
 ## Authors
 
