@@ -84,6 +84,7 @@ gulp
 - [ ] Put in own repository as a gulp plugin
 - [ ] Implement [Page.js](https://visionmedia.github.io/page.js/) for routing
 - [ ] Create components via the command line
+- [ ] Generate styleguide from css comments like KSS, but with an external html file for markup
 
 ## Authors
 
