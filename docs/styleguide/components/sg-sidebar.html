@@ -1,28 +1,24 @@
 <link rel="import" href="../../libs/polymer/polymer.html">
 
 <dom-module id="sg-sidebar">
-  <template>
-    <nav class="sgMenu">
-      <div class="sgWrapper">
-          <ul>
-            <li>
-              Section Title
-              <ul>
-                <li>
-                  <a href="#">pattern.title</a>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#">{{ section.title }}</a></li>
-          </ul>
-      </div>
-    </nav>
-  </template>
+    <template>
+        <nav class="sgMenu">
+            <div class="sgWrapper">
+                <ul>
+                    {% for page in pages %}
+                    <div class="menu-item">
+                        <a href="{{page.src}}">{{page.text}}</a>
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+    </template>
 
-  <script>
-    Polymer({
-      is: "sg-sidebar",
-    });
-  </script>
+    <script>
+        Polymer({
+            is: "sg-sidebar",
+        });
+    </script>
 
 </dom-module>

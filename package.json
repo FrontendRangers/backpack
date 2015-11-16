@@ -39,6 +39,7 @@
     "gulp": "^3.9.0",
     "gulp-bump": "^0.1.x",
     "gulp-concat": "^2.5.2",
+    "gulp-data": "^1.2.0",
     "gulp-git": "^0.5.6",
     "gulp-html-postcss": "^6.0.1",
     "gulp-imagemin": "^2.2.1",

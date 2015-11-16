@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (gulp, plugins, config) {
     return function() {
         plugins.nunjucksRender.nunjucks.configure([config.styleguide.path.src.pages], {watch: false});
@@ -9,6 +11,11 @@ module.exports = function (gulp, plugins, config) {
         // Compile styleguide pages with nunjucks
         gulp.src(config.styleguide.path.src.pages + '/**/*.html')
             .pipe(plugins.plumber())
+            .pipe(plugins.data(
+                function() {
+                    return JSON.parse(plugins.fs.readFileSync('./docs/data/menu.json'));
+                })
+            )
             .pipe(plugins.nunjucksRender())
             .pipe(gulp.dest(config.styleguide.path.dest.pages))
             .pipe(plugins.reload({stream:true}));

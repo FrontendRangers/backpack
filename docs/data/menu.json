@@ -1,0 +1,9 @@
+{
+  "pages": [{
+    "src": "/components/buttons.html",
+    "text": "Buttons"
+  }, {
+    "src": "/components/forms.html",
+    "text": "Forms"
+  }]
+}

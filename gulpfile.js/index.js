@@ -1,3 +1,5 @@
+'use strict';
+
 /**
 *
 * Backpack tasks
@@ -16,6 +18,8 @@ var plugins = require('gulp-load-plugins')();
     plugins.browserSync = require('browser-sync').create();
     plugins.reload = plugins.browserSync.reload;
     plugins.del = require('del');
+    plugins.gutil = require('gulp-util');
+    plugins.fs = require('fs');
 var config = require('./config')(plugins);
 
 function getTask(task) {
@@ -26,6 +30,8 @@ gulp.task('scripts', getTask('scripts'));
 gulp.task('styles', getTask('styles'));
 gulp.task('styleguide', ['clean'], getTask('styleguide'));
 gulp.task('browserSync', ['styleguide'], getTask('browsersync'));
+
+// Tasks to be put in a file
 
 gulp.task('clean', function (cb) {
     return plugins.del([config.styleguide.path.dest.pages + '/**/*'], cb);
