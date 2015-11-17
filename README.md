@@ -20,6 +20,7 @@
 - Barebone styles
 - Configurable class names
 - Wireframe mode
+- Generate settings file with Octophant
 
 ### Styleguide generator
 
@@ -32,6 +33,8 @@
 - Nunjucks templating engine
 - Gulp tasks per file
 - Built-in preview server with BrowserSync
+- Check supercollider with handlebars
+
 
 ## Getting Started
 

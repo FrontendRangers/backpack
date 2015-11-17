@@ -20,6 +20,7 @@ var plugins = require('gulp-load-plugins')();
     plugins.del = require('del');
     plugins.gutil = require('gulp-util');
     plugins.fs = require('fs');
+    plugins.supercollider = require('supercollider');
 var config = require('./config')(plugins);
 
 function getTask(task) {
