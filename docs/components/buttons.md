@@ -1,11 +1,11 @@
-{% extends "styleguide/layouts/default.html" %}
-
-{% block content %}
-<h2>Default</h2>
+---
+layout: component.html
+title: Buttons
+---
+## Default
 <a href="#" class="btn">Button</a>
 <a href="#" class="btn btn--alt">Alt</a>
 <a href="#" class="btn btn--primary">Primary</a>
 <a href="#" class="btn btn--secondary">Secondary</a>
 <a href="#" class="btn btn--primary btn--alt">Primary</a>
 <a href="#" class="btn btn--secondary btn--alt">Secondary</a>
-{% endblock %}

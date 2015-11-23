@@ -18,5 +18,6 @@
     .sgMain {
         flex: 1;
         order: 2;
+        padding: 2em;
     }
 }

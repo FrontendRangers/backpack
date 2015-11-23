@@ -4,13 +4,7 @@
     <template>
         <nav class="sgMenu">
             <div class="sgWrapper">
-                <ul>
-                    {% for page in pages %}
-                    <div class="menu-item">
-                        <a href="{{page.src}}">{{page.text}}</a>
-                    </div>
-                    {% endfor %}
-                </ul>
+                <content></content>
             </div>
         </nav>
     </template>

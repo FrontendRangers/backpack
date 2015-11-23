@@ -5,12 +5,12 @@
 sg-footer {
     font-family: $sg-font-text;
     background-color: $sg-footer-bg-color;
-    color: #fff;
+    color: #74899E;
     .sg-footer {
-        font-size: 1em;
+        font-size: 0.85em;
         &.sgWrapper {
-            padding-top: 0.1em;
-            padding-bottom: 0.1em;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
         }
     }
 }

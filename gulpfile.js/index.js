@@ -1,5 +1,3 @@
-'use strict';
-
 /**
 *
 * Backpack tasks
@@ -10,17 +8,24 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-    plugins.autoprefixer = require('autoprefixer');
-    plugins.precss = require('precss');
-    plugins.postcssSimpleVars = require('postcss-simple-vars');
+    plugins.autoprefixer        = require('autoprefixer');
+    plugins.precss              = require('precss');
+    plugins.postcssSimpleVars   = require('postcss-simple-vars');
     plugins.postcssDiscardEmpty = require('postcss-discard-empty');
-    plugins.postcssReporter = require('postcss-reporter');
-    plugins.browserSync = require('browser-sync').create();
-    plugins.reload = plugins.browserSync.reload;
-    plugins.del = require('del');
-    plugins.gutil = require('gulp-util');
-    plugins.fs = require('fs');
-    plugins.supercollider = require('supercollider');
+    plugins.postcssReporter     = require('postcss-reporter');
+    plugins.browserSync         = require('browser-sync').create();
+    plugins.reload              = plugins.browserSync.reload;
+    plugins.del                 = require('del');
+    plugins.gutil               = require('gulp-util');
+    plugins.fs                  = require('fs');
+    plugins.gulpsmith           = require('gulpsmith');
+    plugins.markdown            = require('metalsmith-markdown');
+    plugins.layouts             = require('metalsmith-layouts');
+    plugins.inPlace             = require('metalsmith-in-place');
+    plugins.collections         = require('metalsmith-collections');
+    plugins.permalinks          = require('metalsmith-permalinks');
+    plugins.ignore              = require('metalsmith-ignore');    
+    plugins.assign              = require('lodash.assign');
 var config = require('./config')(plugins);
 
 function getTask(task) {
@@ -41,7 +46,7 @@ gulp.task('clean', function (cb) {
 gulp.task('default', ['styleguide', 'browserSync'], function () {
     gulp.watch(config.styles.path.src + '/*.{css,scss}', ['styles', 'styleguide']);
     gulp.watch([
-        config.styleguide.path.src.pages + '/**/*.html',
+        config.styleguide.path.src.pages + '/**/*.{html,md}',
         config.styleguide.path.src.layouts + '/**/*.html',
         config.styleguide.path.src.components + '/**/*.html',
         config.styleguide.path.src.styles + '/**/*.css',

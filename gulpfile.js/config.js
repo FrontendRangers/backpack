@@ -21,9 +21,9 @@ module.exports = function (plugins) {
             path: {
                 src: {
                     pages: src + 'docs',
-                    layouts: src + 'docs/styleguide/layouts',
-                    components: src + 'docs/styleguide/components',
-                    styles: src + 'docs/styleguide/styles'
+                    layouts: src + 'styleguide/layouts',
+                    components: src + 'styleguide/components',
+                    styles: src + 'styleguide/styles'
                 },
                 dest: {
                     pages: dest + 'docs',
