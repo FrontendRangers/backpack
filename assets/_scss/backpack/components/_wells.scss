@@ -1,6 +1,0 @@
-.#{$well} {
-  .#{$well-inner} {
-    padding: ($gutter-width / 2);
-    @extend %clearfix;
-  }
-}

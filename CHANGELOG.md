@@ -1,6 +1,11 @@
 # Changelog
 
-## v.0.7.0
+## v0.8.0
+
+- Implement Guidebook
+- Refactor architecture to ITCSS
+
+## v0.7.0
 
 - Change folder structure
 - Remove Jekyll in favor of Polymer + Nunjunks

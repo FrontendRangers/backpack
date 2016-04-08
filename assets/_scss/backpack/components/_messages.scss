@@ -1,50 +1,65 @@
+// ==========================================================================
+// Messages
+// ==========================================================================
+
 .#{$message} {
-  padding: $gutter-width / 2;
-  margin-bottom: $gutter-width / 2;
-  background-color: #EEE;
-  @extend %clearfix;
-  .close {
-    float: right;
-    font-size: 21px;
-    font-weight: bold;
-    line-height: 1;
-    color: inherit;
-    text-shadow: 0 1px 0 rgba(255.00, 255.00, 255.00, 0.30);
-    opacity: 0.80;
-    outline: none;
-    &:hover {
-      opacity: 0.95;
+    margin-bottom: $gutter-width / 2;
+    padding: $gutter-width / 2;
+
+    background-color: #eee;
+    .close {
+        float: right;
+
+        outline: none;
+
+        color: inherit;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        text-shadow: 0 1px 0 rgba(255.00, 255.00, 255.00, .30);
+
+        opacity: .80;
+        &:hover {
+            opacity: .95;
+        }
     }
-  }
-  button.close {
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    -webkit-appearance: none;
-  }
-  p {
-    margin: 0;
-    color: inherit;
-  }
+    button.close {
+        padding: 0;
+
+        border: 0;
+        background: transparent;
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+    }
+    p {
+        margin: 0;
+
+        color: inherit;
+    }
 }
 
 .#{$message-info} {
-  background-color: #498897;
-  color: darken(#498897, 20%);
+    background-color: #498897;
+
+    color: darken(#498897, 20%);
 }
 
 .#{$message-success} {
-  background-color: #206b49;
-  color: darken(#206b49, 20%);
+    background-color: #206b49;
+
+    color: darken(#206b49, 20%);
 }
 
 .#{$message-error} {
-  background-color: #de5856;
-  color: darken(#de5856, 20%);
+    background-color: #de5856;
+
+    color: darken(#de5856, 20%);
 }
 
 .#{$message-warning} {
-  background-color: #d2935d;
-  color: darken(#d2935d, 20%);
+    background-color: #d2935d;
+
+    color: darken(#d2935d, 20%);
 }

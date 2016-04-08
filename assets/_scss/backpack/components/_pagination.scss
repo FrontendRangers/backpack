@@ -1,14 +1,18 @@
+/* ==========================================================================
+   Paginations
+   ========================================================================== */
+
 .pagination {
-  margin: 0;
-  padding: 0;
-  @extend %clearfix;
-  li {
-    float: left;
-    list-style: none;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  a {
-    text-decoration: none;
-  }
+    margin: 0;
+    padding: 0;
+    li {
+        padding-right: 5px;
+        padding-left: 5px;
+        float: left;
+
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
 }

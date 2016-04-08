@@ -1,0 +1,14 @@
+.sg-component {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+    &-header {
+        padding: 1em;
+        background-color: $sg-intro-color;
+    }
+    &-content {
+    	flex: 1;
+        padding: 1em;
+        background-color: $sg-component-color;
+    }
+}

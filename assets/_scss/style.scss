@@ -1,37 +1,15 @@
-/* ==========================================================================
-   Backpack - The css starter toolkit
-   ==========================================================================
-   Add your css at the bottom and your custom class names & settings
-   in the section below.
-   ========================================================================== */
+// ==========================================================================
+// Backpack - The css starter toolkit
+// ==========================================================================
 
-/*
-   Import Backpack class names & settings
-   ========================================================================== */
+//
+// Import Backpack core [do not remove]
+// ==========================================================================
 
-// @import "backpack/class-names";
-// @import "backpack/settings";
+@import "backpack/backpack";
 
-/*
-   Import your own class names & settings
-   ========================================================================== */
-
-// @import "app/class-names";
-// @import "app/settings";
-
-/*
-   Import Backpack core [do not remove]
-   ========================================================================== */
-
-// @import "backpack/backpack";
-
-/*
-   Import your theme and other css
-   ========================================================================== */
+//
+// Import your theme and other css
+// ==========================================================================
 
 // @import "app/app";
-
-body {
-    font-size: 18px;
-    font-family: 'Helvetica Neue';
-}

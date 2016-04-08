@@ -1,55 +1,68 @@
-/* ==========================================================================
-   Tables
-   ========================================================================== */
+// ==========================================================================
+// Tables
+// TODO: Move to objects
+// ==========================================================================
 
-$table-border-color: rgba(0,0,0,0.1);
-$table-striped-color: rgba(0, 0, 0, 0.1);
+//
+// Variables
+// ==========================================================================
+
+$table-border-color: rgba(0,0,0,.1);
+$table-striped-color: rgba(0, 0, 0, .1);
+
+//
+// Base
+// ==========================================================================
 
 .table {
-  width: 100%;
-  table-layout: fixed;
-  margin-bottom: $base-line-height;
-  caption {}
-  th {}
-  td {}
+    width: 100%;
+    margin-bottom: $base-line-height;
 
-  &.table--striped {
-    tr:nth-child(even) {
-      background: $table-striped-color;
-    }
-  }
+    table-layout: fixed;
 
-  &.table--bordered {
-    border-collapse: separate;
-    th, td {
-      border-left: 1px solid $table-border-color;
-    }
-    th:last-child, td:last-child {
-      border-right: 1px solid $table-border-color;
-    }
-    thead {
-      th, td {
-        border-top: 1px solid $table-border-color;
-        border-bottom: 1px solid $table-border-color;
-      }
-    }
-    tbody {
-      tr:first-child {
-        th, td {
-          border-top: 1px solid $table-border-color;
+    &.table--striped {
+        tr:nth-child(even) {
+            background: $table-striped-color;
         }
-      }
-      tr {
-        th, td {
-          border-bottom: 1px solid $table-border-color;
+    }
+
+    &.table--bordered {
+        border-collapse: separate;
+        th,
+        td {
+            border-left: 1px solid $table-border-color;
         }
-      }
+        th:last-child,
+        td:last-child {
+            border-right: 1px solid $table-border-color;
+        }
+        thead {
+            th,
+            td {
+                border-top: 1px solid $table-border-color;
+                border-bottom: 1px solid $table-border-color;
+            }
+        }
+        tbody {
+            tr:first-child {
+                th,
+                td {
+                    border-top: 1px solid $table-border-color;
+                }
+            }
+            tr {
+                th,
+                td {
+                    border-bottom: 1px solid $table-border-color;
+                }
+            }
+        }
+        tfoot {
+            th,
+            td {
+                border-top: 1px solid $table-border-color;
+                border-bottom: 1px solid $table-border-color;
+            }
+        }
     }
-    tfoot {
-      th, td {
-        border-top: 1px solid $table-border-color;
-        border-bottom: 1px solid $table-border-color;
-      }
-    }
-  }
 }

@@ -1,52 +1,55 @@
-/* ==========================================================================
-   Media Block
-   ========================================================================== */
+// ==========================================================================
+// Media Blocks
+// ==========================================================================
 
 .mediaBlock {
-   display: flex;
-   align-items: flex-start;
-  .mediaBlock-img {
-    margin-right: 1em;
-  }
-  .mediaBlock-content {
-    flex: 1;
-  }
-  &.mediaBlock--right {
-    flex-flow: row-reverse;
+    display: flex;
+    align-items: flex-start;
     .mediaBlock-img {
-      text-align: right;
-      margin-left: 1em;
-      margin-right: 0;
-    }
-    .mediaBlock-title {
-      text-align: right;
+        margin-right: 1em;
     }
     .mediaBlock-content {
-      text-align: right;
+        flex: 1;
     }
-  }
+    &.mediaBlock--right {
+        flex-flow: row-reverse;
+        .mediaBlock-img {
+            margin-right: 0;
+            margin-left: 1em;
+
+            text-align: right;
+        }
+        .mediaBlock-title {
+            text-align: right;
+        }
+        .mediaBlock-content {
+            text-align: right;
+        }
+    }
 }
 
-/*==========  Stack  ==========*/
+//
+// Stacks
+// ==========================================================================
 
 .mediaBlock--stack {
-  flex-flow: column;
-  align-items: stretch;
-  .mediaBlock-img {
-    margin: 0;
-  }
-  &.mediaBlock--center {
-    .mediaBlock-img {
-      text-align: center;
-    }
-    .mediaBlock-title {
-      text-align: center;
-    }
-    .mediaBlock-content {
-      text-align: center;
-    }
-  }
-  &.mediaBlock--right {
     flex-flow: column;
-  }
+    align-items: stretch;
+    .mediaBlock-img {
+        margin: 0;
+    }
+    &.mediaBlock--center {
+        .mediaBlock-img {
+            text-align: center;
+        }
+        .mediaBlock-title {
+            text-align: center;
+        }
+        .mediaBlock-content {
+            text-align: center;
+        }
+    }
+    &.mediaBlock--right {
+        flex-flow: column;
+    }
 }

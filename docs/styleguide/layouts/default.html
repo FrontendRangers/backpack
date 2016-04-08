@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>title</title>
+
+        <link rel="stylesheet" href="/styleguide/styles/guidebook.css">
+
+		<!-- Your CSS -->
+		<link rel="stylesheet" href="/assets/css/style.css">
+
+        <script src="/libs/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <link rel="import" href="/styleguide/components/sg-elements.html">
+
+		<!-- <script src="/assets/js/vendor/modernizr/modernizr.js"></script> -->
+	</head>
+	<body class="sg">
+        <div class="sg-layout">
+          <sg-header></sg-header>
+          <div class="sg-content">
+              <div class="sg-main">
+                  {{> body}}
+              </div>
+              <sg-sidebar></sg-sidebar>
+          </div>
+          <sg-footer></sg-footer>
+        </div>
+	</body>
+</html>

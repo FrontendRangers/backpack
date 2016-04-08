@@ -10,7 +10,6 @@
 - [Gulp](http://gulpjs.com)
 - [Sass](http://sass-lang.com/)
 - [Bower](http://bower.io)
-- [Polymer](https://www.polymer-project.org/)
 - [PostCSS](https://github.com/postcss/postcss)
 
 ### CSS toolkit
@@ -22,25 +21,11 @@
 - Wireframe mode
 - Generate settings file with Octophant
 
-### Styleguide generator
-
-> To be placed in his own repository
-
-- Use Polymer to scope styles to the styleguide
-- Fully configurable via JSON file
-- PostCSS
-    - Autoprefixer
-- Nunjucks templating engine
-- Gulp tasks per file
-- Built-in preview server with BrowserSync
-- Check supercollider with handlebars
-
-
 ## Getting Started
 
 Install dependencies
 ```
-npm install && bower install
+npm start
 ```
 
 Run the styleguide
@@ -79,15 +64,6 @@ gulp
     - Manage with [Waffle.io](https://waffle.io/benoitdeziel/backpack)
 - [ ] Create the wireframe theme
     - [Like this](https://www.hellomany.com/ui-kits/wireframe/wkv2)
-
-### Styleguide generator
-
-- [ ] Add dynamic menu generation
-- [ ] Style styleguide components
-- [ ] Put in own repository as a gulp plugin
-- [ ] Implement [Page.js](https://visionmedia.github.io/page.js/) for routing
-- [ ] Create components via the command line
-- [ ] Generate styleguide from css comments like KSS, but with an external html file for markup
 
 ## Authors
 

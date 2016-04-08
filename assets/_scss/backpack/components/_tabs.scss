@@ -1,73 +1,78 @@
-/* ==========================================================================
-   Tabs
-   ========================================================================== */
+// ==========================================================================
+// Tabs
+// ==========================================================================
 
 .#{$tabs} {
-  display: flex;
-  max-width: 100%;
-  margin-bottom: $base-line-height;
-
-  flex-flow: column nowrap;
-  .tabs-nav-container {
-    overflow: hidden;
-  }
-  .#{$tabs-nav} {
-    position: relative;
     display: flex;
-    margin: 0;
-    padding: 0;
-    li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    a {
-      display: block;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  }
-  .#{$tabs-content} {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    .#{$tab-pane} {
-      display: none;
-      &.is-active {
-        display: block;
-      }
-    }
-  }
-  // Tabs Vertical
-  &.tabs--vertical {
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+
+    max-width: 100%;
+    margin-bottom: $base-line-height;
     .tabs-nav-container {
-      min-width: 100px;
+        overflow: hidden;
     }
     .#{$tabs-nav} {
-      flex-flow: column nowrap;
-      flex: 0 1 auto;
-      align-items: stretch;
-      a {
+        display: flex;
+        position: relative;
+
         margin: 0;
-      }
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+        a {
+            display: block;
+
+            text-decoration: none;
+
+            cursor: pointer;
+        }
     }
     .#{$tabs-content} {
-      display: flex;
-      overflow: hidden;
+        margin: 0;
+        padding: 0;
 
-      flex: 1 1 auto;
-      flex-flow: row no wrap;
-      align-items: stretch;
+        list-style: none;
+        .#{$tab-pane} {
+            display: none;
+            &.is-active {
+                display: block;
+            }
+        }
     }
-    .#{$tab-pane} {
-      width: 100%;
+    // Tabs Vertical
+    &.tabs--vertical {
+        flex-flow: row nowrap;
+        .tabs-nav-container {
+            min-width: 100px;
+        }
+        .#{$tabs-nav} {
+            flex: 0 1 auto;
+            flex-flow: column nowrap;
+            align-items: stretch;
+            a {
+                margin: 0;
+            }
+        }
+        .#{$tabs-content} {
+            display: flex;
+            flex: 1 1 auto;
+            flex-flow: row no wrap;
+            align-items: stretch;
+
+            overflow: hidden;
+        }
+        .#{$tab-pane} {
+            width: 100%;
+        }
     }
-  }
-  // Tabs Right
-  &.tabs--right {
-    .tabs-nav-container{
-      order: 1;
+    // Tabs Right
+    &.tabs--right {
+        .tabs-nav-container {
+            order: 1;
+        }
     }
-  }
 }

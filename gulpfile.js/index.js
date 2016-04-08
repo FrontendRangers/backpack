@@ -1,32 +1,21 @@
 /**
 *
 * Backpack tasks
-* @version: 0.7.0
+* @version: 0.8.0
 * @author: Benoit Deziel
 *
 **/
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-    plugins.autoprefixer        = require('autoprefixer');
-    plugins.precss              = require('precss');
-    plugins.postcssSimpleVars   = require('postcss-simple-vars');
-    plugins.postcssDiscardEmpty = require('postcss-discard-empty');
-    plugins.postcssReporter     = require('postcss-reporter');
     plugins.browserSync         = require('browser-sync').create();
     plugins.reload              = plugins.browserSync.reload;
     plugins.del                 = require('del');
     plugins.gutil               = require('gulp-util');
-    plugins.fs                  = require('fs');
-    plugins.gulpsmith           = require('gulpsmith');
-    plugins.markdown            = require('metalsmith-markdown');
-    plugins.layouts             = require('metalsmith-layouts');
-    plugins.inPlace             = require('metalsmith-in-place');
-    plugins.collections         = require('metalsmith-collections');
-    plugins.permalinks          = require('metalsmith-permalinks');
-    plugins.ignore              = require('metalsmith-ignore');    
-    plugins.assign              = require('lodash.assign');
-var config = require('./config')(plugins);
+
+var config = require('require-dir')('./configs', {
+    recurse: true
+});
 
 function getTask(task) {
     return require('./tasks/' + task)(gulp, plugins, config);
@@ -34,7 +23,7 @@ function getTask(task) {
 
 gulp.task('scripts', getTask('scripts'));
 gulp.task('styles', getTask('styles'));
-gulp.task('styleguide', ['clean'], getTask('styleguide'));
+// gulp.task('styleguide', ['clean'], getTask('styleguide'));
 gulp.task('browserSync', ['styleguide'], getTask('browsersync'));
 
 // Tasks to be put in a file
@@ -51,4 +40,8 @@ gulp.task('default', ['styleguide', 'browserSync'], function () {
         config.styleguide.path.src.components + '/**/*.html',
         config.styleguide.path.src.styles + '/**/*.css',
     ], ['styleguide']);
+});
+
+gulp.task('debug', function() {
+    console.log(config);
 });

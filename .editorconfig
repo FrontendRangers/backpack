@@ -6,7 +6,7 @@ root = true
 indent_style = space
 indent_size = 4
 
-[*.html, *.haml, *.jade]
+[*.html, *.haml, *.jade, *.md]
 indent_style = space
 indent_size = 4
 

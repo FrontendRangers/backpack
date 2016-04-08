@@ -1,9 +1,13 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
+
 .#{$panel} {
-  .#{$panel-header}, .#{$panel-content}, .#{$panel-footer} {
-    @extend %clearfix;
-  }
-  .#{$panel-inner} {
-    padding: ($gutter-width / 2);
-    @extend %clearfix;
-  }
+    .#{$panel-header},
+    .#{$panel-content},
+    .#{$panel-footer} {
+    }
+    .#{$panel-inner} {
+        padding: ($gutter-width / 2);
+    }
 }

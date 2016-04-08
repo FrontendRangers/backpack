@@ -1,0 +1,31 @@
+// ==========================================================================
+// Base - Lists
+// ==========================================================================
+
+ul,
+ol {
+    padding: 0 0 0 $gutter-width / 2;
+    ul {
+        margin: 0;
+    }
+}
+
+li {
+    .list-horizontal & {
+        margin-right: 20px;
+        float: left;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .list-bullet & {
+        list-style: disc outside none;
+    }
+    .list-number &,
+    ol & {
+        list-style: decimal inside none;
+    }
+    .list-unstyled & {
+        list-style: none;
+    }
+}

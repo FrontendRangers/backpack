@@ -1,0 +1,18 @@
+/*
+   Header
+   ========================================================================== */
+
+sg-header {
+    font-family: $sg-font-text;
+    background-color: $sg-header-bg-color;
+    color: #fff;
+    .sg-header {
+        &.sg-logo {
+            a,
+            a:visited {
+                color: #fff;
+            }
+        }
+
+    }
+}

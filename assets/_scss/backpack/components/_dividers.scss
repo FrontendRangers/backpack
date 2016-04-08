@@ -1,51 +1,68 @@
-/* ==========================================================================
-   Dividers
-   ========================================================================== */
+// ==========================================================================
+// Dividers
+// ==========================================================================
+
+//
+// Variables
+// ==========================================================================
 
 $divider-line-width: 100vh;
 
+//
+// Core
+// ==========================================================================
+
 .divider {
-  overflow: hidden;
-  height: auto;
-  margin: 1em 0;
-  line-height: 1;
-  text-align: center;
-  border: none;
-  &:empty {
-    border-top: 1px solid #000;
-  }
-  &.divider--space {
+    height: auto;
+    margin: 1em 0;
+
     border: none;
-  }
-  .divider-content {
-    position: relative;
-    display: inline-block;
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: $divider-line-width;
-      height: 0;
-      border-top: 1px solid #000;
+
+    line-height: 1;
+    text-align: center;
+
+    overflow: hidden;
+    &:empty {
+        border-top: 1px solid #000;
     }
-    &:before {
-      right: 100%;
-      margin-right: 1em;
+    &.divider--space {
+        border: none;
     }
-    &:after {
-      left: 100%;
-      margin-left: 1em;
+    .divider-content {
+        display: inline-block;
+        position: relative;
+        &:before,
+        &:after {
+            position: absolute;
+            top: 50%;
+
+            width: $divider-line-width;
+            height: 0;
+
+            border-top: 1px solid #000;
+
+            content: '';
+        }
+        &:before {
+            right: 100%;
+
+            margin-right: 1em;
+        }
+        &:after {
+            left: 100%;
+
+            margin-left: 1em;
+        }
+        &.divider-content--left {
+            float: left;
+        }
+        &.divider-content--right {
+            float: right;
+        }
+        p {
+            display: inline;
+
+            line-height: 1;
+        }
     }
-    &.divider-content--left {
-      float: left;
-    }
-    &.divider-content--right {
-      float: right;
-    }
-    p {
-      display: inline;
-      line-height: 1;
-    }
-  }
 }

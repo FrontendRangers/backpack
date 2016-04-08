@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Generic - Document
+   ========================================================================== */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    color: $text-color-primary;
+    font-family: $base-font-family;
+    font-style: normal;
+    font-weight: $text-regular;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: $body-color;
+}

@@ -1,23 +1,28 @@
-/* ==========================================================================
-   Backpack Core
-   ==========================================================================
-   Import everything, except the class names & settings
-   ========================================================================== */
+// ==========================================================================
+// Backpack - Core
+// @version: 0.8.0
+// ==========================================================================
 
-// @import "../../libs/bourbon/app/assets/stylesheets/bourbon";
-// @import "../../libs/normalize-scss/normalize";
+// Settings
+@import "settings/index";
 
-// Helpers
-// @import "utilities/index";
+// Tools
+@import "tools/index";
 
-// Globals
-@import "globals/index";
+// Generic
+@import "generic/index";
 
-// Layout
-// @import "layout/index";
+// Tools
+@import "base/index";
 
 // Components
-// @import "components/index";
+@import "components/index";
+
+// Modules
+@import "modules/index";
 
 // Theme
-// @import "themes/wireframe/wireframe";
+@import "themes/wireframe/wireframe";
+
+// Helpers
+@import "helpers/index";

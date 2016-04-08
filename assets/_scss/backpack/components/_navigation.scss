@@ -1,6 +1,6 @@
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
+// ==========================================================================
+// Navigations
+// ==========================================================================
 
 /**
  * TODO
@@ -9,171 +9,186 @@
  * - Fix the search form in the navbar
  */
 
-/*
-   Basic navigation
-   ========================================================================== */
+//
+// Basic Navigation
+// ==========================================================================
 
 .nav {
-  margin: 0;
-  padding: 0;
-
-  li {
     margin: 0;
     padding: 0;
-    list-style: none;
-  }
 
-  a {
-    display: block;
-    text-decoration: none;
-  }
+    li {
+        margin: 0;
+        padding: 0;
 
-  .nav-divider {
-    height: 0;
-    border-bottom: 1px solid #cccccc;
-  }
+        list-style: none;
+    }
+
+    a {
+        display: block;
+
+        text-decoration: none;
+    }
+
+    .nav-divider {
+        height: 0;
+
+        border-bottom: 1px solid #ccc;
+    }
 }
 
-/*
-   Horizontal navigation
-   ========================================================================== */
+//
+// Horizontal navigation
+// ==========================================================================
 
 .nav--horizontal {
-  @extend %clearfix;
-  > li {
-    float: left;
-    position: relative;
-  }
+    > li {
+        position: relative;
 
-  > .nav-dropdown > a:after {
-    content: "↓";
-  }
-
-  > li > ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-  }
-
-  li:hover > ul {
-    display: block;
-  }
-
-  li > ul > li {
-    position: relative;
-  }
-
-  > li > ul > li > ul {
-    display: none;
-    position: absolute;
-    top: -1px;
-    left: 100%;
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-  }
-
-  a {
-    display: block;
-    padding: 0 5px;
-    li:first-child & {
-      padding-left: 0;
+        float: left;
     }
-  }
+
+    > .nav-dropdown > a:after {
+        content: '↓';
+    }
+
+    > li > ul {
+        z-index: 1000;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        margin: 0;
+        padding: 0;
+        float: left;
+
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    li:hover > ul {
+        display: block;
+    }
+
+    li > ul > li {
+        position: relative;
+    }
+
+    > li > ul > li > ul {
+        z-index: 1000;
+        display: none;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    a {
+        display: block;
+
+        padding: 0 5px;
+        li:first-child & {
+            padding-left: 0;
+        }
+    }
 }
 
-/*
-   Vertical navigation
-   ========================================================================== */
+//
+// Vertical navigation
+// ==========================================================================
 
-/*
-   Distributed navigation
-   ========================================================================== */
+
+
+//
+// Distributed navigation
+// ==========================================================================
 
 .nav--distribute {
-  display: flex;
-  align-items: stretch;
-  flex-direction: row;
-  justify-content: flex-start;
-  li {
-    flex: 1;
-  }
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    li {
+        flex: 1;
+    }
 }
 
-
-/*
-   Nav bar
-   ========================================================================== */
+// ==========================================================================
+// Nav bar
+// ==========================================================================
 
 .navbar {
-  width: 100%;
-  border: 1px solid #CCC;
-  background-color: #ffffff;
-  @extend %clearfix;
-  a {
-    line-height: 40px;
-  }
+    @extend %clearfix;
 
-  .navbar-title {
-    float: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    line-height: 40px;
-  }
+    width: 100%;
 
-  &.navbar--vertical .navbar-title {
-      float: none;
-  }
-
-  .nav {
-    float: left;
-  }
-
-  .navbar-form {
-    float: left;
-    form, input, button {
-      float: left;
-      margin: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    a {
+        line-height: 40px;
     }
-  }
 
-  .navbar--right {
-    float: right;
-    > li > ul {
-      right: -1px;
-      left: auto;
+    .navbar-title {
+        padding-right: 10px;
+        padding-left: 10px;
+        float: left;
+
+        line-height: 40px;
     }
-    > li > ul > li > ul {
-      right: 100%;
-      left: auto;
+
+    &.navbar--vertical .navbar-title {
+        float: none;
     }
-  }
-  &.navbar--distribute {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    justify-content: flex-start;
-    .navbar-title, .navbar-form {
-      flex: none;
-    }
+
     .nav {
-      flex: 1;
-      display: flex;
-      align-items: stretch;
-      flex-direction: row;
-      justify-content: flex-start;
-      li {
-        flex: 1;
-      }
+        float: left;
     }
-  }
+
+    .navbar-form {
+        float: left;
+        form,
+        input,
+        button {
+            margin: 0;
+            float: left;
+        }
+    }
+
+    .navbar--right {
+        float: right;
+        > li > ul {
+            right: -1px;
+            left: auto;
+        }
+        > li > ul > li > ul {
+            right: 100%;
+            left: auto;
+        }
+    }
+    &.navbar--distribute {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+        .navbar-title,
+        .navbar-form {
+            flex: none;
+        }
+        .nav {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: flex-start;
+            li {
+                flex: 1;
+            }
+        }
+    }
 }

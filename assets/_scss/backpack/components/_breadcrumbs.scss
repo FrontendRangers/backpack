@@ -1,18 +1,23 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
 .#{$breadcrumbs} {
-  margin: 0;
-  padding: 0;
-  @extend %clearfix;
-  li {
-    float: left;
-    list-style: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    &:first-child {
-      padding-left: 0;
+    margin: 0;
+    padding: 0;
+    li {
+        padding-right: 5px;
+        padding-left: 5px;
+        float: left;
+
+        list-style: none;
+        &:first-child {
+            padding-left: 0;
+        }
     }
-  }
-  li:not(:first-child):before {
-    content: "/";
-    padding-right: 10px;
-  }
+    li:not(:first-child):before {
+        padding-right: 10px;
+
+        content: '/';
+    }
 }

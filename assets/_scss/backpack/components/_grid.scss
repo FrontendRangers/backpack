@@ -1,0 +1,197 @@
+// ==========================================================================
+// Component - Grid
+// ==========================================================================
+
+//
+// Classes
+// ==========================================================================
+
+$grid: Grid !default;
+$grid-cell: Grid-cell !default;
+$col: u-col- !default;
+$col-1of2: u-col-1of2 !default;
+
+//
+// Variables
+// ==========================================================================
+
+$grid-gutter-size: 1em !default;
+
+//
+// Container
+// ==========================================================================
+
+.#{$wrapper} {
+    max-width: $layout-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: ($gutter-width / 2);
+    padding-left: ($gutter-width / 2);
+}
+
+//
+// Rows
+// ==========================================================================
+
+.#{$grid} {
+    display: flex;
+    flex-flow: row wrap;
+
+    margin: 0 (-$gutter-width / 2);
+    .no-flexbox & {
+        display: table;
+
+        width: 100%;
+
+        table-layout: fixed;
+    }
+}
+//
+// Default Grid Cell
+// ==========================================================================
+
+[class*='#{$grid-cell}'] {
+    flex-basis: auto;
+}
+
+//
+// Cell sizes
+// ==========================================================================
+
+.#{$col-1of2},
+.#{$col-2of4},
+.#{$col-3of6},
+.#{$col-4of8},
+.#{$col-5of10},
+.#{$col-6of12},
+.#{$col-7of14},
+.#{$col-8of16} {
+    @import: colSize(1, 2);
+}
+
+.#{$col-1of3},
+.#{$col-2of6},
+.#{$col-4of12} {
+    @import: colSize(1, 3);
+}
+
+.#{$col-2of3},
+.#{$col-4of6},
+.#{$col-8of12} {
+    @import: colSize(2, 3);
+}
+
+.#{$col-1of4},
+.#{$col-2of8},
+.#{$col-3of12},
+.#{$col-4of16} {
+    @import: colSize(1, 4);
+}
+
+//
+// Default - 12 Cols Layout
+// ==========================================================================
+
+@for $i from 1 through $total-columns {
+  .col-#{$i}of{$total-columns} {
+    width: percentage($i / $total-columns);
+  }
+  .col-offset-#{$i}of{$total-columns} {
+    margin-left: percentage($i / $total-columns);
+  }
+}
+
+//
+// Modifiers
+// ==========================================================================
+
+.Grid--alignLeft {
+    justify-content: flex-start;
+}
+
+.Grid--alignCenter {
+    justify-content: center;
+}
+
+.Grid--alignRight {
+    justify-content: flex-end;
+}
+
+.Grid--alignTop {
+    align-items: flex-start;
+}
+
+.Grid--alignMiddle {
+    align-items: center;
+}
+
+.Grid--alignBottom {
+    align-items: flex-end;
+}
+
+.Grid--equalHeight {
+    align-items: stretch;
+}
+
+.Grid-cell--top {
+    align-self: flex-start;
+}
+
+.Grid-cell--center {
+    align-self: center;
+}
+
+.Grid-cell--bottom {
+    align-self: flex-end;
+}
+
+//
+// Columns offset
+// ==========================================================================
+
+.col-offset-1of2,
+.col-offset-2of4 {
+    margin-left: 50%;
+}
+
+.col-offset-1of3 {
+    margin-left: 33.3333%;
+}
+
+.col-offset-2of3 {
+    margin-left: 66.6666%;
+}
+
+.col-offset-1of4 {
+    margin-left: 25%;
+}
+
+.col-offset-3of4 {
+    margin-left: 75%;
+}
+
+.col-pull-1of3 {
+    right: 33.3333%;
+}
+
+.col-pull-2of3 {
+    right: 66.6666%;
+}
+
+.col-push-1of3 {
+    left: 33.3333%;
+}
+
+.col-push-2of3 {
+    left: 66.6666%;
+}
+
+//
+// Responsive
+// ==========================================================================
+
+@media screen and (max-width: $screen-xsmall) {
+    [class*='#{$grid-cell}'] {
+        width: 100%;
+    }
+}

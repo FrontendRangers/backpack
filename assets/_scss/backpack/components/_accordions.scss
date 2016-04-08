@@ -1,19 +1,15 @@
-/* ==========================================================================
-   Accordions
-   ========================================================================== */
+// ==========================================================================
+// Accordions
+// ==========================================================================
 
 .accordion {
-  .accordion-pane {
-  }
-  .accordion-title {
-    cursor: pointer;
-    &.is-active {
+    .accordion-title {
+        cursor: pointer;
     }
-  }
-  .accordion-content {
-    display: none;
-    &.is-active {
-      display: block;
+    .accordion-content {
+        display: none;
+        &.is-active {
+            display: block;
+        }
     }
-  }
 }

@@ -19,15 +19,15 @@
   z-index: 100;
   pointer-events:none;
   opacity: 0;
-  @include transition(0.3s ease);
-  @include transform(translate3d(0,0,0));
+  // @include transition(0.3s ease);
+  // @include transform(translate3d(0,0,0));
 }
 
 // Tooltip body
 .#{$tooltip}:after {
   top: -12px;
   left: 50%;
-  @include transform(translate(-50%, -100%));
+  // @include transform(translate(-50%, -100%));
   min-width: 100px;
   padding: 10px;
   border-radius: 5px;
@@ -44,7 +44,7 @@
 // Tooltip arrow
 .#{$tooltip}:before {
   left: 50%;
-  @include transform(translate(-50%, -100%));
+  // @include transform(translate(-50%, -100%));
   content: "";
   z-index: 101;
   @include css-arrow(down, rgba(0,0,0,.9), 6px);
@@ -61,41 +61,41 @@
   margin-left: 12px;
   top: 50%;
   left: 100%;
-  @include transform(translate(0, -50%));
+  // @include transform(translate(0, -50%));
 }
 
 .#{$tooltip}[data-tooltip-position="right"]:before {
   @include css-arrow(left, rgba(0,0,0,.9), 6px);
   top: 50%;
   left: 100%;
-  @include transform(translate(0, -50%));
+  // @include transform(translate(0, -50%));
 }
 
 // Tooltip at the bottom
 .#{$tooltip}[data-tooltip-position="bottom"]:after {
   top: 33px;
-  @include transform(translate(-50%, 0));
+  // @include transform(translate(-50%, 0));
 }
 
 .#{$tooltip}[data-tooltip-position="bottom"]:before {
   @include css-arrow(up, rgba(0,0,0,.9), 6px);
   top: 100%;
   left: 50%;
-  @include transform(translate(-50%));
+  // @include transform(translate(-50%));
 }
 
 // Tooltip left side
 .#{$tooltip}[data-tooltip-position="left"]:after {
   top: 50%;
   left: -12px;
-  @include transform(translate(-100%, -50%));
+  // @include transform(translate(-100%, -50%));
 }
 
 .#{$tooltip}[data-tooltip-position="left"]:before {
   @include css-arrow(right, rgba(0,0,0,.9), 6px);
   top: 50%;
   left: 0;
-  @include transform(translate(-100%, -50%));
+  // @include transform(translate(-100%, -50%));
 }
 
 /*

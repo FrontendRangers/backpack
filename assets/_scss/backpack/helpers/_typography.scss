@@ -1,0 +1,63 @@
+// ==========================================================================
+// Helpers - Typography
+// @status: Ready
+// ==========================================================================
+
+$helpers-typography: true !default;
+
+$text-upper:  u-text-upper !default;
+$text-lower:  u-text-lower !default;
+$text-left:   u-text-left !default;
+$text-center: u-text-center !default;
+$text-right:  u-text-right !default;
+
+%u-text-upper {
+    text-transform: uppercase;
+}
+
+%u-text-lower {
+    text-transform: uppercase;
+}
+
+%u-text-left {
+    text-align: left;
+}
+
+%u-text-center {
+    text-align: center;
+}
+
+%u-text-right {
+    text-align: right;
+}
+
+%u-text-small {
+    // TODO
+}
+
+%u-text-big {
+    // TODO    
+}
+
+@if $helpers-typography {
+
+    .#{$text-upper} {
+        @extend %u-text-upper;
+    }
+
+    .#{$text-lower} {
+        @extend %u-text-lower;
+    }
+
+    .#{$text-left} {
+        @extend %u-text-left;
+    }
+
+    .#{$text-center} {
+        @extend %u-text-center;
+    }
+
+    .#{$text-right} {
+        @extend %u-text-right;
+    }
+}
