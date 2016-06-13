@@ -1,10 +1,10 @@
-var dest = './_build/',
+var dest = './build/',
     src = './',
     libs = './libs/';
 
 module.exports = {
     path: {
-        in: src + 'assets/_scss/*.scss',
+        in: src + 'assets/styles/**/*.scss',
         out: dest + 'assets/styles'
     }
 };

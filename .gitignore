@@ -19,9 +19,8 @@ bower_components
 *.sublime-*
 
 /.sass-cache/
-/_docs/
 /dist/
 /assets/libs/
 /assets/css
-_build
-libs
+/build/
+/libs/
