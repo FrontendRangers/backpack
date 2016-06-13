@@ -19,7 +19,7 @@
 - Barebone styles
 - Configurable class names
 - Wireframe mode
-- Generate settings file with Octophant
+- Generate settings file with Octophant (Coming Soon)
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ gulp
 
 ## Architecture
 
-- `_build/`: compiled HTML, CSS, and JavaScript *– Don't edit files here, folder rebuilds on change*
+- `build/`: compiled HTML, CSS, and JavaScript *– Don't edit files here, folder rebuilds on change*
 - `assets/`: project assets (CSS, JavaScript) *– file structure to be redone*
 - `docs/`: project assets (CSS, JavaScript)
     - `data/`: Data files (menu, colors, icons) *– not working at the moment*
@@ -51,19 +51,22 @@ gulp
     - `config.js`: Styleguide configuration
     - `index.js`: Main gulpfile with global tasks
     - `gulpfile.js/`: Tasks files
-- `libs/`: project assets (CSS, JavaScript)
+- `libs/`: project dependencies (CSS, JavaScript)
 
 ## TODO
 
 ### CSS toolkit
 
+- [x] Integrate Guidebook as a dependency
 - [ ] Define and create utilities/components
 - [ ] Cleanup unnecessary CSS
-- [ ] Recreate architecture following ITCSS principles
+- [x] Recreate architecture following ITCSS principles
 - [ ] Add these tasks to Github Issues
     - Manage with [Waffle.io](https://waffle.io/benoitdeziel/backpack)
 - [ ] Create the wireframe theme
     - [Like this](https://www.hellomany.com/ui-kits/wireframe/wkv2)
+- [ ] Add Octophant to generate data about stylesheets
+- [ ] Add better integration with Guidebook
 
 ## Authors
 
