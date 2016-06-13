@@ -1,3 +1,8 @@
+// ==========================================================================
+// Tools - Colors
+// @status: Not Ready
+// ==========================================================================
+
 $default-color-palette: $colors;
 
 @function color($color-name, $color-variant: '500', $color-palette: $default-color-palette) {
