@@ -1,0 +1,36 @@
+// ==========================================================================
+// Layout
+// @status: Not Ready
+// ==========================================================================
+
+.Layout {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-block {
+
+    }
+}
+
+// TODO: Put this in another file
+
+.u-scroll {
+    overflow: scroll;
+}
+
+.u-scroll-horizontal {
+    overflow-x: scroll;
+}
+
+.u-scroll-vertical {
+    overflow-y: scroll;
+}

@@ -1,0 +1,31 @@
+// ==========================================================================
+// Backpack - Tools
+// @description: Default mixins and functions
+// ==========================================================================
+
+@import "sizes";
+@import 'functions/colors';
+
+// CSS Arrows
+@mixin css-arrow($orientation: "up", $arrow-color: #ccc, $arrow-width: 10px) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $arrow-width;
+
+  @if $orientation == "up" {
+    border-color: transparent transparent $arrow-color transparent;
+  }
+
+  @if $orientation == "down" {
+    border-color: $arrow-color transparent transparent transparent;
+  }
+
+  @if $orientation == "left" {
+    border-color: transparent $arrow-color transparent transparent;
+  }
+
+  @if $orientation == "right" {
+    border-color: transparent transparent transparent $arrow-color;
+  }
+}

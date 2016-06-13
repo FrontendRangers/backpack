@@ -1,0 +1,48 @@
+// ==========================================================================
+// Accordions
+// ==========================================================================
+
+//
+// Accordions - Settings
+// ==========================================================================
+
+$accordions-radio: true !default;
+
+//
+// Accordions - Class Names
+// ==========================================================================
+
+$accordion: Accordion !default;
+$accordion-pane: Accordion-pane !default;
+$accordion-title: Accordion-title !default;
+$accordion-content: Accordion-content !default;
+
+//
+// Accordions - Core
+// ==========================================================================
+
+.#{$accordion} {
+
+}
+
+.#{$accordion-title} {
+    cursor: pointer;
+}
+
+.#{$accordion-content} {
+    display: none;
+    .#{$accordion-pane}.is-active & {
+        display: block;
+    }
+}
+
+@if $accordions-radio {
+    .#{$accordion-pane} {
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked ~ .#{$accordion-content} {
+            display: block;
+        }
+    }
+}

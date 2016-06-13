@@ -1,0 +1,92 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+//
+// Class Names
+// ==========================================================================
+
+$btn: Button !default;
+
+$btn-xsmall: Button--xsmall !default;
+$btn-small: Button--small !default;
+$btn-large: Button--large !default;
+$btn-xlarge: Button--xlarge !default;
+
+$btn-full: Button--full !default;
+
+$btn-group: ButtonGroup !default;
+
+//
+// Basic buttons
+// ==========================================================================
+.#{$btn} {
+    padding: 5px 10px;
+    margin-right: 0;
+    display: inline-block;
+    position: relative;
+    background-color: $btn-color;
+    border: 1px solid darken($btn-color, 15%);
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    text-decoration: none; // States
+    &:hover {
+        background-color: darken($btn-color, 5%);
+        color: #333;
+    }
+    // Sizes
+    &.#{$btn-xsmall} {
+        font-size: 12px;
+        line-height: 1;
+    }
+    &.#{$btn-small} {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    &.#{$btn-large} {
+        font-size: 18px;
+        line-height: 2;
+    }
+    &.#{$btn-xlarge} {
+        font-size: 24px;
+        line-height: 2;
+    }
+    &.#{$btn-full} {
+        float: left;
+        width: 100%;
+        clear: both;
+        text-align: center;
+    }
+}
+
+//
+// Button group
+// ==========================================================================
+
+.#{$btn-group} {
+    list-style: none;
+    padding: 0;
+    @extend %clearfix;
+    li {
+        float: left;
+        padding: 0;
+        margin: 0 0 0 -1px;
+        &:first-child {
+            margin-left: 0;
+        }
+        // This prevent from rounding the middle buttons
+        &:not(:first-child) .#{$btn} {
+            // @include border-top-left-radius(0);
+            // @include border-bottom-left-radius(0);
+            border-left-width: 0;
+        }
+        &:not(:last-child) .#{$btn} {
+            // @include border-top-right-radius(0);
+            // @include border-bottom-right-radius(0);
+        }
+    }
+    .#{$btn} {
+        margin-right: 0;
+    }
+}

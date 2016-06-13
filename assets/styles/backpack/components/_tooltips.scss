@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Tooltips
+   ========================================================================== */
+
+//
+// Class Names
+// ==========================================================================
+
+$tooltip: Tooltip !default;
+
+//
+// Core
+// ==========================================================================
+
+.#{$tooltip},
+[data-tooltip] {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    text-indent: 0 !important;
+    border-bottom: 1px dotted #ccc;
+}
+
+.#{$tooltip}:after,
+.#{$tooltip}:before,
+[data-tooltip]:after,
+[data-tooltip]:before {
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+}
+
+// Tooltip body
+.#{$tooltip}:after {
+    top: -12px;
+    left: 50%;
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #333;
+    background: rgba(0,0,0,.9);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    font-style: normal;
+    text-align: center;
+    content: attr(data-tooltip);
+}
+
+// Tooltip arrow
+.#{$tooltip}:before {
+    left: 50%;
+    content: "";
+    z-index: 101;
+    @include css-arrow(down, rgba(0,0,0,.9), 6px);
+}
+.#{$tooltip}:hover:after,
+.#{$tooltip}:hover:before {
+    opacity: 1;
+}
+
+/*
+   Tooltips - Position
+   ========================================================================== */
+
+// Tooltip right side
+.#{$tooltip}[data-tooltip-position="right"]:after {
+    margin-left: 12px;
+    top: 50%;
+    left: 100%;
+}
+.#{$tooltip}[data-tooltip-position="right"]:before {
+    @include css-arrow(left, rgba(0,0,0,.9), 6px);
+    top: 50%;
+    left: 100%;
+}
+// Tooltip at the bottom
+.#{$tooltip}[data-tooltip-position="bottom"]:after {
+    top: 33px;
+}
+.#{$tooltip}[data-tooltip-position="bottom"]:before {
+    @include css-arrow(up, rgba(0,0,0,.9), 6px);
+    top: 100%;
+    left: 50%;
+}
+// Tooltip left side
+.#{$tooltip}[data-tooltip-position="left"]:after {
+    top: 50%;
+    left: -12px;
+}
+.#{$tooltip}[data-tooltip-position="left"]:before {
+    @include css-arrow(right, rgba(0,0,0,.9), 6px);
+    top: 50%;
+    left: 0;
+}

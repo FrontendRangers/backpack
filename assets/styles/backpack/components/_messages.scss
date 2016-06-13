@@ -1,0 +1,37 @@
+// ==========================================================================
+// Messages
+// ==========================================================================
+
+//
+// Class Names
+// ==========================================================================
+
+$message: Message !default;
+$message-close: Message-close !default;
+
+//
+// Core
+// ==========================================================================
+
+.#{$message} {
+    margin-bottom: $gutter-width / 2;
+    padding: $gutter-width / 2;
+    background-color: #eee;
+    .#{$message-close} {
+        float: right;
+        outline: none;
+        color: inherit;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        text-shadow: 0 1px 0 rgba(255.00, 255.00, 255.00, .30);
+        opacity: 0.80;
+        &:hover {
+            opacity: 0.95;
+        }
+    }
+    p {
+        margin: 0;
+        color: inherit;
+    }
+}

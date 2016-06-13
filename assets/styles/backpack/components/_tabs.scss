@@ -1,0 +1,110 @@
+// ==========================================================================
+// Tabs
+// ==========================================================================
+
+//
+// Tabs - Class Names
+// ==========================================================================
+
+$tabs: Tabs !default;
+$tabs-nav: Tabs-nav !default;
+$tabs-nav-item: Tabs-nav-item !default;
+$tabs-content: Tabs-content !default;
+$tabs-pane: Tabs-pane !default;
+$tabs-vertical: Tabs--vertical !default;
+$tabs-end: Tabs--end !default;
+$tabs-nav-center: Tabs-nav--center !default;
+$tabs-nav-end: Tabs-nav--end !default;
+$tabs-nav-full: Tabs-nav--full !default;
+
+//
+// Tabs Core
+// ==========================================================================
+
+.#{$tabs} {
+    display: flex;
+    flex-flow: column nowrap;
+
+    max-width: 100%;
+    .#{$tabs-nav} {
+        flex: 0 1 auto;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        margin: 0;
+        padding: 0;
+
+        .#{$tabs-nav-item} {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            cursor: pointer;
+        }
+    }
+    .#{$tabs-content} {
+        flex: 1 1 0;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        .#{$tabs-pane} {
+            display: none;
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+}
+
+//
+// Tabs - Variations
+// ==========================================================================
+
+// Tabs Vertical
+.#{$tabs-vertical} {
+    flex-direction: row;
+    .#{$tabs-nav} {
+        flex-direction: column;
+    }
+    .#{$tabs-content} {
+
+    }
+    .#{$tabs-pane} {
+
+    }
+}
+
+// Tabs Right / Below
+.#{$tabs-end} {
+    .#{$tabs-nav} {
+        order: 1;
+    }
+}
+
+//
+// Tabs navigation - Variations
+// ==========================================================================
+
+.#{$tabs-nav} {
+    &.#{$tabs-nav-center} {
+        justify-content: center;
+    }
+
+    &.#{$tabs-nav-end} {
+        justify-content: flex-end;
+    }
+    &.#{$tabs-nav-full} {
+        .#{$tabs-nav-item} {
+            flex: 1 0 auto;
+        }
+    }
+}
