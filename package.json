@@ -1,41 +1,34 @@
 {
-  "name": "backpack",
-  "version": "0.8.0",
-  "description": "A css toolkit.",
-  "homepage": "https://github.com/openfire3/backpack/",
-  "scripts": {
-    "start": "npm install && bower install",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "css",
-    "sass",
-    "scss",
-    "flexbox",
-    "framework",
-    "toolkit"
-  ],
-  "author": {
-    "name": "Benoit Deziel",
-    "url": "https://github.com/benoitdeziel/"
-  },
-  "license": "MIT",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/benoitdeziel/backpack.git"
-  },
-  "bugs": {
-    "url": "https://github.com/benoitdeziel/backpack/issues"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.0.0",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.5"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "guidebook": "git+https://git@github.com/FrontEndRanger/guidebook.git#dev"
-  }
+    "name": "@backpack/root",
+    "version": "0.0.0",
+    "description": "A component library",
+    "license": "MIT",
+    "author": {
+        "name": "Benoit Deziel",
+        "url": "https://github.com/benoitdeziel/"
+    },
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FrontendRangers/backpack.git"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "eslint": "^5.12.1",
+        "eslint-config-prettier": "^4.0.0",
+        "eslint-plugin-prettier": "^3.0.1",
+        "eslint-plugin-react": "^7.12.4",
+        "lerna": "^3.10.7",
+        "prettier": "^1.16.1",
+        "stylelint": "^9.10.1",
+        "stylelint-config-recommended": "^2.1.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "stylelint-processor-styled-components": "^1.5.2"
+    },
+    "scripts": {
+        "storybook:react": "start-storybook -p 9001 -c packages/react/.storybook",
+        "build-storybook": "build-storybook"
+    }
 }
