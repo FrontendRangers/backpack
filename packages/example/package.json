@@ -1,9 +1,9 @@
 {
     "name": "@backpack/example",
-    "version": "0.1.1-alpha.0",
+    "version": "0.1.1",
     "private": true,
     "dependencies": {
-        "@frontendrangers/backpack-core": "^0.1.1-alpha.0",
+        "@frontendrangers/backpack-core": "^0.1.1",
         "@types/jest": "23.3.13",
         "@types/node": "10.12.20",
         "@types/react": "16.7.22",
