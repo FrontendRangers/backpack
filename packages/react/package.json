@@ -1,17 +1,16 @@
 {
-    "name": "@backpack/react",
+    "name": "@frontendrangers/backpack-react",
     "version": "0.1.1-alpha.0",
     "license": "MIT",
     "description": "Backpack for React",
-    "main": "index.ts",
+    "main": "dist/index.js",
     "files": [
-        "dist/**/*"
+        "dist"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "dependencies": {
-        "@types/node": "10.12.18",
-        "@types/react": "16.7.21",
-        "@types/react-dom": "16.0.11",
-        "@types/styled-components": "^4.1.6",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-scripts": "2.1.3",
@@ -19,6 +18,10 @@
         "typescript": "3.2.4"
     },
     "devDependencies": {
+        "@types/node": "10.12.18",
+        "@types/react": "16.7.21",
+        "@types/react-dom": "16.0.11",
+        "@types/styled-components": "^4.1.6",
         "@babel/cli": "^7.2.3",
         "@babel/core": "^7.2.2",
         "@babel/preset-env": "^7.3.1",

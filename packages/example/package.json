@@ -3,7 +3,7 @@
     "version": "0.1.1-alpha.0",
     "private": true,
     "dependencies": {
-        "@backpack/react": "^0.1.1-alpha.0",
+        "@frontendrangers/backpack-core": "^0.1.1-alpha.0",
         "@types/jest": "23.3.13",
         "@types/node": "10.12.20",
         "@types/react": "16.7.22",
@@ -27,5 +27,8 @@
         "not dead",
         "not ie <= 11",
         "not op_mini all"
-    ]
+    ],
+    "devDependencies": {
+        "semantic-release": "^15.13.3"
+    }
 }

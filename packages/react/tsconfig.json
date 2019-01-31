@@ -1,14 +1,20 @@
 {
     "compilerOptions": {
-        "outDir": "dist",
-        "rootDir": "src",
-        "target": "es5",
-        "module": "commonjs",
-        "noImplicitAny": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "module": "esnext",
         "declaration": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "esnext",
+        "sourceMap": true,
+        "lib": ["es6", "esnext"],
         "jsx": "react",
         "allowSyntheticDefaultImports": true
     },
-    "include": ["src/**/*.tsx", "src/**/*.ts"],
-    "exclude": ["node_modules", "**/__tests__/*.spec.tsx", "**/*.stories.tsx"]
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules", "**/*.spec.tsx", "**/*.stories.tsx"]
 }

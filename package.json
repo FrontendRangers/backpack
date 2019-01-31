@@ -16,12 +16,15 @@
         "packages/*"
     ],
     "devDependencies": {
+        "commitizen": "^3.0.5",
+        "cz-lerna-changelog": "^2.0.0",
         "eslint": "^5.12.1",
         "eslint-config-prettier": "^4.0.0",
         "eslint-plugin-prettier": "^3.0.1",
         "eslint-plugin-react": "^7.12.4",
         "lerna": "^3.10.7",
-        "prettier": "^1.16.1",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.16.3",
         "stylelint": "^9.10.1",
         "stylelint-config-recommended": "^2.1.0",
         "stylelint-config-styled-components": "^0.1.1",
@@ -29,6 +32,8 @@
     },
     "scripts": {
         "storybook:react": "start-storybook -p 9001 -c packages/react/.storybook",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "lint": "run-p -c lint:*",
+        "lint:css": "stylelint 'packages/**/*.ts{,x}'"
     }
 }

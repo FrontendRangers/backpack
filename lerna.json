@@ -3,7 +3,12 @@
     "useWorkspaces": true,
     "version": "independent",
     "packages": ["libs/*"],
-    "publishConfig": {
-        "access": "public"
+    "command": {
+        "publish": {
+            "conventionalCommits": true,
+            "access": "public",
+            "npmClient": "yarn",
+            "allowBranch": ["master", "feature/*", "next"]
+        }
     }
 }
