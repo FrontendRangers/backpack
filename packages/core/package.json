@@ -1,6 +1,13 @@
 {
     "name": "@backpack/core",
     "version": "0.1.0",
-    "main": "index.js",
-    "license": "MIT"
+    "main": "dist/index.js",
+    "module": "src/index.js",
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "typescript": "^3.2.4"
+    }
 }
