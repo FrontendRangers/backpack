@@ -53,7 +53,7 @@
         "webpack": "^4.29.0"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start-react": "react-scripts start",
         "build-react": "react-scripts build",
         "build": "rimraf ./dist && tsc",
         "test": "react-scripts test",

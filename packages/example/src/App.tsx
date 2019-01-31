@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { BpButton } from '@backpack/react';
+import { BpButton } from '@frontendrangers/backpack-react';
 
 class App extends Component {
     render() {

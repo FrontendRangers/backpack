@@ -10,10 +10,18 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "target": "esnext",
-        "sourceMap": true,
+        "sourceMap": false,
         "lib": ["es6", "esnext"],
-        "jsx": "react",
-        "allowSyntheticDefaultImports": true
+        "jsx": "preserve",
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "noEmit": true
     },
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "**/*.spec.tsx", "**/*.stories.tsx"]
