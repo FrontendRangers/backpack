@@ -1,6 +1,6 @@
 {
     "name": "@frontendrangers/backpack-react",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "MIT",
     "description": "Backpack for React",
     "main": "dist/index.js",
